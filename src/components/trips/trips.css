@@ -1,0 +1,275 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   TRIPS — accordion of categories; each open category reveals a swipe slider.
+   ───────────────────────────────────────────────────────────────────────── */
+
+.trips-section {
+  padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 3.5rem);
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+
+.trips-header {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+.trips-header .badge { margin-bottom: 1.2rem; }
+.trips-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1.15;
+}
+.trips-header p {
+  margin: 0.75rem auto 0;
+  max-width: 480px;
+  color: var(--text-2);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.trips-list {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+/* ── Category row (accordion item) ───────────────────────────────────────── */
+
+.cat-row { border-bottom: 1px solid var(--border); }
+.cat-row:last-child { border-bottom: none; }
+
+.cat-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 1.5rem;
+  background: var(--surface);
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s;
+}
+.cat-header:hover,
+.cat-row.open > .cat-header { background: var(--surface-2); }
+
+.cat-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+}
+.cat-info { flex: 1; min-width: 0; }
+.cat-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text);
+}
+.cat-subtitle {
+  margin-top: 0.15rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.cat-count {
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  font-size: 0.75rem;
+  color: var(--muted);
+  white-space: nowrap;
+  transition: border-color 0.2s, color 0.2s;
+}
+.cat-row.open > .cat-header .cat-count {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.cat-chevron {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  color: var(--muted);
+  transition: transform 0.3s, color 0.2s;
+}
+.cat-row.open > .cat-header .cat-chevron {
+  color: var(--accent);
+  transform: rotate(180deg);
+}
+
+.cat-drawer {
+  max-height: 0;
+  overflow: hidden;
+  background: var(--bg);
+  border-top: 0 solid var(--border);
+  transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.cat-row.open > .cat-drawer {
+  max-height: 520px;
+  border-top-width: 1px;
+}
+
+/* ── Slider ──────────────────────────────────────────────────────────────── */
+
+.trip-slider-wrap     { padding: 1.5rem; }
+.trip-slider-viewport { overflow: hidden; border-radius: 10px; }
+
+.trip-slider-track {
+  display: flex;
+  cursor: grab;
+  user-select: none;
+  will-change: transform;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.trip-slider-track.dragging {
+  cursor: grabbing;
+  transition: none;
+}
+
+.trip-card {
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+@media (max-width: 560px) {
+  .trip-card { grid-template-columns: 1fr; }
+}
+
+.trip-card-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  font-size: 4rem;
+  background: var(--surface-2);
+  border-right: 1px solid var(--border);
+}
+@media (max-width: 560px) {
+  .trip-card-img {
+    min-height: 110px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+.trip-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: 1.4rem 1.5rem;
+}
+.trip-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text);
+}
+.trip-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+.trip-tag {
+  padding: 0.18rem 0.55rem;
+  border: 1px solid var(--accent-dim);
+  border-radius: 100px;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.trip-card-desc {
+  flex: 1;
+  color: var(--text-2);
+  font-size: 0.87rem;
+  line-height: 1.75;
+}
+.trip-card-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.6rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+.trip-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.trip-card-book {
+  font-size: 0.78rem;
+  padding: 0.4rem 0.9rem;
+}
+
+/* ── Slider controls ─────────────────────────────────────────────────────── */
+
+.trip-slider-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.trip-slider-dots {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.trip-slider-dot {
+  width: 6px;
+  height: 6px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--border);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.trip-slider-dot.active {
+  background: var(--accent);
+  transform: scale(1.4);
+}
+
+.trip-slider-arrows {
+  display: flex;
+  gap: 0.4rem;
+}
+.trip-slider-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.trip-slider-arrow:hover:not(:disabled) {
+  color: var(--text);
+  border-color: var(--accent);
+  background: var(--accent-dim);
+}
+.trip-slider-arrow:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}

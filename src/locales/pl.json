@@ -1,0 +1,90 @@
+{
+  "page.title":    "Przewodnik Via Baltica — Marek Jeziak, Gdańsk",
+  "nav.home":      "Strona główna",
+  "nav.tours":     "Wycieczki",
+  "nav.about":     "O nas",
+  "nav.reviews":   "Opinie",
+  "nav.contact":   "Kontakt",
+  "nav.cta":       "Zarezerwuj wycieczkę",
+
+  "hero.badge":     "Przewodnik · Via Baltica · Gdańsk",
+  "hero.heading":   "Odkryj Gdańsk<br>oczami <em>lokalsa</em>",
+  "hero.body":      "Prywatne wycieczki z przewodnikiem po jednym z najpiękniejszych miast bałtyckich Europy — gdzie historia, bursztyn i morze tworzą niepowtarzalną całość.",
+  "hero.cta":       "Odkryj wycieczki",
+  "hero.secondary": "Poznaj przewodnika",
+  "hero.stat1":     "Lat doświadczenia",
+  "hero.stat2":     "Ocena Google",
+  "hero.stat3":     "Unikalnych tras",
+  "hero.stat4":     "Języki",
+
+  "about.badge":      "Twój przewodnik",
+  "about.heading":    "Pasja do opowieści,<br>miłość do <em>Gdańska</em>",
+  "about.guideTitle": "Licencjonowany Przewodnik · Gdańsk",
+  "about.badge1":     "Via Baltica",
+  "about.badge2":     "Ekspert Trójmiasta",
+  "about.badge3":     "Historia i Kultura",
+  "about.p1":         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "about.p2":         "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Pellentesque habitant morbi tristique senectus et netus.",
+  "about.p3":         "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae. Proin viverra, ligula sit amet ultrices semper, ligula arcu tristique sapien, a accumsan nisi mauris ac eros. Fusce fermentum — przewodnik zrodzony z bursztynowych brzegów.",
+  "about.h1title":    "Licencja przewodnika",
+  "about.h1desc":     "Certyfikat Polskiej Organizacji Turystycznej, ponad 18 lat doświadczenia.",
+  "about.h2title":    "Wielojęzyczność",
+  "about.h2desc":     "Wycieczki po angielsku i polsku, dostosowane do tempa Twojej grupy.",
+  "about.h3title":    "Lokalna wiedza",
+  "about.h3desc":     "Urodzony i wychowany w Gdańsku — zna każde ukryte podwórko i legendę.",
+  "about.h4title":    "Ocena 5 gwiazdek",
+  "about.h4desc":     "Stale najwyżej oceniany w Google, z entuzjastycznymi recenzjami z całego świata.",
+  "about.ctaTours":   "Przeglądaj wycieczki",
+  "about.ctaContact": "Napisz do mnie",
+
+  "trips.badge":      "Odkryj Gdańsk",
+  "trips.heading":    "Dostępne Wycieczki",
+  "trips.subheading": "Wybierz kategorię, a następnie przesuń karty, aby odkryć trasy.",
+  "trips.book":       "Zarezerwuj wycieczkę",
+  "trips.tours":      "tras",
+
+  "trips.data": [
+    {
+      "icon": "⚓",
+      "title": "Wycieczki po Gdańsku",
+      "subtitle": "5 wycieczek · Spacer i Historia",
+      "trips": [
+        { "emoji": "⚓",  "color": "#1a2a3a", "title": "Stare Miasto i Nabrzeże",        "meta": "3 h · Centrum",   "tags": ["Historia", "Spacer"],    "body": "Przejdź Drogą Królewską, podziwiaj Fontannę Neptuna i odkryj historię legendarnego Żurawia nad Motławą — miasto zrodzone z handlu i bursztynu." },
+        { "emoji": "⚔️", "color": "#1a1a2a", "title": "Wycieczka Historyczna II WŚ",    "meta": "5 h · Westerplatte", "tags": ["Historia", "Pamięć"], "body": "Tu wybuchła II Wojna Światowa — stań na Westerplatte, odwiedź Muzeum II Wojny Światowej i posłuchaj historii miasta, które odrodziło się z ruin." },
+        { "emoji": "🎨", "color": "#1f0d1f", "title": "Street Art i Stocznia",          "meta": "3 h · Stocznia",  "tags": ["Sztuka", "Miejski"],     "body": "Stocznia Gdańska — kolebka Solidarności — stała się płótnem dla artystów. Odkryj murale, Europejskie Centrum Solidarności i surową energię twórczą postindustrialnej strefy." },
+        { "emoji": "🍺", "color": "#1a1a0d", "title": "Piwo Rzemieślnicze i Kuchnia",   "meta": "3 h · Wrzeszcz", "tags": ["Jedzenie", "Wieczór"],   "body": "Poznaj Gdańsk od środka: lokalne browary rzemieślnicze, wędzone ryby, tradycyjne dania kaszubskie i ukryte podwórka dzielnicy Wrzeszcz." },
+        { "emoji": "🌅", "color": "#1f1a0d", "title": "Szlak Bursztynowy o Świcie",     "meta": "2 h · Oliwa",    "tags": ["Natura", "Ranek"],       "body": "Zacznij o świcie w Parku Oliwskim, gdzie rosną wielowiekowe dęby i stoi barokowa katedra. Poznaj tajemnice bałtyckiego bursztynu w porannym świetle." }
+      ]
+    },
+    {
+      "icon": "🌊",
+      "title": "Wybrzeże Bałtyku",
+      "subtitle": "3 wycieczki · Morze i Relaks",
+      "trips": [
+        { "emoji": "🌊", "color": "#0d1f2d", "title": "Sopot i Molo Bałtyckie",   "meta": "4 h · Sopot",   "tags": ["Wybrzeże", "Relaks"],      "body": "Spaceruj po najdłuższym drewnianym molo w Europie, wdychaj bałtyckie powietrze i odkryj eleganckie uzdrowisko, które ongiś zachwycało cesarzy i artystów." },
+        { "emoji": "🚢", "color": "#0d1a2a", "title": "Port Gdynia i Modernizm",  "meta": "4 h · Gdynia",  "tags": ["Architektura", "Morze"],   "body": "Odkryj polską perłę modernizmu z okresu międzywojennego: Gdynię zbudowaną niemal od zera w latach 20., z architekturą Art Deco i okrętami-muzeami." },
+        { "emoji": "🦅", "color": "#1a1000", "title": "Ptaki Delty Wisły",        "meta": "5 h · Żuławy",  "tags": ["Natura", "Ptaki"],         "body": "Żuławy Wiślane w delcie Wisły to raj dla ptaków migrujących. Obserwuj bieliki, rzadkie brodźce i rozległe trzciny sięgające horyzontu." }
+      ]
+    },
+    {
+      "icon": "🌲",
+      "title": "Natura i Wycieczki Dalsze",
+      "subtitle": "2 wycieczki · Przyroda i Zamki",
+      "trips": [
+        { "emoji": "🏰", "color": "#2a1a1a", "title": "Zamek w Malborku",        "meta": "8 h · Malbork", "tags": ["Zamek", "Wycieczka"],      "body": "Odwiedź największy zamek z cegły na świecie. Potężna twierdza krzyżacka nad Nogatem opowiada historię potęgi, wiary i średniowiecznej architektury w monumentalnej skali." },
+        { "emoji": "🌲", "color": "#0d1a0d", "title": "Pojezierze Kaszubskie",   "meta": "6 h · Kartuzy", "tags": ["Natura", "Jeziora"],       "body": "Wyrusz w Kaszubskie wzgórza — pagórki, polodowcowe jeziora i kultura niepodobna do żadnej innej w Polsce. Spotkaj lokalnych rzemieślników i skosztuj regionalnego żurku." }
+      ]
+    }
+  ],
+
+  "reviews.badge":    "Co mówią klienci",
+  "reviews.heading":  "Zaufali nam podróżnicy",
+  "reviews.count":    "(18 opinii)",
+  "reviews.cta":      "Czytaj wszystkie opinie w Google →",
+  "reviews.r1.text":  "Marek to wyjątkowy przewodnik — pełen wiedzy, pasji i zaangażowania. Wycieczka Via Baltica przerosła wszelkie oczekiwania. Gorąco polecam!",
+  "reviews.r1.date":  "Marzec 2025",
+  "reviews.r2.text":  "Fantastyczne doświadczenie w Gdańsku. Marek ożywia historię w sposób, jakiego żaden podręcznik nie jest w stanie oddać. Wrócimy na kolejną wycieczkę!",
+  "reviews.r2.date":  "Styczeń 2025",
+  "reviews.r3.text":  "Jedna z najlepszych wycieczek z przewodnikiem, jaką miałam w Europie. Trasa Via Baltica była perfekcyjnie zaplanowana, a opowieści Marka sprawiły, że każdy przystanek był niezapomniany.",
+  "reviews.r3.date":  "Grudzień 2024"
+}

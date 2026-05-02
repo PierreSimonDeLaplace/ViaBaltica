@@ -1,0 +1,20 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   Pill-shaped section labels. Used as a section "kicker" above headings.
+   ───────────────────────────────────────────────────────────────────────── */
+
+.badge,
+.about-label {
+  display: inline-block;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blue-light);
+  border: 1px solid var(--border-hover);
+  background: var(--blue-dim);
+  padding: 0.35rem 0.9rem;
+  border-radius: 100px;
+}
+
+.about-label {
+  margin-bottom: 0.25rem;
+}

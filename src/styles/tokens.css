@@ -1,0 +1,76 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   Design tokens — single source of truth for colors, spacing, shadows, etc.
+   Two themes (dark / light) selected by [data-theme] on <html>.
+   ───────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* surfaces */
+  --bg:           #08111e;
+  --surface:      #0e1c2f;
+  --surface-2:    #132340;
+
+  /* borders */
+  --border:       rgba(99, 155, 210, 0.14);
+  --border-hover: rgba(99, 155, 210, 0.35);
+
+  /* accent (amber) */
+  --accent:       #d4923a;
+  --accent-light: #e8b46a;
+  --accent-dim:   rgba(212, 146, 58, 0.14);
+
+  /* secondary (baltic blue) */
+  --blue:         #4a8fc0;
+  --blue-light:   #7ab3d8;
+  --blue-dim:     rgba(74, 143, 192, 0.14);
+
+  /* text */
+  --text:         #e8f0f8;
+  --text-2:       #a8c0d8;
+  --muted:        #5d7d96;
+
+  /* chrome */
+  --nav-bg:       rgba(8, 17, 30, 0.88);
+  --nav-height:   72px;
+
+  /* depth */
+  --shadow:       0 8px 32px rgba(0, 0, 0, 0.45);
+  --shadow-lg:    0 24px 60px rgba(0, 0, 0, 0.6);
+
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --bg:           #e8f2fa;
+  --surface:      #f4f8fc;
+  --surface-2:    #ffffff;
+
+  --border:       rgba(30, 80, 130, 0.13);
+  --border-hover: rgba(30, 80, 130, 0.32);
+
+  --accent:       #b5720a;
+  --accent-light: #d4923a;
+  --accent-dim:   rgba(181, 114, 10, 0.11);
+
+  --blue:         #1a5280;
+  --blue-light:   #2a72aa;
+  --blue-dim:     rgba(26, 82, 128, 0.10);
+
+  --text:         #0c1f35;
+  --text-2:       #2a4a6a;
+  --muted:        #6080a0;
+
+  --nav-bg:       rgba(232, 242, 250, 0.92);
+
+  --shadow:       0 8px 32px rgba(20, 60, 100, 0.12);
+  --shadow-lg:    0 24px 60px rgba(20, 60, 100, 0.18);
+
+  color-scheme: light;
+}
+
+/* Animate theme-sensitive surfaces when [data-theme] flips. */
+body, nav, .mobile-drawer, .review-card, .trip-card,
+.cat-header, .cat-drawer, .trips-list, .reviews-section,
+.dropdown, .btn-primary, .btn-outline {
+  transition: background 0.35s ease, color 0.35s ease,
+              border-color 0.35s ease, box-shadow 0.35s ease;
+}
