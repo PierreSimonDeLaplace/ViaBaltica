@@ -43,40 +43,6 @@
   "trips.book":       "Book this tour",
   "trips.tours":      "tours",
 
-  "trips.data": [
-    {
-      "icon": "⚓",
-      "title": "Gdańsk City Tours",
-      "subtitle": "5 tours · Walking & History",
-      "trips": [
-        { "emoji": "⚓",  "color": "#1a2a3a", "title": "Old Town & Waterfront",    "meta": "3 h · City Centre",      "tags": ["History", "Walking"],       "body": "Stroll through the Royal Road, marvel at the Neptune Fountain, and discover the stories behind Gdańsk's iconic crane on the Motława river — a city born of trade and amber." },
-        { "emoji": "⚔️", "color": "#1a1a2a", "title": "WWII History Tour",         "meta": "5 h · Westerplatte",     "tags": ["History", "Memorial"],      "body": "Where WWII began — stand on the grounds of Westerplatte, explore the Museum of the Second World War, and hear the story of a city that rebuilt itself from rubble." },
-        { "emoji": "🎨", "color": "#1f0d1f", "title": "Street Art & Shipyard",     "meta": "3 h · Shipyard District","tags": ["Art", "Urban"],             "body": "The Gdańsk Shipyard — birthplace of Solidarity — is now a canvas for artists. Explore murals, the European Solidarity Centre, and the raw creative energy of the post-industrial zone." },
-        { "emoji": "🍺", "color": "#1a1a0d", "title": "Craft Beer & Local Food",   "meta": "3 h · Wrzeszcz",         "tags": ["Food", "Evening"],          "body": "Taste Gdańsk from the inside: local craft breweries, smoked fish markets, traditional Kashubian dishes, and the hidden courtyards of the Wrzeszcz district." },
-        { "emoji": "🌅", "color": "#1f1a0d", "title": "Amber Route Sunrise Walk",  "meta": "2 h · Oliwa",            "tags": ["Nature", "Morning"],        "body": "Begin at dawn in Oliwa Park, home to centuries-old oaks and a baroque cathedral. Learn the secrets of Baltic amber as morning light filters through the canopy." }
-      ]
-    },
-    {
-      "icon": "🌊",
-      "title": "Baltic Coast & Seaside",
-      "subtitle": "3 tours · Sea & Relaxation",
-      "trips": [
-        { "emoji": "🌊", "color": "#0d1f2d", "title": "Sopot & Baltic Pier",         "meta": "4 h · Sopot",   "tags": ["Coast", "Leisure"],        "body": "Walk Europe's longest wooden pier, breathe in Baltic sea air, and explore the elegant spa town that once charmed kaisers and artists alike." },
-        { "emoji": "🚢", "color": "#0d1a2a", "title": "Gdynia Port & Modernism",     "meta": "4 h · Gdynia",  "tags": ["Architecture", "Sea"],     "body": "Explore Poland's inter-war modernist gem: the port city of Gdynia, built almost from scratch in the 1920s, with its Art Deco architecture and museum ships." },
-        { "emoji": "🦅", "color": "#1a1000", "title": "Vistula Delta Birdwatching", "meta": "5 h · Żuławy",  "tags": ["Nature", "Birds"],         "body": "The Żuławy wetlands at the Vistula delta are a migratory paradise. Spot white-tailed eagles, rare waders, and vast reed beds stretching to the horizon." }
-      ]
-    },
-    {
-      "icon": "🌲",
-      "title": "Nature & Day Trips",
-      "subtitle": "2 tours · Countryside & Castles",
-      "trips": [
-        { "emoji": "🏰", "color": "#2a1a1a", "title": "Malbork Castle Day Trip",   "meta": "8 h · Malbork", "tags": ["Castle", "Day Trip"],      "body": "Visit the largest brick castle in the world. The mighty Teutonic stronghold on the Nogat river tells a story of power, faith, and medieval architecture on a grand scale." },
-        { "emoji": "🌲", "color": "#0d1a0d", "title": "Kashubian Lake District",   "meta": "6 h · Kartuzy", "tags": ["Nature", "Lakes"],         "body": "Venture into the Kashubian highlands — rolling hills, glacial lakes, and a culture unlike any other in Poland. Meet local craftsmen and taste regional żurek." }
-      ]
-    }
-  ],
-
   "reviews.badge":    "What clients say",
   "reviews.heading":  "Trusted by travellers",
   "reviews.count":    "(18 reviews)",

@@ -1,0 +1,55 @@
+{
+  "photo": "https://picsum.photos/seed/kashubia/120/120",
+  "en": {
+    "title": "Nature & Day Trips",
+    "subtitle": "2 tours · Countryside & Castles",
+    "trips": [
+      {
+        "id": "malbork-castle",
+        "thumb":  "https://picsum.photos/seed/malbork-castle/400/400",
+        "banner": "https://picsum.photos/seed/malbork-castle/800/320",
+        "color": "#2a1a1a",
+        "title": "Malbork Castle Day Trip",
+        "meta": "8 h · Malbork",
+        "tags": ["Castle", "Day Trip"],
+        "body": "Visit the largest brick castle in the world. The mighty Teutonic stronghold on the Nogat river tells a story of power, faith, and medieval architecture on a grand scale."
+      },
+      {
+        "id": "kashubian-lake-district",
+        "thumb":  "https://picsum.photos/seed/kashubian-lake-district/400/400",
+        "banner": "https://picsum.photos/seed/kashubian-lake-district/800/320",
+        "color": "#0d1a0d",
+        "title": "Kashubian Lake District",
+        "meta": "6 h · Kartuzy",
+        "tags": ["Nature", "Lakes"],
+        "body": "Venture into the Kashubian highlands — rolling hills, glacial lakes, and a culture unlike any other in Poland. Meet local craftsmen and taste regional żurek."
+      }
+    ]
+  },
+  "pl": {
+    "title": "Natura i Wycieczki Dalsze",
+    "subtitle": "2 wycieczki · Przyroda i Zamki",
+    "trips": [
+      {
+        "id": "malbork-castle",
+        "thumb":  "https://picsum.photos/seed/malbork-castle/400/400",
+        "banner": "https://picsum.photos/seed/malbork-castle/800/320",
+        "color": "#2a1a1a",
+        "title": "Zamek w Malborku",
+        "meta": "8 h · Malbork",
+        "tags": ["Zamek", "Wycieczka"],
+        "body": "Odwiedź największy zamek z cegły na świecie. Potężna twierdza krzyżacka nad Nogatem opowiada historię potęgi, wiary i średniowiecznej architektury w monumentalnej skali."
+      },
+      {
+        "id": "kashubian-lake-district",
+        "thumb":  "https://picsum.photos/seed/kashubian-lake-district/400/400",
+        "banner": "https://picsum.photos/seed/kashubian-lake-district/800/320",
+        "color": "#0d1a0d",
+        "title": "Pojezierze Kaszubskie",
+        "meta": "6 h · Kartuzy",
+        "tags": ["Natura", "Jeziora"],
+        "body": "Wyrusz w Kaszubskie wzgórza — pagórki, polodowcowe jeziora i kultura niepodobna do żadnej innej w Polsce. Spotkaj lokalnych rzemieślników i skosztuj regionalnego żurku."
+      }
+    ]
+  }
+}

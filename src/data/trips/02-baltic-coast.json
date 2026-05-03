@@ -1,0 +1,75 @@
+{
+  "photo": "https://picsum.photos/seed/baltic-sea/120/120",
+  "en": {
+    "title": "Baltic Coast & Seaside",
+    "subtitle": "3 tours · Sea & Relaxation",
+    "trips": [
+      {
+        "id": "sopot-baltic-pier",
+        "thumb":  "https://picsum.photos/seed/sopot-baltic-pier/400/400",
+        "banner": "https://picsum.photos/seed/sopot-baltic-pier/800/320",
+        "color": "#0d1f2d",
+        "title": "Sopot & Baltic Pier",
+        "meta": "4 h · Sopot",
+        "tags": ["Coast", "Leisure"],
+        "body": "Walk Europe's longest wooden pier, breathe in Baltic sea air, and explore the elegant spa town that once charmed kaisers and artists alike."
+      },
+      {
+        "id": "gdynia-port-modernism",
+        "thumb":  "https://picsum.photos/seed/gdynia-port-modernism/400/400",
+        "banner": "https://picsum.photos/seed/gdynia-port-modernism/800/320",
+        "color": "#0d1a2a",
+        "title": "Gdynia Port & Modernism",
+        "meta": "4 h · Gdynia",
+        "tags": ["Architecture", "Sea"],
+        "body": "Explore Poland's inter-war modernist gem: the port city of Gdynia, built almost from scratch in the 1920s, with its Art Deco architecture and museum ships."
+      },
+      {
+        "id": "vistula-delta-birdwatching",
+        "thumb":  "https://picsum.photos/seed/vistula-delta-birdwatching/400/400",
+        "banner": "https://picsum.photos/seed/vistula-delta-birdwatching/800/320",
+        "color": "#1a1000",
+        "title": "Vistula Delta Birdwatching",
+        "meta": "5 h · Żuławy",
+        "tags": ["Nature", "Birds"],
+        "body": "The Żuławy wetlands at the Vistula delta are a migratory paradise. Spot white-tailed eagles, rare waders, and vast reed beds stretching to the horizon."
+      }
+    ]
+  },
+  "pl": {
+    "title": "Wybrzeże Bałtyku",
+    "subtitle": "3 wycieczki · Morze i Relaks",
+    "trips": [
+      {
+        "id": "sopot-baltic-pier",
+        "thumb":  "https://picsum.photos/seed/sopot-baltic-pier/400/400",
+        "banner": "https://picsum.photos/seed/sopot-baltic-pier/800/320",
+        "color": "#0d1f2d",
+        "title": "Sopot i Molo Bałtyckie",
+        "meta": "4 h · Sopot",
+        "tags": ["Wybrzeże", "Relaks"],
+        "body": "Spaceruj po najdłuższym drewnianym molo w Europie, wdychaj bałtyckie powietrze i odkryj eleganckie uzdrowisko, które ongiś zachwycało cesarzy i artystów."
+      },
+      {
+        "id": "gdynia-port-modernism",
+        "thumb":  "https://picsum.photos/seed/gdynia-port-modernism/400/400",
+        "banner": "https://picsum.photos/seed/gdynia-port-modernism/800/320",
+        "color": "#0d1a2a",
+        "title": "Port Gdynia i Modernizm",
+        "meta": "4 h · Gdynia",
+        "tags": ["Architektura", "Morze"],
+        "body": "Odkryj polską perłę modernizmu z okresu międzywojennego: Gdynię zbudowaną niemal od zera w latach 20., z architekturą Art Deco i okrętami-muzeami."
+      },
+      {
+        "id": "vistula-delta-birdwatching",
+        "thumb":  "https://picsum.photos/seed/vistula-delta-birdwatching/400/400",
+        "banner": "https://picsum.photos/seed/vistula-delta-birdwatching/800/320",
+        "color": "#1a1000",
+        "title": "Ptaki Delty Wisły",
+        "meta": "5 h · Żuławy",
+        "tags": ["Natura", "Ptaki"],
+        "body": "Żuławy Wiślane w delcie Wisły to raj dla ptaków migrujących. Obserwuj bieliki, rzadkie brodźce i rozległe trzciny sięgające horyzontu."
+      }
+    ]
+  }
+}

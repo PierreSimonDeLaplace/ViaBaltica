@@ -1,0 +1,115 @@
+{
+  "photo": "https://picsum.photos/seed/gdansk-city/120/120",
+  "en": {
+    "title": "Gdańsk City Tours",
+    "subtitle": "5 tours · Walking & History",
+    "trips": [
+      {
+        "id": "old-town-waterfront",
+        "thumb":  "https://picsum.photos/seed/old-town-waterfront/400/400",
+        "banner": "https://picsum.photos/seed/old-town-waterfront/800/320",
+        "color": "#1a2a3a",
+        "title": "Old Town & Waterfront",
+        "meta": "3 h · City Centre",
+        "tags": ["History", "Walking"],
+        "body": "Stroll through the Royal Road, marvel at the Neptune Fountain, and discover the stories behind Gdańsk's iconic crane on the Motława river — a city born of trade and amber."
+      },
+      {
+        "id": "wwii-history-tour",
+        "thumb":  "https://picsum.photos/seed/wwii-history-tour/400/400",
+        "banner": "https://picsum.photos/seed/wwii-history-tour/800/320",
+        "color": "#1a1a2a",
+        "title": "WWII History Tour",
+        "meta": "5 h · Westerplatte",
+        "tags": ["History", "Memorial"],
+        "body": "Where WWII began — stand on the grounds of Westerplatte, explore the Museum of the Second World War, and hear the story of a city that rebuilt itself from rubble."
+      },
+      {
+        "id": "street-art-shipyard",
+        "thumb":  "https://picsum.photos/seed/street-art-shipyard/400/400",
+        "banner": "https://picsum.photos/seed/street-art-shipyard/800/320",
+        "color": "#1f0d1f",
+        "title": "Street Art & Shipyard",
+        "meta": "3 h · Shipyard District",
+        "tags": ["Art", "Urban"],
+        "body": "The Gdańsk Shipyard — birthplace of Solidarity — is now a canvas for artists. Explore murals, the European Solidarity Centre, and the raw creative energy of the post-industrial zone."
+      },
+      {
+        "id": "craft-beer-local-food",
+        "thumb":  "https://picsum.photos/seed/craft-beer-local-food/400/400",
+        "banner": "https://picsum.photos/seed/craft-beer-local-food/800/320",
+        "color": "#1a1a0d",
+        "title": "Craft Beer & Local Food",
+        "meta": "3 h · Wrzeszcz",
+        "tags": ["Food", "Evening"],
+        "body": "Taste Gdańsk from the inside: local craft breweries, smoked fish markets, traditional Kashubian dishes, and the hidden courtyards of the Wrzeszcz district."
+      },
+      {
+        "id": "amber-route-sunrise",
+        "thumb":  "https://picsum.photos/seed/amber-route-sunrise/400/400",
+        "banner": "https://picsum.photos/seed/amber-route-sunrise/800/320",
+        "color": "#1f1a0d",
+        "title": "Amber Route Sunrise Walk",
+        "meta": "2 h · Oliwa",
+        "tags": ["Nature", "Morning"],
+        "body": "Begin at dawn in Oliwa Park, home to centuries-old oaks and a baroque cathedral. Learn the secrets of Baltic amber as morning light filters through the canopy."
+      }
+    ]
+  },
+  "pl": {
+    "title": "Wycieczki po Gdańsku",
+    "subtitle": "5 wycieczek · Spacer i Historia",
+    "trips": [
+      {
+        "id": "old-town-waterfront",
+        "thumb":  "https://picsum.photos/seed/old-town-waterfront/400/400",
+        "banner": "https://picsum.photos/seed/old-town-waterfront/800/320",
+        "color": "#1a2a3a",
+        "title": "Stare Miasto i Nabrzeże",
+        "meta": "3 h · Centrum",
+        "tags": ["Historia", "Spacer"],
+        "body": "Przejdź Drogą Królewską, podziwiaj Fontannę Neptuna i odkryj historię legendarnego Żurawia nad Motławą — miasto zrodzone z handlu i bursztynu."
+      },
+      {
+        "id": "wwii-history-tour",
+        "thumb":  "https://picsum.photos/seed/wwii-history-tour/400/400",
+        "banner": "https://picsum.photos/seed/wwii-history-tour/800/320",
+        "color": "#1a1a2a",
+        "title": "Wycieczka Historyczna II WŚ",
+        "meta": "5 h · Westerplatte",
+        "tags": ["Historia", "Pamięć"],
+        "body": "Tu wybuchła II Wojna Światowa — stań na Westerplatte, odwiedź Muzeum II Wojny Światowej i posłuchaj historii miasta, które odrodziło się z ruin."
+      },
+      {
+        "id": "street-art-shipyard",
+        "thumb":  "https://picsum.photos/seed/street-art-shipyard/400/400",
+        "banner": "https://picsum.photos/seed/street-art-shipyard/800/320",
+        "color": "#1f0d1f",
+        "title": "Street Art i Stocznia",
+        "meta": "3 h · Stocznia",
+        "tags": ["Sztuka", "Miejski"],
+        "body": "Stocznia Gdańska — kolebka Solidarności — stała się płótnem dla artystów. Odkryj murale, Europejskie Centrum Solidarności i surową energię twórczą postindustrialnej strefy."
+      },
+      {
+        "id": "craft-beer-local-food",
+        "thumb":  "https://picsum.photos/seed/craft-beer-local-food/400/400",
+        "banner": "https://picsum.photos/seed/craft-beer-local-food/800/320",
+        "color": "#1a1a0d",
+        "title": "Piwo Rzemieślnicze i Kuchnia",
+        "meta": "3 h · Wrzeszcz",
+        "tags": ["Jedzenie", "Wieczór"],
+        "body": "Poznaj Gdańsk od środka: lokalne browary rzemieślnicze, wędzone ryby, tradycyjne dania kaszubskie i ukryte podwórka dzielnicy Wrzeszcz."
+      },
+      {
+        "id": "amber-route-sunrise",
+        "thumb":  "https://picsum.photos/seed/amber-route-sunrise/400/400",
+        "banner": "https://picsum.photos/seed/amber-route-sunrise/800/320",
+        "color": "#1f1a0d",
+        "title": "Szlak Bursztynowy o Świcie",
+        "meta": "2 h · Oliwa",
+        "tags": ["Natura", "Ranek"],
+        "body": "Zacznij o świcie w Parku Oliwskim, gdzie rosną wielowiekowe dęby i stoi barokowa katedra. Poznaj tajemnice bałtyckiego bursztynu w porannym świetle."
+      }
+    ]
+  }
+}
