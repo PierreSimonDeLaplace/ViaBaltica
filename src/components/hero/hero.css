@@ -159,6 +159,11 @@
   border-top: 1px solid rgba(99, 155, 210, 0.15);
 }
 
+:root[data-theme="light"] .hero-stats {
+  background: rgba(245, 247, 250, 0.88);
+  border-top-color: rgba(74, 143, 192, 0.18);
+}
+
 .hero-stat {
   flex: 1;
   max-width: 180px;
@@ -168,6 +173,10 @@
 }
 .hero-stat:last-child { border-right: none; }
 
+:root[data-theme="light"] .hero-stat {
+  border-right-color: rgba(74, 143, 192, 0.18);
+}
+
 .hero-stat-num {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.8rem;
@@ -175,12 +184,21 @@
   line-height: 1;
   color: #e8c97a;
 }
+
+:root[data-theme="light"] .hero-stat-num {
+  color: #a0621e;
+}
+
 .hero-stat-label {
   margin-top: 0.25rem;
   font-size: 0.7rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgba(232, 240, 248, 0.55);
+}
+
+:root[data-theme="light"] .hero-stat-label {
+  color: rgba(30, 45, 65, 0.6);
 }
 
 @media (max-width: 480px) {
