@@ -63,5 +63,8 @@
   "contact.hours.value": "Daily · 08:00 – 20:00",
   "contact.lang.label":  "Languages",
   "contact.lang.value":  "English & Polish",
-  "contact.note":        "Private tours · Custom routes · Groups welcome"
+  "contact.note":        "Private tours · Custom routes · Groups welcome",
+
+  "footer.copyright":    "© 2025 Via Baltica · Mark Jeziak. All rights reserved.",
+  "footer.made":         "Handcrafted in Gdańsk"
 }

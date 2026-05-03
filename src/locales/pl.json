@@ -63,5 +63,8 @@
   "contact.hours.value": "Codziennie · 08:00 – 20:00",
   "contact.lang.label":  "Języki",
   "contact.lang.value":  "Angielski i Polski",
-  "contact.note":        "Wycieczki prywatne · Trasy na zamówienie · Grupy mile widziane"
+  "contact.note":        "Wycieczki prywatne · Trasy na zamówienie · Grupy mile widziane",
+
+  "footer.copyright":    "© 2025 Via Baltica · Marek Jeziak. Wszelkie prawa zastrzeżone.",
+  "footer.made":         "Stworzone z pasją w Gdańsku"
 }

@@ -3,7 +3,7 @@
    The hamburger is a CSS-only toggle driven by #menu-toggle (in index.html).
    ───────────────────────────────────────────────────────────────────────── */
 
-nav {
+.site-nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -168,9 +168,9 @@ nav {
 
 /* CSS-only toggle: #menu-toggle lives in index.html. */
 input#menu-toggle { display: none; }
-input#menu-toggle:checked ~ nav .hamburger span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-input#menu-toggle:checked ~ nav .hamburger span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-input#menu-toggle:checked ~ nav .hamburger span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+input#menu-toggle:checked ~ .site-nav .hamburger span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+input#menu-toggle:checked ~ .site-nav .hamburger span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+input#menu-toggle:checked ~ .site-nav .hamburger span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
 /* ── Mobile drawer ───────────────────────────────────────────────────────── */
 

@@ -19,6 +19,7 @@ import { mount as mountAbout }   from './components/about/about';
 import { mount as mountTrips }   from './components/trips/trips';
 import { mount as mountReviews } from './components/reviews/reviews';
 import { mount as mountContact } from './components/contact/contact';
+import { mount as mountFooter } from './components/footer/footer';
 
 import { initTheme } from './scripts/theme';
 import { initI18n }  from './scripts/i18n';
@@ -32,6 +33,7 @@ mountAbout(main);
 mountTrips(main);
 mountReviews(main);
 mountContact(main);
+mountFooter();
 
 initTheme();
 void initI18n();
