@@ -116,7 +116,7 @@ function buildTripCard(trip: Trip, bookLabel: string): HTMLElement {
           </svg>
           ${trip.meta}
         </span>
-        <a href="#" class="btn-primary trip-card-book">${bookLabel}</a>
+        <a href="#contact" class="btn-primary trip-card-book">${bookLabel}</a>
       </div>
     </div>`;
   return card;
@@ -173,14 +173,24 @@ function buildSlider(track: HTMLElement, count: number): HTMLElement {
   next.addEventListener('click', () => goTo(current + 1));
 
   // Pointer swipe on the track itself.
+  // setPointerCapture is deferred to pointermove so that a plain tap/click on a
+  // child <a> is not swallowed — pointer capture re-routes the synthesised click
+  // to the track, bypassing the anchor and breaking #contact navigation.
   let startX = 0;
   let dragging = false;
 
   track.addEventListener('pointerdown', (e) => {
     startX = e.clientX;
     dragging = true;
-    track.classList.add('dragging');
-    track.setPointerCapture(e.pointerId);
+    // Do NOT setPointerCapture yet — wait until real drag motion is confirmed.
+  });
+
+  track.addEventListener('pointermove', (e) => {
+    if (!dragging) return;
+    if (!track.hasPointerCapture(e.pointerId) && Math.abs(e.clientX - startX) > 5) {
+      track.setPointerCapture(e.pointerId);
+      track.classList.add('dragging');
+    }
   });
 
   track.addEventListener('pointerup', (e) => {
@@ -192,6 +202,11 @@ function buildSlider(track: HTMLElement, count: number): HTMLElement {
     if (Math.abs(dx) > SWIPE_THRESHOLD_PX) {
       goTo(dx < 0 ? current + 1 : current - 1);
     }
+  });
+
+  track.addEventListener('pointercancel', () => {
+    dragging = false;
+    track.classList.remove('dragging');
   });
 
   goTo(0);

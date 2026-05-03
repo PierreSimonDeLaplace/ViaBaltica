@@ -86,5 +86,16 @@
   "reviews.r2.text":  "Absolutely fantastic experience in Gdańsk. Mark brings history to life in a way no textbook ever could. We'll be back for the next tour!",
   "reviews.r2.date":  "January 2025",
   "reviews.r3.text":  "One of the best guided experiences I've had in Europe. The route along Via Baltica was perfectly curated, and Mark's storytelling made every stop memorable.",
-  "reviews.r3.date":  "December 2024"
+  "reviews.r3.date":  "December 2024",
+
+  "contact.badge":       "Get in Touch",
+  "contact.heading":     "Book your<br>Gdańsk <em>adventure</em>",
+  "contact.body":        "Ready to explore Gdańsk? Reach out directly — Mark responds within 24 hours to discuss your perfect tour.",
+  "contact.phone.label": "Phone",
+  "contact.email.label": "Email",
+  "contact.hours.label": "Available",
+  "contact.hours.value": "Daily · 08:00 – 20:00",
+  "contact.lang.label":  "Languages",
+  "contact.lang.value":  "English & Polish",
+  "contact.note":        "Private tours · Custom routes · Groups welcome"
 }

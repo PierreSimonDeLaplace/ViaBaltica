@@ -86,5 +86,16 @@
   "reviews.r2.text":  "Fantastyczne doświadczenie w Gdańsku. Marek ożywia historię w sposób, jakiego żaden podręcznik nie jest w stanie oddać. Wrócimy na kolejną wycieczkę!",
   "reviews.r2.date":  "Styczeń 2025",
   "reviews.r3.text":  "Jedna z najlepszych wycieczek z przewodnikiem, jaką miałam w Europie. Trasa Via Baltica była perfekcyjnie zaplanowana, a opowieści Marka sprawiły, że każdy przystanek był niezapomniany.",
-  "reviews.r3.date":  "Grudzień 2024"
+  "reviews.r3.date":  "Grudzień 2024",
+
+  "contact.badge":       "Kontakt",
+  "contact.heading":     "Zarezerwuj swoją<br>gdańską <em>przygodę</em>",
+  "contact.body":        "Gotowy na odkrycie Gdańska? Skontaktuj się bezpośrednio — Marek odpowiada w ciągu 24 godzin i chętnie omówi idealną wycieczkę.",
+  "contact.phone.label": "Telefon",
+  "contact.email.label": "Email",
+  "contact.hours.label": "Dostępność",
+  "contact.hours.value": "Codziennie · 08:00 – 20:00",
+  "contact.lang.label":  "Języki",
+  "contact.lang.value":  "Angielski i Polski",
+  "contact.note":        "Wycieczki prywatne · Trasy na zamówienie · Grupy mile widziane"
 }
