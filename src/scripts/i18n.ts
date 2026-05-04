@@ -17,9 +17,12 @@ import {
 } from '../types/locale';
 
 const STORAGE_KEY = 'preferred-lang';
+export const I18N_DEBUG = new URLSearchParams(location.search).get('debug') === 'true';
 
 const cache = new Map<SupportedLang, Locale>();
 const listeners = new Set<LanguageChangeListener>();
+
+if (I18N_DEBUG) console.warn('[i18n] debug mode — translations suppressed, bare keys visible');
 
 /* ────────────────────────────────────────────────────────────────────────── */
 
@@ -45,41 +48,43 @@ function detectLanguage(): SupportedLang {
 }
 
 function applyTranslations(lang: SupportedLang, dict: Locale): void {
-  // text-only translations
-  document.querySelectorAll<HTMLElement>('[data-i18n]').forEach((el) => {
-    const key = el.dataset.i18n;
-    if (!key) return;
+  if (!I18N_DEBUG) {
+    // text-only translations
+    document.querySelectorAll<HTMLElement>('[data-i18n]').forEach((el) => {
+      const key = el.dataset.i18n;
+      if (!key) return;
 
-    const value = dict[key];
-    if (typeof value !== 'string') return;
+      const value = dict[key];
+      if (typeof value !== 'string') return;
 
-    // If the element also contains an SVG (e.g. a chevron), only update the
-    // text node — we don't want to wipe out the icon.
-    if (el.querySelector('svg')) {
-      for (const node of el.childNodes) {
-        if (node.nodeType === Node.TEXT_NODE) {
-          node.textContent = `${value} `;
-          return;
+      // If the element also contains an SVG (e.g. a chevron), only update the
+      // text node — we don't want to wipe out the icon.
+      if (el.querySelector('svg')) {
+        for (const node of el.childNodes) {
+          if (node.nodeType === Node.TEXT_NODE) {
+            node.textContent = `${value} `;
+            return;
+          }
         }
       }
-    }
-    el.textContent = value;
-  });
+      el.textContent = value;
+    });
 
-  // HTML-allowed translations (used for headings with <br>, <em>)
-  document.querySelectorAll<HTMLElement>('[data-i18n-html]').forEach((el) => {
-    const key = el.dataset.i18nHtml;
-    if (!key) return;
-    const value = dict[key];
-    if (typeof value === 'string') el.innerHTML = value;
-  });
+    // HTML-allowed translations (used for headings with <br>, <em>)
+    document.querySelectorAll<HTMLElement>('[data-i18n-html]').forEach((el) => {
+      const key = el.dataset.i18nHtml;
+      if (!key) return;
+      const value = dict[key];
+      if (typeof value === 'string') el.innerHTML = value;
+    });
 
-  // <title> + <html lang>
-  const title = dict['page.title'];
-  if (typeof title === 'string') document.title = title;
+    // page title
+    const title = dict['page.title'];
+    if (typeof title === 'string') document.title = title;
+  }
+
+  // Always update regardless of debug mode
   document.documentElement.lang = lang;
-
-  // Active state on lang switcher buttons
   document.querySelectorAll<HTMLButtonElement>('.lang-btn').forEach((btn) => {
     const isActive = btn.dataset.lang === lang;
     btn.classList.toggle('active', isActive);
@@ -100,7 +105,7 @@ export async function switchLanguage(lang: SupportedLang): Promise<void> {
   const dict = await loadLocale(lang);
   applyTranslations(lang, dict);
   localStorage.setItem(STORAGE_KEY, lang);
-  listeners.forEach((listen) => listen(lang, dict));
+  listeners.forEach((listen) => listen(lang, I18N_DEBUG ? {} as Locale : dict));
 }
 
 /**

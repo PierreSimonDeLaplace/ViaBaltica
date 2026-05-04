@@ -1,7 +1,9 @@
 import html from './trips.html?raw';
 import './trips.css';
 
-import { onLanguageChange } from '../../scripts/i18n';
+import { onLanguageChange, I18N_DEBUG } from '../../scripts/i18n';
+
+const d = (value: string, key: string): string => I18N_DEBUG ? key : value;
 import { getString, type Locale, type SupportedLang } from '../../types/locale';
 import { type TripCategoryFile, type TripEntry } from '../../types/trips';
 import { initDrawer, openDrawer, updateDrawerContent, getCurrentTripId } from './drawer';
@@ -96,8 +98,8 @@ function buildCategoryHeader(
       <img src="${photo}" alt="${lang.title}" loading="lazy" />
     </div>
     <div class="cat-info">
-      <div class="cat-title">${lang.title}</div>
-      <div class="cat-subtitle">${lang.subtitle}</div>
+      <div class="cat-title">${d(lang.title, 'category.title')}</div>
+      <div class="cat-subtitle">${d(lang.subtitle, 'category.subtitle')}</div>
     </div>
     <span class="cat-count">${lang.trips.length} ${toursLabel}</span>
     <svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -132,23 +134,25 @@ function buildCategoryDrawer(
 function buildTripCard(trip: TripEntry, labels: SliderLabels): HTMLElement {
   const card = document.createElement('div');
   card.className = 'trip-card';
+  const tags = I18N_DEBUG
+    ? trip.tags.map((_, i) => `<span class="trip-tag">trip.tags[${i}]</span>`).join('')
+    : trip.tags.map(tag => `<span class="trip-tag">${tag}</span>`).join('');
+
   card.innerHTML = `
     <div class="trip-card-img" style="background:${trip.color};">
       <img src="${trip.thumb}" alt="${trip.title}" loading="lazy" />
     </div>
     <div class="trip-card-body">
-      <div class="trip-card-title">${trip.title}</div>
-      <div class="trip-card-tags">
-        ${trip.tags.map(tag => `<span class="trip-tag">${tag}</span>`).join('')}
-      </div>
-      <p class="trip-card-desc">${trip.body}</p>
+      <div class="trip-card-title">${d(trip.title, 'trip.title')}</div>
+      <div class="trip-card-tags">${tags}</div>
+      <p class="trip-card-desc">${d(trip.body, 'trip.body')}</p>
       <div class="trip-card-footer">
         <span class="trip-card-meta">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="10"/>
             <path d="M12 6v6l4 2"/>
           </svg>
-          ${trip.meta}
+          ${d(trip.meta, 'trip.meta')}
         </span>
         <a href="#contact" class="btn-primary trip-card-book">${labels.book}</a>
       </div>

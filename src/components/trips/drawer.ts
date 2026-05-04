@@ -1,5 +1,8 @@
 import './drawer.css';
 import type { TripEntry } from '../../types/trips';
+import { I18N_DEBUG } from '../../scripts/i18n';
+
+const d = (value: string, key: string): string => I18N_DEBUG ? key : value;
 
 let overlayEl: HTMLElement;
 let drawerEl:  HTMLElement;
@@ -80,17 +83,19 @@ function renderContent(trip: TripEntry, bookLabel: string): void {
 
     <div class="drawer-content">
       <div class="drawer-tags">
-        ${trip.tags.map(t => `<span class="trip-tag">${t}</span>`).join('')}
+        ${I18N_DEBUG
+          ? trip.tags.map((_, i) => `<span class="trip-tag">trip.tags[${i}]</span>`).join('')
+          : trip.tags.map(t => `<span class="trip-tag">${t}</span>`).join('')}
       </div>
-      <h2 class="drawer-title">${trip.title}</h2>
+      <h2 class="drawer-title">${d(trip.title, 'trip.title')}</h2>
       <div class="drawer-meta">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <circle cx="12" cy="12" r="10"/>
           <path d="M12 6v6l4 2"/>
         </svg>
-        ${trip.meta}
+        ${d(trip.meta, 'trip.meta')}
       </div>
-      <p class="drawer-body">${trip.body}</p>
+      <p class="drawer-body">${d(trip.body, 'trip.body')}</p>
       <a href="#contact" class="btn-primary drawer-cta">${bookLabel}</a>
     </div>
 

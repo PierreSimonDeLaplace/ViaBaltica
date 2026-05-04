@@ -1,5 +1,7 @@
 import html from './contact.html?raw';
 import './contact.css';
+import { I18N_DEBUG } from '../../scripts/i18n';
+import config from '../../data/contact.json';
 
 export function mount(target: HTMLElement): void {
   target.insertAdjacentHTML('beforeend', html);
@@ -11,16 +13,15 @@ function injectPhone(): void {
   const slot = document.getElementById('contact-phone-slot');
   if (!slot) return;
 
-  // Digits split across literals — keeps the full number out of static HTML source
-  const cc   = "+" + "4" + "8";
-  const seg1 = "5" + "0" + "0";
-  const seg2 = "1" + "2" + "3";
-  const seg3 = "4" + "5" + "6";
+  if (I18N_DEBUG) {
+    slot.textContent = '[contact.json → phone]';
+    return;
+  }
 
   const a = document.createElement('a');
-  a.href      = "tel:" + cc + seg1 + seg2 + seg3;
-  a.textContent = `${cc} ${seg1} ${seg2} ${seg3}`;
-  a.className = 'contact-link';
+  a.href        = 'tel:' + config.phone.replace(/\s/g, '');
+  a.textContent = config.phone;
+  a.className   = 'contact-link';
   slot.appendChild(a);
 }
 
@@ -28,13 +29,14 @@ function injectEmail(): void {
   const slot = document.getElementById('contact-email-slot');
   if (!slot) return;
 
-  // Split to keep the full address out of static source
-  const user = "kont" + "akt";
-  const host = "viab" + "altica" + ".pl";
+  if (I18N_DEBUG) {
+    slot.textContent = '[contact.json → email]';
+    return;
+  }
 
   const a = document.createElement('a');
-  a.href      = "mail" + "to:" + user + "@" + host;
-  a.textContent = user + "@" + host;
-  a.className = 'contact-link';
+  a.href        = 'mailto:' + config.email;
+  a.textContent = config.email;
+  a.className   = 'contact-link';
   slot.appendChild(a);
 }
