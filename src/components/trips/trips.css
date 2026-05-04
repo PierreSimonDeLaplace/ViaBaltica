@@ -135,7 +135,7 @@
 /* ── Slider ──────────────────────────────────────────────────────────────── */
 
 .trip-slider-wrap     { padding: 1.5rem; }
-.trip-slider-viewport { overflow: hidden; border-radius: 10px; }
+.trip-slider-viewport { overflow: hidden; border-radius: 10px; touch-action: pan-y; }
 
 .trip-slider-track {
   display: flex;
@@ -144,6 +144,7 @@
   will-change: transform;
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .trip-slider-track.dragging {
   cursor: grabbing;
   transition: none;

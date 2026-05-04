@@ -209,36 +209,88 @@ function buildSlider(track: HTMLElement, count: number): HTMLElement {
   prev.addEventListener('click', () => goTo(current - 1));
   next.addEventListener('click', () => goTo(current + 1));
 
-  let startX   = 0;
+  let startX = 0;
+  let startY = 0;
   let dragging = false;
+  let axisDecided = false;
 
-  track.addEventListener('pointerdown', (e) => {
-    startX   = e.clientX;
-    dragging = true;
-  });
+  if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+    track.addEventListener('touchstart', (e) => {
+      if (e.touches.length !== 1) return;
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      dragging = false;
+      axisDecided = false;
+      track.classList.remove('dragging');
+    }, { passive: true });
 
-  track.addEventListener('pointermove', (e) => {
-    if (!dragging) return;
-    if (!track.hasPointerCapture(e.pointerId) && Math.abs(e.clientX - startX) > 5) {
-      track.setPointerCapture(e.pointerId);
-      track.classList.add('dragging');
-    }
-  });
+    track.addEventListener('touchmove', (e) => {
+      if (e.touches.length !== 1) return;
+      if (!axisDecided) {
+        const dx = Math.abs(e.touches[0].clientX - startX);
+        const dy = Math.abs(e.touches[0].clientY - startY);
+        if (dx > 5 || dy > 5) {
+          axisDecided = true;
+          if (dx > dy) {
+            dragging = true;
+            track.classList.add('dragging');
+          }
+        }
+      }
+      if (dragging) e.preventDefault();
+    }, { passive: false });
 
-  track.addEventListener('pointerup', (e) => {
-    if (!dragging) return;
-    dragging = false;
-    track.classList.remove('dragging');
-    const dx = e.clientX - startX;
-    if (Math.abs(dx) > SWIPE_THRESHOLD_PX) {
-      goTo(dx < 0 ? current + 1 : current - 1);
-    }
-  });
+    const endTouch = (e: TouchEvent): void => {
+      const wasDragging = dragging;
+      dragging = false;
+      axisDecided = false;
+      track.classList.remove('dragging');
+      if (!wasDragging) return;
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > SWIPE_THRESHOLD_PX) {
+        goTo(dx < 0 ? current + 1 : current - 1);
+      }
+    };
 
-  track.addEventListener('pointercancel', () => {
-    dragging = false;
-    track.classList.remove('dragging');
-  });
+    track.addEventListener('touchend',    endTouch);
+    track.addEventListener('touchcancel', endTouch);
+  } else {
+    let activeId: number | null = null;
+
+    track.addEventListener('pointerdown', (e) => {
+      activeId = e.pointerId;
+      startX   = e.clientX;
+      dragging = false;
+      track.classList.remove('dragging');
+    });
+
+    track.addEventListener('pointermove', (e) => {
+      if (e.pointerId !== activeId) return;
+      if (!dragging && Math.abs(e.clientX - startX) > 5) {
+        dragging = true;
+        track.setPointerCapture(e.pointerId);
+        track.classList.add('dragging');
+      }
+    });
+
+    track.addEventListener('pointerup', (e) => {
+      if (e.pointerId !== activeId) return;
+      const dx = e.clientX - startX;
+      activeId = null;
+      track.classList.remove('dragging');
+      if (dragging && Math.abs(dx) > SWIPE_THRESHOLD_PX) {
+        goTo(dx < 0 ? current + 1 : current - 1);
+      }
+      dragging = false;
+    });
+
+    track.addEventListener('pointercancel', (e) => {
+      if (e.pointerId !== activeId) return;
+      activeId = null;
+      dragging = false;
+      track.classList.remove('dragging');
+    });
+  }
 
   goTo(0);
   return controls;

@@ -22,12 +22,19 @@ export function initDrawer(): void {
 
   overlayEl.addEventListener('click', closeDrawer);
 
+  drawerEl.addEventListener('click', (e) => {
+    if (window.innerWidth >= 560) return;
+    const target = e.target as HTMLElement;
+    if (target.closest('.drawer-back') || target.closest('.drawer-cta-mobile')) return;
+    closeDrawer();
+  });
+
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && currentTripId) closeDrawer();
   });
 
   window.addEventListener('popstate', () => {
-    if (!new URLSearchParams(location.search).has('trip')) _close();
+    if (!new URLSearchParams(location.search).has('trip') && currentTripId) _close();
   });
 }
 
@@ -57,7 +64,9 @@ export function getCurrentTripId(): string | null {
 }
 
 export function closeDrawer(): void {
-  if (currentTripId) history.back();
+  if (!currentTripId) return;
+  _close();
+  if (new URLSearchParams(location.search).has('trip')) history.back();
 }
 
 function _close(): void {
