@@ -1,14 +1,10 @@
 import html from './trips.html?raw';
 import './trips.css';
 
-import { onLanguageChange, I18N_DEBUG } from '../../scripts/i18n';
-
-const d = (value: string, key: string): string => I18N_DEBUG ? key : value;
+import { onLanguageChange, d } from '../../scripts/i18n';
 import { getString, type Locale, type SupportedLang } from '../../types/locale';
-import { type TripCategoryFile, type TripEntry } from '../../types/trips';
-import { initDrawer, openDrawer, updateDrawerContent, getCurrentTripId } from './drawer';
-
-const SWIPE_THRESHOLD_PX = 40;
+import { type TripCategoryFile, type TripCategoryLang, type TripEntry } from '../../types/trips';
+import { initDrawer, openDrawer, refreshIfOpen, renderTags } from './drawer';
 
 // All category JSON files loaded eagerly at build time — drop a new file in
 // src/data/trips/ and it appears automatically on next build.
@@ -18,11 +14,6 @@ const raw = import.meta.glob<{ default: TripCategoryFile }>(
 );
 const CATEGORIES: TripCategoryFile[] = Object.values(raw).map(m => m.default);
 
-interface SliderLabels {
-  book:  string;
-  tours: string;
-}
-
 /* ──────────────────────────────────────────────────────────────────────── */
 
 export function mount(target: HTMLElement): void {
@@ -30,21 +21,17 @@ export function mount(target: HTMLElement): void {
   initDrawer();
   onLanguageChange((lang, dict) => {
     renderCategories(lang, dict);
-    // Keep drawer in sync when the user switches language mid-view
-    const openId = getCurrentTripId();
-    if (openId) {
-      const trip = findTripById(openId, lang);
-      if (trip) updateDrawerContent(trip, getString(dict, 'trips.book', 'trips.book'));
-    }
+    refreshIfOpen(
+      (id) => {
+        for (const cat of CATEGORIES) {
+          const found = cat[lang].trips.find(t => t.id === id);
+          if (found) return found;
+        }
+        return undefined;
+      },
+      getString(dict, 'trips.book', 'trips.book'),
+    );
   });
-}
-
-function findTripById(id: string, lang: SupportedLang): TripEntry | undefined {
-  for (const cat of CATEGORIES) {
-    const found = cat[lang].trips.find(t => t.id === id);
-    if (found) return found;
-  }
-  return undefined;
 }
 
 /* ──────────────────────────────────────────────────────────────────────── */
@@ -53,13 +40,11 @@ function renderCategories(lang: SupportedLang, dict: Locale): void {
   const list = document.getElementById('tripsList');
   if (!list) return;
 
-  const labels: SliderLabels = {
-    book:  getString(dict, 'trips.book',  'trips.book'),
-    tours: getString(dict, 'trips.tours', 'trips.tours'),
-  };
+  const bookLabel  = getString(dict, 'trips.book',  'trips.book');
+  const toursLabel = getString(dict, 'trips.tours', 'trips.tours');
 
   list.replaceChildren(
-    ...CATEGORIES.map(cat => buildCategoryRow(cat, lang, labels)),
+    ...CATEGORIES.map(cat => buildCategoryRow(cat, lang, bookLabel, toursLabel)),
   );
 }
 
@@ -68,12 +53,13 @@ function renderCategories(lang: SupportedLang, dict: Locale): void {
 function buildCategoryRow(
   cat: TripCategoryFile,
   lang: SupportedLang,
-  labels: SliderLabels,
+  bookLabel: string,
+  toursLabel: string,
 ): HTMLElement {
   const langData = cat[lang];
   const row      = document.createElement('div');
-  const header   = buildCategoryHeader(cat.photo, langData, labels.tours);
-  const drawer   = buildCategoryDrawer(langData, labels);
+  const header   = buildCategoryHeader(cat.photo, langData, toursLabel);
+  const drawer   = buildCategoryDrawer(langData, bookLabel);
   row.className  = 'cat-row';
 
   header.addEventListener('click', () => {
@@ -88,7 +74,7 @@ function buildCategoryRow(
 
 function buildCategoryHeader(
   photo: string,
-  lang: { title: string; subtitle: string; trips: TripEntry[] },
+  lang: TripCategoryLang,
   toursLabel: string,
 ): HTMLElement {
   const header = document.createElement('div');
@@ -109,8 +95,8 @@ function buildCategoryHeader(
 }
 
 function buildCategoryDrawer(
-  lang: { trips: TripEntry[] },
-  labels: SliderLabels,
+  lang: TripCategoryLang,
+  bookLabel: string,
 ): HTMLElement {
   const drawer   = document.createElement('div');
   drawer.className = 'cat-drawer';
@@ -123,20 +109,17 @@ function buildCategoryDrawer(
 
   const track    = document.createElement('div');
   track.className = 'trip-slider-track';
-  lang.trips.forEach(trip => track.appendChild(buildTripCard(trip, labels)));
+  lang.trips.forEach(trip => track.appendChild(buildTripCard(trip, bookLabel)));
 
   viewport.appendChild(track);
-  wrap.append(viewport, buildSlider(track, lang.trips.length));
+  wrap.append(viewport, buildSlider(viewport, lang.trips.length));
   drawer.appendChild(wrap);
   return drawer;
 }
 
-function buildTripCard(trip: TripEntry, labels: SliderLabels): HTMLElement {
+function buildTripCard(trip: TripEntry, bookLabel: string): HTMLElement {
   const card = document.createElement('div');
   card.className = 'trip-card';
-  const tags = I18N_DEBUG
-    ? trip.tags.map((_, i) => `<span class="trip-tag">trip.tags[${i}]</span>`).join('')
-    : trip.tags.map(tag => `<span class="trip-tag">${tag}</span>`).join('');
 
   card.innerHTML = `
     <div class="trip-card-img" style="background:${trip.color};">
@@ -144,7 +127,7 @@ function buildTripCard(trip: TripEntry, labels: SliderLabels): HTMLElement {
     </div>
     <div class="trip-card-body">
       <div class="trip-card-title">${d(trip.title, 'trip.title')}</div>
-      <div class="trip-card-tags">${tags}</div>
+      <div class="trip-card-tags">${renderTags(trip.tags)}</div>
       <p class="trip-card-desc">${d(trip.body, 'trip.body')}</p>
       <div class="trip-card-footer">
         <span class="trip-card-meta">
@@ -154,14 +137,14 @@ function buildTripCard(trip: TripEntry, labels: SliderLabels): HTMLElement {
           </svg>
           ${d(trip.meta, 'trip.meta')}
         </span>
-        <a href="#contact" class="btn-primary trip-card-book">${labels.book}</a>
+        <a href="#contact" class="btn-primary trip-card-book">${bookLabel}</a>
       </div>
     </div>`;
 
   // Clicking anywhere on the card except the Book button opens the detail drawer
   card.addEventListener('click', (e) => {
     if ((e.target as HTMLElement).closest('.trip-card-book')) return;
-    openDrawer(trip, labels.book);
+    openDrawer(trip, bookLabel);
   });
 
   return card;
@@ -169,7 +152,7 @@ function buildTripCard(trip: TripEntry, labels: SliderLabels): HTMLElement {
 
 /* ──────────────────────────────────────────────────────────────────────── */
 
-function buildSlider(track: HTMLElement, count: number): HTMLElement {
+function buildSlider(viewport: HTMLElement, count: number): HTMLElement {
   let current = 0;
 
   const dots = document.createElement('div');
@@ -186,9 +169,7 @@ function buildSlider(track: HTMLElement, count: number): HTMLElement {
   controls.className = 'trip-slider-controls';
   controls.append(dots, arrows);
 
-  const goTo = (index: number): void => {
-    current = Math.max(0, Math.min(index, count - 1));
-    track.style.transform = `translateX(-${current * 100}%)`;
+  const sync = (): void => {
     dots.querySelectorAll('.trip-slider-dot').forEach((dot, i) => {
       dot.classList.toggle('active', i === current);
     });
@@ -196,103 +177,39 @@ function buildSlider(track: HTMLElement, count: number): HTMLElement {
     next.disabled = current === count - 1;
   };
 
+  const goTo = (index: number): void => {
+    current = Math.max(0, Math.min(index, count - 1));
+    viewport.scrollTo({ left: viewport.clientWidth * current, behavior: 'smooth' });
+    sync();
+  };
+
   for (let i = 0; i < count; i += 1) {
     const dot = document.createElement('button');
     dot.type      = 'button';
     dot.className = `trip-slider-dot${i === 0 ? ' active' : ''}`;
     dot.setAttribute('aria-label', `Trip ${i + 1}`);
-    const idx = i;
-    dot.addEventListener('click', () => goTo(idx));
+    dot.addEventListener('click', () => goTo(i));
     dots.appendChild(dot);
   }
 
   prev.addEventListener('click', () => goTo(current - 1));
   next.addEventListener('click', () => goTo(current + 1));
 
-  let startX = 0;
-  let startY = 0;
-  let dragging = false;
-  let axisDecided = false;
-
-  if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
-    track.addEventListener('touchstart', (e) => {
-      if (e.touches.length !== 1) return;
-      startX = e.touches[0].clientX;
-      startY = e.touches[0].clientY;
-      dragging = false;
-      axisDecided = false;
-      track.classList.remove('dragging');
-    }, { passive: true });
-
-    track.addEventListener('touchmove', (e) => {
-      if (e.touches.length !== 1) return;
-      if (!axisDecided) {
-        const dx = Math.abs(e.touches[0].clientX - startX);
-        const dy = Math.abs(e.touches[0].clientY - startY);
-        if (dx > 5 || dy > 5) {
-          axisDecided = true;
-          if (dx > dy) {
-            dragging = true;
-            track.classList.add('dragging');
-          }
-        }
+  let settleTimer: number | undefined;
+  viewport.addEventListener('scroll', () => {
+    if (settleTimer !== undefined) clearTimeout(settleTimer);
+    settleTimer = window.setTimeout(() => {
+      const w = viewport.clientWidth;
+      if (w === 0) return;
+      const newIndex = Math.round(viewport.scrollLeft / w);
+      if (newIndex !== current) {
+        current = newIndex;
+        sync();
       }
-      if (dragging) e.preventDefault();
-    }, { passive: false });
+    }, 80);
+  });
 
-    const endTouch = (e: TouchEvent): void => {
-      const wasDragging = dragging;
-      dragging = false;
-      axisDecided = false;
-      track.classList.remove('dragging');
-      if (!wasDragging) return;
-      const dx = e.changedTouches[0].clientX - startX;
-      if (Math.abs(dx) > SWIPE_THRESHOLD_PX) {
-        goTo(dx < 0 ? current + 1 : current - 1);
-      }
-    };
-
-    track.addEventListener('touchend',    endTouch);
-    track.addEventListener('touchcancel', endTouch);
-  } else {
-    let activeId: number | null = null;
-
-    track.addEventListener('pointerdown', (e) => {
-      activeId = e.pointerId;
-      startX   = e.clientX;
-      dragging = false;
-      track.classList.remove('dragging');
-    });
-
-    track.addEventListener('pointermove', (e) => {
-      if (e.pointerId !== activeId) return;
-      if (!dragging && Math.abs(e.clientX - startX) > 5) {
-        dragging = true;
-        track.setPointerCapture(e.pointerId);
-        track.classList.add('dragging');
-      }
-    });
-
-    track.addEventListener('pointerup', (e) => {
-      if (e.pointerId !== activeId) return;
-      const dx = e.clientX - startX;
-      activeId = null;
-      track.classList.remove('dragging');
-      if (dragging && Math.abs(dx) > SWIPE_THRESHOLD_PX) {
-        goTo(dx < 0 ? current + 1 : current - 1);
-      }
-      dragging = false;
-    });
-
-    track.addEventListener('pointercancel', (e) => {
-      if (e.pointerId !== activeId) return;
-      activeId = null;
-      dragging = false;
-      track.classList.remove('dragging');
-    });
-  }
-
-  goTo(0);
+  sync();
   return controls;
 }
 

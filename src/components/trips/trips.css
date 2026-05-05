@@ -135,23 +135,22 @@
 /* ── Slider ──────────────────────────────────────────────────────────────── */
 
 .trip-slider-wrap     { padding: 1.5rem; }
-.trip-slider-viewport { overflow: hidden; border-radius: 10px; touch-action: pan-y; }
-
-.trip-slider-track {
-  display: flex;
-  cursor: grab;
-  user-select: none;
-  will-change: transform;
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+.trip-slider-viewport {
+  overflow-x: auto;
+  overflow-y: hidden;
+  border-radius: 10px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x pan-y;
 }
+.trip-slider-viewport::-webkit-scrollbar { display: none; }
 
-.trip-slider-track.dragging {
-  cursor: grabbing;
-  transition: none;
-}
+.trip-slider-track { display: flex; }
 
 .trip-card {
   min-width: 100%;
+  scroll-snap-align: start;
   display: grid;
   grid-template-columns: 200px 1fr;
   background: var(--surface);

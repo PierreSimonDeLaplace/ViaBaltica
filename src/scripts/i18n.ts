@@ -19,6 +19,8 @@ import {
 const STORAGE_KEY = 'preferred-lang';
 export const I18N_DEBUG = new URLSearchParams(location.search).get('debug') === 'true';
 
+export const d = (value: string, key: string): string => I18N_DEBUG ? key : value;
+
 const cache = new Map<SupportedLang, Locale>();
 const listeners = new Set<LanguageChangeListener>();
 

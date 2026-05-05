@@ -1,8 +1,12 @@
 import './drawer.css';
 import type { TripEntry } from '../../types/trips';
-import { I18N_DEBUG } from '../../scripts/i18n';
+import { I18N_DEBUG, d } from '../../scripts/i18n';
 
-const d = (value: string, key: string): string => I18N_DEBUG ? key : value;
+export function renderTags(tags: string[]): string {
+  return I18N_DEBUG
+    ? tags.map((_, i) => `<span class="trip-tag">trip.tags[${i}]</span>`).join('')
+    : tags.map(t => `<span class="trip-tag">${t}</span>`).join('');
+}
 
 let overlayEl: HTMLElement;
 let drawerEl:  HTMLElement;
@@ -55,18 +59,24 @@ export function openDrawer(trip: TripEntry, bookLabel: string): void {
   drawerEl.querySelector<HTMLElement>('.drawer-close')?.focus();
 }
 
-export function updateDrawerContent(trip: TripEntry, bookLabel: string): void {
-  if (currentTripId) renderContent(trip, bookLabel);
-}
-
-export function getCurrentTripId(): string | null {
-  return currentTripId;
+export function refreshIfOpen(
+  resolveTrip: (id: string) => TripEntry | undefined,
+  bookLabel: string,
+): void {
+  if (!currentTripId) return;
+  const trip = resolveTrip(currentTripId);
+  if (trip) renderContent(trip, bookLabel);
 }
 
 export function closeDrawer(): void {
   if (!currentTripId) return;
   _close();
-  if (new URLSearchParams(location.search).has('trip')) history.back();
+  if (new URLSearchParams(location.search).has('trip')) {
+    const params = new URLSearchParams(location.search);
+    params.delete('trip');
+    const qs = params.toString();
+    history.replaceState(null, '', location.pathname + (qs ? `?${qs}` : '') + location.hash);
+  }
 }
 
 function _close(): void {
@@ -91,11 +101,7 @@ function renderContent(trip: TripEntry, bookLabel: string): void {
     </div>
 
     <div class="drawer-content">
-      <div class="drawer-tags">
-        ${I18N_DEBUG
-          ? trip.tags.map((_, i) => `<span class="trip-tag">trip.tags[${i}]</span>`).join('')
-          : trip.tags.map(t => `<span class="trip-tag">${t}</span>`).join('')}
-      </div>
+      <div class="drawer-tags">${renderTags(trip.tags)}</div>
       <h2 class="drawer-title">${d(trip.title, 'trip.title')}</h2>
       <div class="drawer-meta">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
