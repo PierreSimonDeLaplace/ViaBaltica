@@ -11,7 +11,12 @@ import html from './nav.html?raw';
 import './nav.css';
 
 export function mount(): void {
-  const toggle = document.getElementById('menu-toggle');
+  const toggle = document.getElementById('menu-toggle') as HTMLInputElement | null;
   if (!toggle) throw new Error('Nav.mount: missing #menu-toggle in document');
   toggle.insertAdjacentHTML('afterend', html);
+
+  document.querySelector('.mobile-drawer')?.addEventListener('click', (e) => {
+    if ((e.target as HTMLElement).closest('.theme-btn')) return;
+    toggle.checked = false;
+  });
 }
