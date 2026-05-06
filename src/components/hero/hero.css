@@ -181,3 +181,9 @@
   .hero-stat { padding: 0 0.5rem; }
   .hero-stat-num { font-size: 1.4rem; }
 }
+
+.hero-stat-num--text {
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  padding-top: 0.35rem;
+}
