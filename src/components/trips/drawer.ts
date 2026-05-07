@@ -89,14 +89,8 @@ function _close(): void {
 
 function renderContent(trip: TripEntry, bookLabel: string): void {
   drawerEl.innerHTML = `
-    <button class="drawer-close" aria-label="Close">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <line x1="18" y1="6" x2="6" y2="18"/>
-        <line x1="6" y1="6" x2="18" y2="18"/>
-      </svg>
-    </button>
-
     <div class="drawer-hero" style="background:${trip.color}">
+      ${trip.badge ? `<div class="trip-ribbon trip-ribbon--${trip.badge}">${trip.badge}</div>` : ''}
       <img class="drawer-hero-img" src="${trip.banner}" alt="${trip.title}" loading="lazy" />
     </div>
 
@@ -111,7 +105,14 @@ function renderContent(trip: TripEntry, bookLabel: string): void {
         ${d(trip.meta, 'trip.meta')}
       </div>
       <p class="drawer-body">${d(trip.body, 'trip.body')}</p>
-      <a href="#contact" class="btn-primary drawer-cta">${bookLabel}</a>
+      <div class="drawer-cta-row">
+        ${trip.price ? `
+          <div class="drawer-price">
+            <span class="drawer-price-from">${trip.price.split(/\s(.+)/)[0]}</span>
+            <span class="drawer-price-amount">${trip.price.split(/\s(.+)/)[1]}</span>
+          </div>` : ''}
+        <a href="#contact" class="btn-primary drawer-cta">${bookLabel}</a>
+      </div>
     </div>
 
     <div class="drawer-bottombar">
@@ -124,7 +125,6 @@ function renderContent(trip: TripEntry, bookLabel: string): void {
       <a href="#contact" class="btn-primary drawer-cta-mobile">${bookLabel}</a>
     </div>`;
 
-  drawerEl.querySelector('.drawer-close')?.addEventListener('click', closeDrawer);
   drawerEl.querySelector('.drawer-back')?.addEventListener('click', closeDrawer);
   drawerEl.querySelector('.drawer-cta')?.addEventListener('click', _close);
   drawerEl.querySelector('.drawer-cta-mobile')?.addEventListener('click', _close);

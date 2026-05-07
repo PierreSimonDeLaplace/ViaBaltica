@@ -15,7 +15,7 @@
 
 .trip-detail-drawer {
   position: fixed;
-  top: 0;
+  top: var(--nav-height);
   right: 0;
   bottom: 0;
   width: min(560px, 100vw);
@@ -84,46 +84,22 @@
   flex-shrink: 0;
 }
 
-/* ── Close button ────────────────────────────────────────────────────────── */
-
-.drawer-close {
-  position: sticky;
-  top: 0.75rem;
-  z-index: 10;
-  align-self: flex-end;
-  margin: 0.75rem 0.75rem 0;
-  width: 36px;
-  height: 36px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  background: var(--surface-2);
-  color: var(--muted);
-  cursor: pointer;
-  transition: color 0.2s, border-color 0.2s, background 0.2s;
-}
-
-.drawer-close:hover {
-  color: var(--text);
-  border-color: var(--accent);
-  background: var(--bg);
-}
-
-.drawer-close svg {
-  width: 15px;
-  height: 15px;
-}
 
 /* ── Hero band ───────────────────────────────────────────────────────────── */
 
 .drawer-hero {
+  position: relative;
   height: 220px;
   flex-shrink: 0;
-  margin-top: -0.75rem;
   overflow: hidden;
+}
+
+.drawer-hero .trip-ribbon {
+  top: 32px;
+  right: -41px;
+  width: 173px;
+  padding: 7px 0;
+  font-size: 0.75rem;
 }
 
 .drawer-hero-img {
@@ -170,6 +146,33 @@
   height: 14px;
 }
 
+.drawer-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 0.4rem;
+}
+
+.drawer-price {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+.drawer-price-from {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.drawer-price-amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  line-height: 1;
+}
+
 .drawer-body {
   color: var(--text);
   font-size: 0.97rem;
@@ -177,6 +180,5 @@
 }
 
 .drawer-cta {
-  align-self: flex-start;
-  margin-top: 0.4rem;
+  align-self: center;
 }

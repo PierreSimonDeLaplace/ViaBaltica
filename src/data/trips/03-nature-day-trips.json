@@ -12,7 +12,9 @@
         "title": "Malbork Castle Day Trip",
         "meta": "8 h · Malbork",
         "tags": ["Castle", "Day Trip"],
-        "body": "Visit the largest brick castle in the world. The mighty Teutonic stronghold on the Nogat river tells a story of power, faith, and medieval architecture on a grand scale."
+        "body": "Visit the largest brick castle in the world. The mighty Teutonic stronghold on the Nogat river tells a story of power, faith, and medieval architecture on a grand scale.",
+        "price": "from €75",
+        "badge": "bestseller"
       },
       {
         "id": "kashubian-lake-district",
@@ -22,7 +24,9 @@
         "title": "Kashubian Lake District",
         "meta": "6 h · Kartuzy",
         "tags": ["Nature", "Lakes"],
-        "body": "Venture into the Kashubian highlands — rolling hills, glacial lakes, and a culture unlike any other in Poland. Meet local craftsmen and taste regional żurek."
+        "body": "Venture into the Kashubian highlands — rolling hills, glacial lakes, and a culture unlike any other in Poland. Meet local craftsmen and taste regional żurek.",
+        "price": "from €65",
+        "badge": "promo"
       }
     ]
   },
@@ -38,7 +42,9 @@
         "title": "Zamek w Malborku",
         "meta": "8 h · Malbork",
         "tags": ["Zamek", "Wycieczka"],
-        "body": "Odwiedź największy zamek z cegły na świecie. Potężna twierdza krzyżacka nad Nogatem opowiada historię potęgi, wiary i średniowiecznej architektury w monumentalnej skali."
+        "body": "Odwiedź największy zamek z cegły na świecie. Potężna twierdza krzyżacka nad Nogatem opowiada historię potęgi, wiary i średniowiecznej architektury w monumentalnej skali.",
+        "price": "od €75",
+        "badge": "bestseller"
       },
       {
         "id": "kashubian-lake-district",
@@ -48,7 +54,9 @@
         "title": "Pojezierze Kaszubskie",
         "meta": "6 h · Kartuzy",
         "tags": ["Natura", "Jeziora"],
-        "body": "Wyrusz w Kaszubskie wzgórza — pagórki, polodowcowe jeziora i kultura niepodobna do żadnej innej w Polsce. Spotkaj lokalnych rzemieślników i skosztuj regionalnego żurku."
+        "body": "Wyrusz w Kaszubskie wzgórza — pagórki, polodowcowe jeziora i kultura niepodobna do żadnej innej w Polsce. Spotkaj lokalnych rzemieślników i skosztuj regionalnego żurku.",
+        "price": "od €65",
+        "badge": "promo"
       }
     ]
   }

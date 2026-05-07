@@ -121,12 +121,22 @@ function buildTripCard(trip: TripEntry, bookLabel: string): HTMLElement {
   const card = document.createElement('div');
   card.className = 'trip-card';
 
+  const [pricePrefix = '', priceAmount = ''] = trip.price?.split(/\s(.+)/) ?? [];
+
   card.innerHTML = `
     <div class="trip-card-img" style="background:${trip.color};">
+      ${trip.badge ? `<div class="trip-ribbon trip-ribbon--${trip.badge}">${trip.badge}</div>` : ''}
       <img src="${trip.thumb}" alt="${trip.title}" loading="lazy" />
     </div>
     <div class="trip-card-body">
-      <div class="trip-card-title">${d(trip.title, 'trip.title')}</div>
+      <div class="trip-card-top">
+        <div class="trip-card-title">${d(trip.title, 'trip.title')}</div>
+        ${trip.price ? `
+          <div class="trip-price-circle">
+            <span class="trip-price-from">${pricePrefix}</span>
+            <span class="trip-price-amount">${priceAmount}</span>
+          </div>` : ''}
+      </div>
       <div class="trip-card-tags">${renderTags(trip.tags)}</div>
       <p class="trip-card-desc">${d(trip.body, 'trip.body')}</p>
       <div class="trip-card-footer">

@@ -12,7 +12,9 @@
         "title": "Sopot & Baltic Pier",
         "meta": "4 h · Sopot",
         "tags": ["Coast", "Leisure"],
-        "body": "Walk Europe's longest wooden pier, breathe in Baltic sea air, and explore the elegant spa town that once charmed kaisers and artists alike."
+        "body": "Walk Europe's longest wooden pier, breathe in Baltic sea air, and explore the elegant spa town that once charmed kaisers and artists alike.",
+        "price": "from €50",
+        "badge": "hot"
       },
       {
         "id": "gdynia-port-modernism",
@@ -22,7 +24,8 @@
         "title": "Gdynia Port & Modernism",
         "meta": "4 h · Gdynia",
         "tags": ["Architecture", "Sea"],
-        "body": "Explore Poland's inter-war modernist gem: the port city of Gdynia, built almost from scratch in the 1920s, with its Art Deco architecture and museum ships."
+        "body": "Explore Poland's inter-war modernist gem: the port city of Gdynia, built almost from scratch in the 1920s, with its Art Deco architecture and museum ships.",
+        "price": "from €50"
       },
       {
         "id": "vistula-delta-birdwatching",
@@ -32,7 +35,8 @@
         "title": "Vistula Delta Birdwatching",
         "meta": "5 h · Żuławy",
         "tags": ["Nature", "Birds"],
-        "body": "The Żuławy wetlands at the Vistula delta are a migratory paradise. Spot white-tailed eagles, rare waders, and vast reed beds stretching to the horizon."
+        "body": "The Żuławy wetlands at the Vistula delta are a migratory paradise. Spot white-tailed eagles, rare waders, and vast reed beds stretching to the horizon.",
+        "price": "from €60"
       }
     ]
   },
@@ -48,7 +52,9 @@
         "title": "Sopot i Molo Bałtyckie",
         "meta": "4 h · Sopot",
         "tags": ["Wybrzeże", "Relaks"],
-        "body": "Spaceruj po najdłuższym drewnianym molo w Europie, wdychaj bałtyckie powietrze i odkryj eleganckie uzdrowisko, które ongiś zachwycało cesarzy i artystów."
+        "body": "Spaceruj po najdłuższym drewnianym molo w Europie, wdychaj bałtyckie powietrze i odkryj eleganckie uzdrowisko, które ongiś zachwycało cesarzy i artystów.",
+        "price": "od €50",
+        "badge": "hot"
       },
       {
         "id": "gdynia-port-modernism",
@@ -58,7 +64,8 @@
         "title": "Port Gdynia i Modernizm",
         "meta": "4 h · Gdynia",
         "tags": ["Architektura", "Morze"],
-        "body": "Odkryj polską perłę modernizmu z okresu międzywojennego: Gdynię zbudowaną niemal od zera w latach 20., z architekturą Art Deco i okrętami-muzeami."
+        "body": "Odkryj polską perłę modernizmu z okresu międzywojennego: Gdynię zbudowaną niemal od zera w latach 20., z architekturą Art Deco i okrętami-muzeami.",
+        "price": "od €50"
       },
       {
         "id": "vistula-delta-birdwatching",
@@ -68,7 +75,8 @@
         "title": "Ptaki Delty Wisły",
         "meta": "5 h · Żuławy",
         "tags": ["Natura", "Ptaki"],
-        "body": "Żuławy Wiślane w delcie Wisły to raj dla ptaków migrujących. Obserwuj bieliki, rzadkie brodźce i rozległe trzciny sięgające horyzontu."
+        "body": "Żuławy Wiślane w delcie Wisły to raj dla ptaków migrujących. Obserwuj bieliki, rzadkie brodźce i rozległe trzciny sięgające horyzontu.",
+        "price": "od €60"
       }
     ]
   }

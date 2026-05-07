@@ -12,7 +12,9 @@
         "title": "Old Town & Waterfront",
         "meta": "3 h · City Centre",
         "tags": ["History", "Walking"],
-        "body": "Stroll through the Royal Road, marvel at the Neptune Fountain, and discover the stories behind Gdańsk's iconic crane on the Motława river — a city born of trade and amber."
+        "body": "Stroll through the Royal Road, marvel at the Neptune Fountain, and discover the stories behind Gdańsk's iconic crane on the Motława river — a city born of trade and amber.",
+        "price": "from €45",
+        "badge": "bestseller"
       },
       {
         "id": "wwii-history-tour",
@@ -22,7 +24,8 @@
         "title": "WWII History Tour",
         "meta": "5 h · Westerplatte",
         "tags": ["History", "Memorial"],
-        "body": "Where WWII began — stand on the grounds of Westerplatte, explore the Museum of the Second World War, and hear the story of a city that rebuilt itself from rubble."
+        "body": "Where WWII began — stand on the grounds of Westerplatte, explore the Museum of the Second World War, and hear the story of a city that rebuilt itself from rubble.",
+        "price": "from €55"
       },
       {
         "id": "street-art-shipyard",
@@ -32,7 +35,8 @@
         "title": "Street Art & Shipyard",
         "meta": "3 h · Shipyard District",
         "tags": ["Art", "Urban"],
-        "body": "The Gdańsk Shipyard — birthplace of Solidarity — is now a canvas for artists. Explore murals, the European Solidarity Centre, and the raw creative energy of the post-industrial zone."
+        "body": "The Gdańsk Shipyard — birthplace of Solidarity — is now a canvas for artists. Explore murals, the European Solidarity Centre, and the raw creative energy of the post-industrial zone.",
+        "price": "from €40"
       },
       {
         "id": "craft-beer-local-food",
@@ -42,7 +46,9 @@
         "title": "Craft Beer & Local Food",
         "meta": "3 h · Wrzeszcz",
         "tags": ["Food", "Evening"],
-        "body": "Taste Gdańsk from the inside: local craft breweries, smoked fish markets, traditional Kashubian dishes, and the hidden courtyards of the Wrzeszcz district."
+        "body": "Taste Gdańsk from the inside: local craft breweries, smoked fish markets, traditional Kashubian dishes, and the hidden courtyards of the Wrzeszcz district.",
+        "price": "from €50",
+        "badge": "hot"
       },
       {
         "id": "amber-route-sunrise",
@@ -52,7 +58,9 @@
         "title": "Amber Route Sunrise Walk",
         "meta": "2 h · Oliwa",
         "tags": ["Nature", "Morning"],
-        "body": "Begin at dawn in Oliwa Park, home to centuries-old oaks and a baroque cathedral. Learn the secrets of Baltic amber as morning light filters through the canopy."
+        "body": "Begin at dawn in Oliwa Park, home to centuries-old oaks and a baroque cathedral. Learn the secrets of Baltic amber as morning light filters through the canopy.",
+        "price": "from €35",
+        "badge": "promo"
       }
     ]
   },
@@ -68,7 +76,9 @@
         "title": "Stare Miasto i Nabrzeże",
         "meta": "3 h · Centrum",
         "tags": ["Historia", "Spacer"],
-        "body": "Przejdź Drogą Królewską, podziwiaj Fontannę Neptuna i odkryj historię legendarnego Żurawia nad Motławą — miasto zrodzone z handlu i bursztynu."
+        "body": "Przejdź Drogą Królewską, podziwiaj Fontannę Neptuna i odkryj historię legendarnego Żurawia nad Motławą — miasto zrodzone z handlu i bursztynu.",
+        "price": "od €45",
+        "badge": "bestseller"
       },
       {
         "id": "wwii-history-tour",
@@ -78,7 +88,8 @@
         "title": "Wycieczka Historyczna II WŚ",
         "meta": "5 h · Westerplatte",
         "tags": ["Historia", "Pamięć"],
-        "body": "Tu wybuchła II Wojna Światowa — stań na Westerplatte, odwiedź Muzeum II Wojny Światowej i posłuchaj historii miasta, które odrodziło się z ruin."
+        "body": "Tu wybuchła II Wojna Światowa — stań na Westerplatte, odwiedź Muzeum II Wojny Światowej i posłuchaj historii miasta, które odrodziło się z ruin.",
+        "price": "od €55"
       },
       {
         "id": "street-art-shipyard",
@@ -88,7 +99,8 @@
         "title": "Street Art i Stocznia",
         "meta": "3 h · Stocznia",
         "tags": ["Sztuka", "Miejski"],
-        "body": "Stocznia Gdańska — kolebka Solidarności — stała się płótnem dla artystów. Odkryj murale, Europejskie Centrum Solidarności i surową energię twórczą postindustrialnej strefy."
+        "body": "Stocznia Gdańska — kolebka Solidarności — stała się płótnem dla artystów. Odkryj murale, Europejskie Centrum Solidarności i surową energię twórczą postindustrialnej strefy.",
+        "price": "od €40"
       },
       {
         "id": "craft-beer-local-food",
@@ -98,7 +110,9 @@
         "title": "Piwo Rzemieślnicze i Kuchnia",
         "meta": "3 h · Wrzeszcz",
         "tags": ["Jedzenie", "Wieczór"],
-        "body": "Poznaj Gdańsk od środka: lokalne browary rzemieślnicze, wędzone ryby, tradycyjne dania kaszubskie i ukryte podwórka dzielnicy Wrzeszcz."
+        "body": "Poznaj Gdańsk od środka: lokalne browary rzemieślnicze, wędzone ryby, tradycyjne dania kaszubskie i ukryte podwórka dzielnicy Wrzeszcz.",
+        "price": "od €50",
+        "badge": "hot"
       },
       {
         "id": "amber-route-sunrise",
@@ -108,7 +122,9 @@
         "title": "Szlak Bursztynowy o Świcie",
         "meta": "2 h · Oliwa",
         "tags": ["Natura", "Ranek"],
-        "body": "Zacznij o świcie w Parku Oliwskim, gdzie rosną wielowiekowe dęby i stoi barokowa katedra. Poznaj tajemnice bałtyckiego bursztynu w porannym świetle."
+        "body": "Zacznij o świcie w Parku Oliwskim, gdzie rosną wielowiekowe dęby i stoi barokowa katedra. Poznaj tajemnice bałtyckiego bursztynu w porannym świetle.",
+        "price": "od €35",
+        "badge": "promo"
       }
     ]
   }

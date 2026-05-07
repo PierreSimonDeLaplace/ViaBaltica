@@ -7,6 +7,8 @@ export interface TripEntry {
   meta:  string;
   tags:  string[];
   body:  string;
+  price?:  string;
+  badge?:  'bestseller' | 'hot' | 'promo';
 }
 
 export interface TripCategoryLang {
