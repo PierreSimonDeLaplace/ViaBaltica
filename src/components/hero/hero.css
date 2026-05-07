@@ -24,8 +24,13 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-  background-image: url('https://images8.alphacoders.com/742/thumb-1920-742355.jpg');
+  background-image: url('https://images.unsplash.com/photo-1671921002984-4aaf9db971e2?w=1920&q=85');
   background-size: cover;
+  background-position: center 50%;
+}
+
+:root[data-theme="light"] .hero-bg {
+  background-image: url('https://images8.alphacoders.com/742/thumb-1920-742355.jpg');
   background-position: center 60%;
 }
 .hero-bg::after {
