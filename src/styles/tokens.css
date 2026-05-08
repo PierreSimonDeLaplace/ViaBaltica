@@ -4,6 +4,10 @@
    ───────────────────────────────────────────────────────────────────────── */
 
 :root {
+  /* typography */
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans:  'DM Sans', sans-serif;
+
   /* surfaces */
   --bg:           #08111e;
   --surface:      #0e1c2f;
@@ -17,6 +21,12 @@
   --accent:       #d4923a;
   --accent-light: #e8b46a;
   --accent-dim:   rgba(212, 146, 58, 0.14);
+  --accent-glow:  rgba(212, 146, 58, 0.35);
+
+  /* hero gold — rendered on dark photo overlay, theme-invariant */
+  --gold:        #e8c97a;
+  --gold-dim:    rgba(232, 201, 122, 0.10);
+  --gold-border: rgba(232, 201, 122, 0.40);
 
   /* secondary (baltic blue) */
   --blue:         #4a8fc0;
@@ -35,6 +45,20 @@
   /* depth */
   --shadow:       0 8px 32px rgba(0, 0, 0, 0.45);
   --shadow-lg:    0 24px 60px rgba(0, 0, 0, 0.6);
+
+  /* ribbon badge colours */
+  --ribbon-hot:   #d94f4f;
+  --ribbon-promo: #3d8ec9;
+
+  /* price circle — dark ink on amber background */
+  --price-ink:     #100800;
+  --price-ink-dim: rgba(10, 5, 0, 0.65);
+
+  /* hero image loading placeholder */
+  --drawer-hero-bg: #0d1520;
+
+  /* star rating */
+  --star: #FBBC05;
 
   color-scheme: dark;
 }
@@ -63,6 +87,8 @@
 
   --shadow:       0 8px 32px rgba(20, 60, 100, 0.12);
   --shadow-lg:    0 24px 60px rgba(20, 60, 100, 0.18);
+
+  --drawer-hero-bg: #c8d5e0;
 
   color-scheme: light;
 }

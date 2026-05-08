@@ -7,7 +7,7 @@
 }
 
 .drawer-gallery-heading {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif), serif;
   font-size: 1.15rem;
   font-weight: 600;
   letter-spacing: 0.02em;

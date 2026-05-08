@@ -14,7 +14,7 @@
 }
 .trips-header .badge { margin-bottom: 1.2rem; }
 .trips-header h2 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif), serif;
   font-size: clamp(2rem, 5vw, 3.2rem);
   font-weight: 600;
   line-height: 1.15;
@@ -78,7 +78,7 @@
 }
 .cat-info { flex: 1; min-width: 0; }
 .cat-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif), serif;
   font-size: 1.15rem;
   font-weight: 600;
   line-height: 1.2;
@@ -199,7 +199,7 @@
   padding: 1.4rem 1.5rem;
 }
 .trip-card-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif), serif;
   font-size: 1.35rem;
   font-weight: 600;
   line-height: 1.2;
@@ -266,14 +266,14 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(10, 5, 0, 0.65);
+  color: var(--price-ink-dim);
   line-height: 1;
 }
 .trip-price-amount {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif), serif;
   font-size: 1.1rem;
   font-weight: 700;
-  color: #100800;
+  color: var(--price-ink);
   line-height: 1;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
 }
@@ -300,9 +300,9 @@
   z-index: 1;
   pointer-events: none;
 }
-.trip-ribbon--bestseller { background: var(--accent); color: #1a1200; }
-.trip-ribbon--hot        { background: #d94f4f; }
-.trip-ribbon--promo      { background: #3d8ec9; }
+.trip-ribbon--bestseller { background: var(--accent); color: var(--price-ink); }
+.trip-ribbon--hot        { background: var(--ribbon-hot); }
+.trip-ribbon--promo      { background: var(--ribbon-promo); }
 
 /* ── Slider controls ─────────────────────────────────────────────────────── */
 

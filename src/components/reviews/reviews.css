@@ -17,7 +17,7 @@
 .reviews-header .badge { margin-bottom: 1.2rem; }
 .reviews-header h2 {
   margin-bottom: 0.75rem;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif), serif;
   font-size: clamp(2rem, 5vw, 3.2rem);
   font-weight: 600;
   line-height: 1.15;
@@ -40,17 +40,17 @@
 
 .google-logo { display: flex; gap: 1px; }
 .google-logo span {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif), serif;
   font-size: 1rem;
   font-weight: 600;
   line-height: 1;
 }
 .g-blue   { color: #4285F4; }
 .g-red    { color: #EA4335; }
-.g-yellow { color: #FBBC05; }
+.g-yellow { color: var(--star); }
 .g-green  { color: #34A853; }
 
-.summary-stars { color: #FBBC05; font-size: 0.95rem; letter-spacing: 1px; }
+.summary-stars { color: var(--star); font-size: 0.95rem; letter-spacing: 1px; }
 .summary-score { color: var(--text);  font-size: 0.9rem; font-weight: 500; }
 .summary-count { color: var(--muted); font-size: 0.8rem; }
 
@@ -85,7 +85,7 @@
   position: absolute;
   top: 0.5rem;
   right: 1.2rem;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif), serif;
   font-size: 5rem;
   line-height: 1;
   color: var(--blue);
@@ -93,7 +93,7 @@
   pointer-events: none;
 }
 
-.review-stars { color: #FBBC05; font-size: 1rem; letter-spacing: 2px; }
+.review-stars { color: var(--star); font-size: 1rem; letter-spacing: 2px; }
 .review-text  { flex: 1; color: var(--text); font-size: 0.92rem; line-height: 1.75; }
 
 .reviewer {
@@ -111,7 +111,7 @@
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif), serif;
   font-size: 1rem;
   font-weight: 600;
   color: #fff;

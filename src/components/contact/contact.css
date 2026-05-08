@@ -21,7 +21,7 @@
 }
 
 .contact-header h2 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif), serif;
   font-size: clamp(2.2rem, 5vw, 3.4rem);
   font-weight: 600;
   color: var(--text);
@@ -52,13 +52,13 @@
   gap: 1rem;
   padding: 1.4rem 1.5rem;
   background: var(--surface);
-  border: 1px solid rgba(74, 143, 192, 0.12);
+  border: 1px solid var(--blue-dim);
   border-radius: 10px;
   transition: border-color 0.25s ease, transform 0.25s ease;
 }
 
 .contact-card:hover {
-  border-color: rgba(74, 143, 192, 0.3);
+  border-color: var(--border-hover);
   transform: translateY(-2px);
 }
 
@@ -69,7 +69,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(212, 146, 58, 0.1);
+  background: var(--accent-dim);
   border-radius: 8px;
   color: var(--accent);
 }

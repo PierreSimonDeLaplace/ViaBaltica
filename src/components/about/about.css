@@ -47,7 +47,7 @@
 .portrait-frame svg { width: 100%; height: 100%; }
 
 .portrait-name {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif), serif;
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--text);
@@ -87,7 +87,7 @@
 }
 
 .about-text h2 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif), serif;
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 600;
   line-height: 1.12;
