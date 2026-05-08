@@ -124,7 +124,7 @@ function buildTripCard(trip: TripEntry, bookLabel: string): HTMLElement {
   const [pricePrefix = '', priceAmount = ''] = trip.price?.split(/\s(.+)/) ?? [];
 
   card.innerHTML = `
-    <div class="trip-card-img" style="background:${trip.color};">
+    <div class="trip-card-img">
       ${trip.badge ? `<div class="trip-ribbon trip-ribbon--${trip.badge}">${trip.badge}</div>` : ''}
       <img src="${trip.thumb}" alt="${trip.title}" loading="lazy" />
     </div>

@@ -1,6 +1,13 @@
 import './drawer.css';
 import type { TripEntry } from '../../types/trips';
 import { I18N_DEBUG, d } from '../../scripts/i18n';
+import {
+  getGalleryImages,
+  initGalleryLightbox,
+  openGalleryAt,
+  destroyGallery,
+  type GalleryItem,
+} from './gallery';
 
 export function renderTags(tags: string[]): string {
   return I18N_DEBUG
@@ -29,12 +36,19 @@ export function initDrawer(): void {
   drawerEl.addEventListener('click', (e) => {
     if (window.innerWidth >= 560) return;
     const target = e.target as HTMLElement;
-    if (target.closest('.drawer-back') || target.closest('.drawer-cta-mobile')) return;
+    if (
+      target.closest('.drawer-back')        ||
+      target.closest('.drawer-cta-mobile')  ||
+      target.closest('.drawer-hero--collage')
+    ) return;
     closeDrawer();
   });
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && currentTripId) closeDrawer();
+    if (e.key === 'Escape' && currentTripId) {
+      if (document.querySelector('.pswp--open')) return;
+      closeDrawer();
+    }
   });
 
   window.addEventListener('popstate', () => {
@@ -55,8 +69,6 @@ export function openDrawer(trip: TripEntry, bookLabel: string): void {
   if (!new URLSearchParams(location.search).has('trip')) {
     history.pushState({ trip: trip.id }, '', `?trip=${encodeURIComponent(trip.id)}`);
   }
-
-  drawerEl.querySelector<HTMLElement>('.drawer-close')?.focus();
 }
 
 export function refreshIfOpen(
@@ -87,12 +99,46 @@ function _close(): void {
   (lastFocused as HTMLElement | null)?.focus();
 }
 
-function renderContent(trip: TripEntry, bookLabel: string): void {
-  drawerEl.innerHTML = `
-    <div class="drawer-hero" style="background:${trip.color}">
+function buildSimpleHero(trip: TripEntry): string {
+  return `
+    <div class="drawer-hero">
       ${trip.badge ? `<div class="trip-ribbon trip-ribbon--${trip.badge}">${trip.badge}</div>` : ''}
       <img class="drawer-hero-img" src="${trip.banner}" alt="${trip.title}" loading="lazy" />
-    </div>
+    </div>`;
+}
+
+function buildCollageHero(trip: TripEntry, images: GalleryItem[]): string {
+  // lightbox indices: 0 = banner, 1 = images[0], 2 = images[1], ...
+  const totalCount = 1 + images.length;
+  const moreCount  = Math.max(0, totalCount - 3);
+
+  return `
+    <div class="drawer-hero drawer-hero--collage">
+      ${trip.badge ? `<div class="trip-ribbon trip-ribbon--${trip.badge}">${trip.badge}</div>` : ''}
+      <button type="button" class="drawer-hero-main" data-pswp-index="0" aria-label="View photos">
+        <img src="${trip.banner}" alt="${trip.title}" loading="lazy" />
+      </button>
+      <div class="drawer-hero-side">
+        <button type="button" class="drawer-hero-thumb" data-pswp-index="1" aria-label="View photo 1">
+          <img src="${images[0].thumb}" alt="" loading="lazy" />
+        </button>
+        ${images.length >= 2 ? `
+        <button type="button" class="drawer-hero-thumb" data-pswp-index="2" aria-label="${moreCount > 0 ? `View all ${totalCount} photos` : 'View photo 2'}">
+          <img src="${images[1].thumb}" alt="" loading="lazy" />
+          ${moreCount > 0 ? `<span class="drawer-hero-more">+${moreCount}</span>` : ''}
+        </button>` : ''}
+      </div>
+    </div>`;
+}
+
+function renderContent(trip: TripEntry, bookLabel: string): void {
+  destroyGallery();
+
+  const galleryImages = trip.gallery ? getGalleryImages(trip.gallery) : [];
+  const hasGallery    = galleryImages.length > 0;
+
+  drawerEl.innerHTML = `
+    ${hasGallery ? buildCollageHero(trip, galleryImages) : buildSimpleHero(trip)}
 
     <div class="drawer-content">
       <div class="drawer-tags">${renderTags(trip.tags)}</div>
@@ -105,6 +151,9 @@ function renderContent(trip: TripEntry, bookLabel: string): void {
         ${d(trip.meta, 'trip.meta')}
       </div>
       <p class="drawer-body">${d(trip.body, 'trip.body')}</p>
+    </div>
+
+    <div class="drawer-cta-area">
       <div class="drawer-cta-row">
         ${trip.price ? `
           <div class="drawer-price">
@@ -128,4 +177,15 @@ function renderContent(trip: TripEntry, bookLabel: string): void {
   drawerEl.querySelector('.drawer-back')?.addEventListener('click', closeDrawer);
   drawerEl.querySelector('.drawer-cta')?.addEventListener('click', _close);
   drawerEl.querySelector('.drawer-cta-mobile')?.addEventListener('click', _close);
+
+  if (hasGallery) {
+    const srcs = [trip.banner, ...galleryImages.map(img => img.full)];
+    initGalleryLightbox(srcs);
+
+    drawerEl.querySelector('.drawer-hero--collage')?.addEventListener('click', (e) => {
+      const cell = (e.target as HTMLElement).closest<HTMLElement>('[data-pswp-index]');
+      if (!cell) return;
+      openGalleryAt(Number(cell.dataset.pswpIndex));
+    });
+  }
 }

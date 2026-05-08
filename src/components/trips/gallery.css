@@ -1,0 +1,54 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   GALLERY — thumbnail grid inside the trip detail drawer.
+   ───────────────────────────────────────────────────────────────────────── */
+
+.drawer-gallery-slot {
+  padding: 0 1.75rem 0.25rem;
+}
+
+.drawer-gallery-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  margin-bottom: 0.85rem;
+}
+
+.drawer-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.drawer-gallery-item {
+  display: block;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.drawer-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.drawer-gallery-item:hover img {
+  transform: scale(1.07);
+  filter: brightness(1.08);
+}
+
+/* First item spans 2 columns to give the grid a lead shot */
+.drawer-gallery-item:first-child {
+  grid-column: span 2;
+}
+
+@media (max-width: 400px) {
+  .drawer-gallery { grid-template-columns: repeat(2, 1fr); }
+  .drawer-gallery-item:first-child { grid-column: span 2; }
+}

@@ -2,13 +2,13 @@ export interface TripEntry {
   id:     string;
   thumb:  string;
   banner: string;
-  color:  string;
   title: string;
   meta:  string;
   tags:  string[];
   body:  string;
-  price?:  string;
-  badge?:  'bestseller' | 'hot' | 'promo';
+  price?:   string;
+  badge?:   'bestseller' | 'hot' | 'promo';
+  gallery?: string;
 }
 
 export interface TripCategoryLang {
