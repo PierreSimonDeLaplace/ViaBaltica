@@ -60,6 +60,49 @@
   /* star rating */
   --star: #FBBC05;
 
+  /* white */
+  --white: #ffffff;
+
+  /* hero photo overlays */
+  --hero-tint-top:   rgba(8, 17, 30, 0.55);
+  --hero-tint-mid:   rgba(8, 17, 30, 0.35);
+  --hero-tint-bot:   rgba(8, 17, 30, 0.75);
+  --hero-tint-warm:  rgba(212, 146, 58, 0.12);
+  --hero-text-dim:   rgba(232, 240, 248, 0.88);
+  --hero-stat-bg:    rgba(8, 17, 30, 0.70);
+  --hero-stat-label: rgba(232, 240, 248, 0.55);
+
+  /* modal/overlay backdrop */
+  --overlay-bg: rgba(0, 0, 0, 0.55);
+
+  /* pure black at useful opacities for shadows */
+  --shadow-15: rgba(0, 0, 0, 0.15);
+  --shadow-25: rgba(0, 0, 0, 0.25);
+  --shadow-30: rgba(0, 0, 0, 0.30);
+  --shadow-35: rgba(0, 0, 0, 0.35);
+  --shadow-40: rgba(0, 0, 0, 0.40);
+  --shadow-50: rgba(0, 0, 0, 0.50);
+
+  /* blue at mid opacities */
+  --blue-dim-2: rgba(74, 143, 192, 0.18);
+  --blue-mid:   rgba(74, 143, 192, 0.35);
+
+  /* accent at mid opacity */
+  --accent-mid: rgba(212, 146, 58, 0.50);
+
+  /* gallery "+N more" overlay */
+  --gallery-more-bg: rgba(4, 10, 20, 0.55);
+
+  /* Google Maps brand colours — mandated by Google brand guidelines */
+  --g-blue:  #4285F4;
+  --g-red:   #EA4335;
+  --g-green: #34A853;
+
+  /* reviewer avatar palette */
+  --avatar-1: #c9a96e;
+  --avatar-2: #6e9ec9;
+  --avatar-3: #9ec96e;
+
   color-scheme: dark;
 }
 
@@ -89,6 +132,12 @@
   --shadow-lg:    0 24px 60px rgba(20, 60, 100, 0.18);
 
   --drawer-hero-bg: #c8d5e0;
+
+  --hero-tint-top:    rgba(8, 17, 30, 0.45);
+  --hero-tint-mid:    rgba(8, 17, 30, 0.25);
+  --hero-tint-bot:    rgba(8, 17, 30, 0.65);
+  --hero-stat-bg:     rgba(245, 247, 250, 0.88);
+  --hero-stat-label:  rgba(30, 45, 65, 0.60);
 
   color-scheme: light;
 }

@@ -1,5 +1,8 @@
 {
-  "page.title":    "Tour Guide Via Baltica — Mark Jeziak, Gdańsk",
+  "page.title":       "Tour Guide Via Baltica — Mark Jeziak, Gdańsk",
+  "page.description": "Private guided tours in Gdańsk with certified local guide Mark Jeziak. English & Polish. Book your Baltic Sea city experience today.",
+
+  "drawer.back": "Back",
   "nav.home":      "Home",
   "nav.tours":     "Tours",
   "nav.about":     "About",

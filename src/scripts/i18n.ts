@@ -80,9 +80,13 @@ function applyTranslations(lang: SupportedLang, dict: Locale): void {
       if (typeof value === 'string') el.innerHTML = value;
     });
 
-    // page title
+    // page title + meta description
     const title = dict['page.title'];
     if (typeof title === 'string') document.title = title;
+
+    const description = dict['page.description'];
+    const metaDesc = document.querySelector<HTMLMetaElement>('meta[name="description"]');
+    if (typeof description === 'string' && metaDesc) metaDesc.content = description;
   }
 
   // Always update regardless of debug mode

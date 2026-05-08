@@ -45,10 +45,10 @@
   font-weight: 600;
   line-height: 1;
 }
-.g-blue   { color: #4285F4; }
-.g-red    { color: #EA4335; }
+.g-blue   { color: var(--g-blue); }
+.g-red    { color: var(--g-red); }
 .g-yellow { color: var(--star); }
-.g-green  { color: #34A853; }
+.g-green  { color: var(--g-green); }
 
 .summary-stars { color: var(--star); font-size: 0.95rem; letter-spacing: 1px; }
 .summary-score { color: var(--text);  font-size: 0.9rem; font-weight: 500; }
@@ -114,7 +114,7 @@
   font-family: var(--font-serif), serif;
   font-size: 1rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--white);
 }
 .reviewer-info {
   display: flex;

@@ -30,6 +30,7 @@ export function mount(target: HTMLElement): void {
         return undefined;
       },
       getString(dict, 'trips.book', 'trips.book'),
+      getString(dict, 'drawer.back', 'Back'),
     );
   });
 }
@@ -40,11 +41,12 @@ function renderCategories(lang: SupportedLang, dict: Locale): void {
   const list = document.getElementById('tripsList');
   if (!list) return;
 
-  const bookLabel  = getString(dict, 'trips.book',  'trips.book');
-  const toursLabel = getString(dict, 'trips.tours', 'trips.tours');
+  const bookLabel  = getString(dict, 'trips.book',   'trips.book');
+  const backLabel  = getString(dict, 'drawer.back',  'Back');
+  const toursLabel = getString(dict, 'trips.tours',  'trips.tours');
 
   list.replaceChildren(
-    ...CATEGORIES.map(cat => buildCategoryRow(cat, lang, bookLabel, toursLabel)),
+    ...CATEGORIES.map(cat => buildCategoryRow(cat, lang, bookLabel, backLabel, toursLabel)),
   );
 }
 
@@ -54,12 +56,13 @@ function buildCategoryRow(
   cat: TripCategoryFile,
   lang: SupportedLang,
   bookLabel: string,
+  backLabel: string,
   toursLabel: string,
 ): HTMLElement {
   const langData = cat[lang];
   const row      = document.createElement('div');
   const header   = buildCategoryHeader(cat.photo, langData, toursLabel);
-  const drawer   = buildCategoryDrawer(langData, bookLabel);
+  const drawer   = buildCategoryDrawer(langData, bookLabel, backLabel);
   row.className  = 'cat-row';
 
   header.addEventListener('click', () => {
@@ -97,6 +100,7 @@ function buildCategoryHeader(
 function buildCategoryDrawer(
   lang: TripCategoryLang,
   bookLabel: string,
+  backLabel: string,
 ): HTMLElement {
   const drawer   = document.createElement('div');
   drawer.className = 'cat-drawer';
@@ -109,7 +113,7 @@ function buildCategoryDrawer(
 
   const track    = document.createElement('div');
   track.className = 'trip-slider-track';
-  lang.trips.forEach(trip => track.appendChild(buildTripCard(trip, bookLabel)));
+  lang.trips.forEach(trip => track.appendChild(buildTripCard(trip, bookLabel, backLabel)));
 
   viewport.appendChild(track);
   wrap.append(viewport, buildSlider(viewport, lang.trips.length));
@@ -117,7 +121,7 @@ function buildCategoryDrawer(
   return drawer;
 }
 
-function buildTripCard(trip: TripEntry, bookLabel: string): HTMLElement {
+function buildTripCard(trip: TripEntry, bookLabel: string, backLabel: string): HTMLElement {
   const card = document.createElement('div');
   card.className = 'trip-card';
 
@@ -154,7 +158,7 @@ function buildTripCard(trip: TripEntry, bookLabel: string): HTMLElement {
   // Clicking anywhere on the card except the Book button opens the detail drawer
   card.addEventListener('click', (e) => {
     if ((e.target as HTMLElement).closest('.trip-card-book')) return;
-    openDrawer(trip, bookLabel);
+    openDrawer(trip, bookLabel, backLabel);
   });
 
   return card;

@@ -56,11 +56,11 @@ export function initDrawer(): void {
   });
 }
 
-export function openDrawer(trip: TripEntry, bookLabel: string): void {
+export function openDrawer(trip: TripEntry, bookLabel: string, backLabel: string): void {
   lastFocused   = document.activeElement;
   currentTripId = trip.id;
 
-  renderContent(trip, bookLabel);
+  renderContent(trip, bookLabel, backLabel);
 
   overlayEl.classList.add('open');
   drawerEl.classList.add('open');
@@ -74,10 +74,11 @@ export function openDrawer(trip: TripEntry, bookLabel: string): void {
 export function refreshIfOpen(
   resolveTrip: (id: string) => TripEntry | undefined,
   bookLabel: string,
+  backLabel: string,
 ): void {
   if (!currentTripId) return;
   const trip = resolveTrip(currentTripId);
-  if (trip) renderContent(trip, bookLabel);
+  if (trip) renderContent(trip, bookLabel, backLabel);
 }
 
 export function closeDrawer(): void {
@@ -131,7 +132,7 @@ function buildCollageHero(trip: TripEntry, images: GalleryItem[]): string {
     </div>`;
 }
 
-function renderContent(trip: TripEntry, bookLabel: string): void {
+function renderContent(trip: TripEntry, bookLabel: string, backLabel: string): void {
   destroyGallery();
 
   const galleryImages = trip.gallery ? getGalleryImages(trip.gallery) : [];
@@ -165,11 +166,11 @@ function renderContent(trip: TripEntry, bookLabel: string): void {
     </div>
 
     <div class="drawer-bottombar">
-      <button class="drawer-back" aria-label="Back">
+      <button class="drawer-back" aria-label="${backLabel}">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
           <path d="M19 12H5M12 5l-7 7 7 7"/>
         </svg>
-        <span>Back</span>
+        <span>${backLabel}</span>
       </button>
       <a href="#contact" class="btn-primary drawer-cta-mobile">${bookLabel}</a>
     </div>`;

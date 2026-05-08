@@ -1,5 +1,8 @@
 {
-  "page.title":    "Przewodnik Via Baltica — Marek Jeziak, Gdańsk",
+  "page.title":       "Przewodnik Via Baltica — Marek Jeziak, Gdańsk",
+  "page.description": "Prywatne wycieczki z licencjonowanym przewodnikiem Markiem Jeziakiem po Gdańsku. Po angielsku i polsku. Zarezerwuj swoją przygodę nad Bałtykiem.",
+
+  "drawer.back": "Wróć",
   "nav.home":      "Strona główna",
   "nav.tours":     "Wycieczki",
   "nav.about":     "O nas",

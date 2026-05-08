@@ -128,7 +128,7 @@
   overflow: hidden;
   background: none;
   cursor: pointer;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 5px var(--shadow-40);
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
               box-shadow 0.3s ease;
   z-index: 1;
@@ -148,7 +148,7 @@
 .lang-flag.active {
   z-index: 2;
   transform: scale(1.15) translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 12px var(--shadow-50);
 }
 
 /* ── Hamburger ───────────────────────────────────────────────────────────── */

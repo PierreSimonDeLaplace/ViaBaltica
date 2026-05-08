@@ -40,19 +40,19 @@
   background:
     linear-gradient(
       to bottom,
-      rgba(8, 17, 30, 0.55) 0%,
-      rgba(8, 17, 30, 0.35) 40%,
-      rgba(8, 17, 30, 0.75) 100%
+      var(--hero-tint-top) 0%,
+      var(--hero-tint-mid) 40%,
+      var(--hero-tint-bot) 100%
     ),
-    linear-gradient(135deg, rgba(212, 146, 58, 0.12) 0%, transparent 60%);
+    linear-gradient(135deg, var(--hero-tint-warm) 0%, transparent 60%);
 }
 :root[data-theme="light"] .hero-bg::after {
   background:
     linear-gradient(
       to bottom,
-      rgba(8, 17, 30, 0.45) 0%,
-      rgba(8, 17, 30, 0.25) 40%,
-      rgba(8, 17, 30, 0.65) 100%
+      var(--hero-tint-top) 0%,
+      var(--hero-tint-mid) 40%,
+      var(--hero-tint-bot) 100%
     );
 }
 
@@ -97,8 +97,8 @@
   font-weight: 600;
   line-height: 1.08;
   letter-spacing: -0.01em;
-  color: #ffffff;
-  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.4);
+  color: var(--white);
+  text-shadow: 0 2px 24px var(--shadow-40);
 }
 .page-hero h1 em {
   color: var(--gold);
@@ -107,10 +107,10 @@
 
 .hero-desc {
   max-width: 520px;
-  color: rgba(232, 240, 248, 0.88);
+  color: var(--hero-text-dim);
   font-size: clamp(0.95rem, 2vw, 1.1rem);
   line-height: 1.75;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 8px var(--shadow-30);
 }
 
 .hero-actions {
@@ -135,14 +135,14 @@
   justify-content: center;
   padding: 1.1rem clamp(1.5rem, 5vw, 3.5rem);
 
-  background: rgba(8, 17, 30, 0.7);
+  background: var(--hero-stat-bg);
   backdrop-filter: blur(12px);
-  border-top: 1px solid rgba(99, 155, 210, 0.15);
+  border-top: 1px solid var(--border);
 }
 
 :root[data-theme="light"] .hero-stats {
-  background: rgba(245, 247, 250, 0.88);
-  border-top-color: rgba(74, 143, 192, 0.18);
+  background: var(--hero-stat-bg);
+  border-top-color: var(--blue-dim-2);
 }
 
 .hero-stat {
@@ -150,12 +150,12 @@
   max-width: 180px;
   padding: 0 1rem;
   text-align: center;
-  border-right: 1px solid rgba(99, 155, 210, 0.15);
+  border-right: 1px solid var(--border);
 }
 .hero-stat:last-child { border-right: none; }
 
 :root[data-theme="light"] .hero-stat {
-  border-right-color: rgba(74, 143, 192, 0.18);
+  border-right-color: var(--blue-dim-2);
 }
 
 .hero-stat-num {
@@ -175,11 +175,11 @@
   font-size: 0.7rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(232, 240, 248, 0.55);
+  color: var(--hero-stat-label);
 }
 
 :root[data-theme="light"] .hero-stat-label {
-  color: rgba(30, 45, 65, 0.6);
+  color: var(--hero-stat-label);
 }
 
 @media (max-width: 480px) {
