@@ -1,0 +1,27 @@
+{
+  "rating": 5.0,
+  "total": 18,
+  "reviews": [
+    {
+      "author": "Anna K.",
+      "rating": 5,
+      "text": "Mark is an exceptional guide — knowledgeable, passionate, and incredibly engaging. The Via Baltica tour exceeded every expectation. Highly recommended!",
+      "time": "March 2025",
+      "avatar": ""
+    },
+    {
+      "author": "Thomas R.",
+      "rating": 5,
+      "text": "Absolutely fantastic experience in Gdańsk. Mark brings history to life in a way no textbook ever could. We'll be back for the next tour!",
+      "time": "January 2025",
+      "avatar": ""
+    },
+    {
+      "author": "Monika W.",
+      "rating": 5,
+      "text": "One of the best guided experiences I've had in Europe. The route along Via Baltica was perfectly curated, and Mark's storytelling made every stop memorable.",
+      "time": "December 2024",
+      "avatar": ""
+    }
+  ]
+}

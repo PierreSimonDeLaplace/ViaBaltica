@@ -48,7 +48,8 @@
 
   "reviews.badge":    "What clients say",
   "reviews.heading":  "Trusted by travellers",
-  "reviews.count":    "(18 reviews)",
+  "reviews.count":        "(18 reviews)",
+  "reviews.count_format": "({n} reviews)",
   "reviews.cta":      "Read all reviews on Google →",
   "reviews.r1.text":  "Mark is an exceptional guide — knowledgeable, passionate, and incredibly engaging. The Via Baltica tour exceeded every expectation. Highly recommended!",
   "reviews.r1.date":  "March 2025",

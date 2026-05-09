@@ -48,7 +48,8 @@
 
   "reviews.badge":    "Co mówią klienci",
   "reviews.heading":  "Zaufali nam podróżnicy",
-  "reviews.count":    "(18 opinii)",
+  "reviews.count":        "(18 opinii)",
+  "reviews.count_format": "({n} opinii)",
   "reviews.cta":      "Czytaj wszystkie opinie w Google →",
   "reviews.r1.text":  "Marek to wyjątkowy przewodnik — pełen wiedzy, pasji i zaangażowania. Wycieczka Via Baltica przerosła wszelkie oczekiwania. Gorąco polecam!",
   "reviews.r1.date":  "Marzec 2025",

@@ -1,0 +1,27 @@
+{
+  "rating": 5.0,
+  "total": 18,
+  "reviews": [
+    {
+      "author": "Anna K.",
+      "rating": 5,
+      "text": "Marek to wyjątkowy przewodnik — pełen wiedzy, pasji i zaangażowania. Wycieczka Via Baltica przerosła wszelkie oczekiwania. Gorąco polecam!",
+      "time": "Marzec 2025",
+      "avatar": ""
+    },
+    {
+      "author": "Thomas R.",
+      "rating": 5,
+      "text": "Fantastyczne doświadczenie w Gdańsku. Marek ożywia historię w sposób, jakiego żaden podręcznik nie jest w stanie oddać. Wrócimy na kolejną wycieczkę!",
+      "time": "Styczeń 2025",
+      "avatar": ""
+    },
+    {
+      "author": "Monika W.",
+      "rating": 5,
+      "text": "Jedna z najlepszych wycieczek z przewodnikiem, jaką miałam w Europie. Trasa Via Baltica była perfekcyjnie zaplanowana, a opowieści Marka sprawiły, że każdy przystanek był niezapomniany.",
+      "time": "Grudzień 2024",
+      "avatar": ""
+    }
+  ]
+}
