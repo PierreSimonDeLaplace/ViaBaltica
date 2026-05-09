@@ -21,21 +21,15 @@ export const I18N_DEBUG = new URLSearchParams(location.search).get('debug') === 
 
 export const d = (value: string, key: string): string => I18N_DEBUG ? key : value;
 
-const cache = new Map<SupportedLang, Locale>();
+const locales = import.meta.glob<{ default: Locale }>('../locales/*.json', { eager: true });
 const listeners = new Set<LanguageChangeListener>();
 
 if (I18N_DEBUG) console.warn('[i18n] debug mode — translations suppressed, bare keys visible');
 
 /* ────────────────────────────────────────────────────────────────────────── */
 
-async function loadLocale(lang: SupportedLang): Promise<Locale> {
-  const cached = cache.get(lang);
-  if (cached) return cached;
-
-  const mod = await import(`../locales/${lang}.json`);
-  const dict = mod.default as Locale;
-  cache.set(lang, dict);
-  return dict;
+function loadLocale(lang: SupportedLang): Locale {
+  return locales[`../locales/${lang}.json`]?.default ?? {} as Locale;
 }
 
 function detectLanguage(): SupportedLang {
@@ -107,8 +101,8 @@ export function onLanguageChange(listener: LanguageChangeListener): () => void {
   };
 }
 
-export async function switchLanguage(lang: SupportedLang): Promise<void> {
-  const dict = await loadLocale(lang);
+export function switchLanguage(lang: SupportedLang): void {
+  const dict = loadLocale(lang);
   applyTranslations(lang, dict);
   localStorage.setItem(STORAGE_KEY, lang);
   listeners.forEach((listen) => listen(lang, I18N_DEBUG ? {} as Locale : dict));
@@ -118,13 +112,13 @@ export async function switchLanguage(lang: SupportedLang): Promise<void> {
  * Wires up `.lang-btn` click handlers and applies the initial language.
  * Call after all components that contain `data-i18n` are mounted.
  */
-export async function initI18n(): Promise<void> {
+export function initI18n(): void {
   document.querySelectorAll<HTMLButtonElement>('.lang-btn').forEach((btn) => {
     btn.addEventListener('click', () => {
       const lang = btn.dataset.lang;
-      if (isSupportedLang(lang)) void switchLanguage(lang);
+      if (isSupportedLang(lang)) switchLanguage(lang);
     });
   });
 
-  await switchLanguage(detectLanguage());
+  switchLanguage(detectLanguage());
 }

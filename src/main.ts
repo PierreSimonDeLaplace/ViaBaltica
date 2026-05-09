@@ -36,4 +36,4 @@ mountContact(main);
 mountFooter();
 
 initTheme();
-void initI18n();
+initI18n();
