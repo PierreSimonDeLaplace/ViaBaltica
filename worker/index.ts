@@ -47,14 +47,17 @@ async function handleReviews(
   const apiUrl = new URL('https://maps.googleapis.com/maps/api/place/details/json');
   apiUrl.searchParams.set('place_id', env.GOOGLE_PLACE_ID);
   apiUrl.searchParams.set('fields',   FIELDS);
-  apiUrl.searchParams.set('reviews_sort', 'newest');
+  apiUrl.searchParams.set('reviews_sort', 'most_relevant');
   apiUrl.searchParams.set('language', lang);
   apiUrl.searchParams.set('key',      env.GOOGLE_API_KEY);
+
+  console.log(`[reviews] calling Google Places API lang=${lang}`);
 
   let apiRes: Response;
   try {
     apiRes = await fetch(apiUrl.toString());
   } catch (err) {
+    console.error(`[reviews] fetch failed: ${String(err)}`);
     return new Response(JSON.stringify({ error: 'fetch_failed', detail: String(err) }), {
       status: 502,
       headers: { 'Content-Type': 'application/json', ...CORS },
@@ -62,6 +65,8 @@ async function handleReviews(
   }
 
   const data = await apiRes.json() as GooglePlacesResponse;
+
+  console.log(`[reviews] Google Places API responded status=${data.status}`);
 
   if (data.status !== 'OK') {
     return new Response(JSON.stringify({ error: data.status }), {

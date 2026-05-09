@@ -31,7 +31,7 @@ function devReviewsProxy(): Plugin {
         const apiUrl = new URL('https://maps.googleapis.com/maps/api/place/details/json');
         apiUrl.searchParams.set('place_id',     vars['GOOGLE_PLACE_ID'] ?? '');
         apiUrl.searchParams.set('fields',        FIELDS);
-        apiUrl.searchParams.set('reviews_sort', 'newest');
+        apiUrl.searchParams.set('reviews_sort', 'most_relevant');
         apiUrl.searchParams.set('language',      lang);
         apiUrl.searchParams.set('key',           vars['GOOGLE_API_KEY'] ?? '');
 
