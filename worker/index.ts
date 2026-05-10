@@ -51,7 +51,7 @@ async function handleReviews(
   apiUrl.searchParams.set('language', lang);
   apiUrl.searchParams.set('key',      env.GOOGLE_API_KEY);
 
-  console.log(`[reviews] calling Google Places API lang=${lang}`);
+  console.log(`[reviews] calling Google Places API lang=${lang} place_id=${env.GOOGLE_PLACE_ID}`);
 
   let apiRes: Response;
   try {
@@ -66,7 +66,7 @@ async function handleReviews(
 
   const data = await apiRes.json() as GooglePlacesResponse;
 
-  console.log(`[reviews] Google Places API responded status=${data.status}`);
+  console.log(`[reviews] Google Places API response: ${JSON.stringify(data)}`);
 
   if (data.status !== 'OK') {
     return new Response(JSON.stringify({ error: data.status }), {
