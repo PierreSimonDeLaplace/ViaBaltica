@@ -1,7 +1,11 @@
 import { getString, type Locale, type SupportedLang } from '../../types/locale';
 import { onLanguageChange } from '../../scripts/i18n';
 import { marked } from 'marked';
+import PhotoSwipeLightbox from 'photoswipe/lightbox';
+import 'photoswipe/style.css';
 import './blog.css';
+
+let pswpLightbox: PhotoSwipeLightbox | null = null;
 
 interface PostTranslation {
   title:   string;
@@ -10,11 +14,12 @@ interface PostTranslation {
 }
 
 interface Post {
-  slug:  string;
-  date:  string;
-  image: string;
-  en:    PostTranslation;
-  pl:    PostTranslation;
+  slug:     string;
+  date:     string;
+  image:    string;
+  gallery?: string[];
+  en:       PostTranslation;
+  pl:       PostTranslation;
 }
 
 const postModules = import.meta.glob<{ default: Post }>('../../data/blog/*.json', { eager: true });
@@ -68,7 +73,20 @@ function renderList(container: HTMLElement, dict: Locale, lang: SupportedLang): 
 }
 
 function renderPost(container: HTMLElement, post: Post, dict: Locale, lang: SupportedLang): void {
+  pswpLightbox?.destroy();
+  pswpLightbox = null;
+
   const t = post[lang] ?? post.en;
+
+  const galleryHtml = post.gallery?.length
+    ? `<div class="post-gallery pswp-gallery">
+        ${post.gallery.map((src, i) =>
+          `<a href="${escapeHtml(src)}">
+            <img src="${escapeHtml(src)}" alt="${escapeHtml(t.title)} — photo ${i + 1}" loading="lazy">
+          </a>`
+        ).join('')}
+      </div>`
+    : '';
 
   container.innerHTML = `
     <article class="blog-post">
@@ -79,8 +97,30 @@ function renderPost(container: HTMLElement, post: Post, dict: Locale, lang: Supp
           <h1 class="blog-post-title">${escapeHtml(t.title)}</h1>
         </header>
         <div class="post-content">${marked.parse(t.content, { async: false })}</div>
+        ${galleryHtml}
       </div>
     </article>`;
+
+  const galleryEl = container.querySelector<HTMLElement>('.pswp-gallery');
+  if (!galleryEl) return;
+
+  pswpLightbox = new PhotoSwipeLightbox({
+    gallery: galleryEl,
+    children: 'a',
+    pswpModule: () => import('photoswipe'),
+  });
+
+  pswpLightbox.addFilter('domItemData', (itemData, _element, linkEl) => {
+    const img = linkEl?.querySelector<HTMLImageElement>('img');
+    itemData.src  = linkEl?.href ?? '';
+    itemData.w    = img?.naturalWidth  ?? 0;
+    itemData.h    = img?.naturalHeight ?? 0;
+    itemData.msrc = img?.src;
+    itemData.alt  = img?.alt;
+    return itemData;
+  });
+
+  pswpLightbox.init();
 }
 
 export function mount(target: HTMLElement): void {
