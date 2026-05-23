@@ -1,0 +1,15 @@
+{
+  "slug": "food-guide",
+  "date": "2025-01-20",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Neptune%27s_Fountain_in_the_center_of_Gdansk_-_panoramio.jpg/960px-Neptune%27s_Fountain_in_the_center_of_Gdansk_-_panoramio.jpg",
+  "en": {
+    "title": "A Local's Food Guide to Gdańsk",
+    "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+    "content": "# A Local's Food Guide to Gdańsk\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\n## What to Eat\n\n- Sed ut perspiciatis unde omnis iste natus error\n- Nemo enim ipsam voluptatem quia voluptas sit\n- Neque porro quisquam est qui dolorem ipsum\n\n## Where to Eat\n\nAt vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias.\n\n## What to Avoid\n\nNam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus."
+  },
+  "pl": {
+    "title": "Przewodnik kulinarny po Gdańsku",
+    "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+    "content": "# Przewodnik kulinarny po Gdańsku\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\n## Co jeść\n\n- Sed ut perspiciatis unde omnis iste natus error\n- Nemo enim ipsam voluptatem quia voluptas sit\n- Neque porro quisquam est qui dolorem ipsum\n\n## Gdzie jeść\n\nAt vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias.\n\n## Czego unikać\n\nNam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus."
+  }
+}

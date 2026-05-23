@@ -1,16 +1,16 @@
 import html from './trips.html?raw';
 import './trips.css';
 
-import { onLanguageChange, d } from '../../scripts/i18n';
-import { getString, type Locale, type SupportedLang } from '../../types/locale';
-import { type TripCategoryFile, type TripCategoryLang, type TripEntry } from '../../types/trips';
-import { initDrawer, openDrawer, refreshIfOpen, renderTags } from './drawer';
+import {onLanguageChange, d} from '../../scripts/i18n';
+import {getString, type Locale, type SupportedLang} from '../../types/locale';
+import {type TripCategoryFile, type TripCategoryLang, type TripEntry} from '../../types/trips';
+import {initDrawer, openDrawer, refreshIfOpen, renderTags} from './drawer';
 
 // All category JSON files loaded eagerly at build time — drop a new file in
 // src/data/trips/ and it appears automatically on next build.
 const raw = import.meta.glob<{ default: TripCategoryFile }>(
   '../../data/trips/*.json',
-  { eager: true },
+  {eager: true},
 );
 const CATEGORIES: TripCategoryFile[] = Object.values(raw).map(m => m.default);
 
@@ -41,9 +41,9 @@ function renderCategories(lang: SupportedLang, dict: Locale): void {
   const list = document.getElementById('tripsList');
   if (!list) return;
 
-  const bookLabel  = getString(dict, 'trips.book',   'trips.book');
-  const backLabel  = getString(dict, 'drawer.back',  'Back');
-  const toursLabel = getString(dict, 'trips.tours',  'trips.tours');
+  const bookLabel = getString(dict, 'trips.book', 'trips.book');
+  const backLabel = getString(dict, 'drawer.back', 'Back');
+  const toursLabel = getString(dict, 'trips.tours', 'trips.tours');
 
   list.replaceChildren(
     ...CATEGORIES.map(cat => buildCategoryRow(cat, lang, bookLabel, backLabel, toursLabel)),
@@ -60,10 +60,10 @@ function buildCategoryRow(
   toursLabel: string,
 ): HTMLElement {
   const langData = cat[lang];
-  const row      = document.createElement('div');
-  const header   = buildCategoryHeader(cat.photo, langData, toursLabel);
-  const drawer   = buildCategoryDrawer(langData, bookLabel, backLabel);
-  row.className  = 'cat-row';
+  const row = document.createElement('div');
+  const header = buildCategoryHeader(cat.photo, langData, toursLabel);
+  const drawer = buildCategoryDrawer(langData, bookLabel, backLabel);
+  row.className = 'cat-row';
 
   header.addEventListener('click', () => {
     const wasOpen = row.classList.contains('open');
@@ -102,16 +102,16 @@ function buildCategoryDrawer(
   bookLabel: string,
   backLabel: string,
 ): HTMLElement {
-  const drawer   = document.createElement('div');
+  const drawer = document.createElement('div');
   drawer.className = 'cat-drawer';
 
-  const wrap     = document.createElement('div');
+  const wrap = document.createElement('div');
   wrap.className = 'trip-slider-wrap';
 
   const viewport = document.createElement('div');
   viewport.className = 'trip-slider-viewport';
 
-  const track    = document.createElement('div');
+  const track = document.createElement('div');
   track.className = 'trip-slider-track';
   lang.trips.forEach(trip => track.appendChild(buildTripCard(trip, bookLabel, backLabel)));
 
@@ -173,7 +173,7 @@ function buildSlider(viewport: HTMLElement, count: number): HTMLElement {
   dots.className = 'trip-slider-dots';
 
   const prev = makeArrowButton('Previous', 'M15 18l-6-6 6-6');
-  const next = makeArrowButton('Next',     'M9 18l6-6-6-6');
+  const next = makeArrowButton('Next', 'M9 18l6-6-6-6');
 
   const arrows = document.createElement('div');
   arrows.className = 'trip-slider-arrows';
@@ -193,13 +193,13 @@ function buildSlider(viewport: HTMLElement, count: number): HTMLElement {
 
   const goTo = (index: number): void => {
     current = Math.max(0, Math.min(index, count - 1));
-    viewport.scrollTo({ left: viewport.clientWidth * current, behavior: 'smooth' });
+    viewport.scrollTo({left: viewport.clientWidth * current, behavior: 'smooth'});
     sync();
   };
 
   for (let i = 0; i < count; i += 1) {
     const dot = document.createElement('button');
-    dot.type      = 'button';
+    dot.type = 'button';
     dot.className = `trip-slider-dot${i === 0 ? ' active' : ''}`;
     dot.setAttribute('aria-label', `Trip ${i + 1}`);
     dot.addEventListener('click', () => goTo(i));
@@ -229,7 +229,7 @@ function buildSlider(viewport: HTMLElement, count: number): HTMLElement {
 
 function makeArrowButton(label: string, pathD: string): HTMLButtonElement {
   const btn = document.createElement('button');
-  btn.type  = 'button';
+  btn.type = 'button';
   btn.className = 'trip-slider-arrow';
   btn.setAttribute('aria-label', label);
   btn.innerHTML = `

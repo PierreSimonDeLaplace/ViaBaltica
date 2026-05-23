@@ -8,6 +8,7 @@
   "nav.about":     "O nas",
   "nav.reviews":   "Opinie",
   "nav.contact":   "Kontakt",
+  "nav.blog":      "Blog",
   "nav.cta":       "Zarezerwuj wycieczkę",
 
   "hero.badge":     "Przewodnik · Via Baltica · Gdańsk",
@@ -45,6 +46,13 @@
   "trips.subheading": "Wybierz kategorię, a następnie przesuń karty, aby odkryć trasy.",
   "trips.book":       "Zarezerwuj wycieczkę",
   "trips.tours":      "tras",
+
+  "blog.page_title": "Blog — Via Baltica",
+  "blog.badge":      "Z notatnika Marka",
+  "blog.heading":    "Historie z Gdańska",
+  "blog.read_more":  "Czytaj więcej →",
+  "blog.back":       "← Wszystkie wpisy",
+  "blog.empty":      "Brak wpisów.",
 
   "reviews.badge":    "Co mówią klienci",
   "reviews.heading":  "Zaufali nam podróżnicy",

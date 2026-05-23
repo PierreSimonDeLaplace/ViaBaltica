@@ -8,6 +8,7 @@
   "nav.about":     "About",
   "nav.reviews":   "Reviews",
   "nav.contact":   "Contact",
+  "nav.blog":      "Blog",
   "nav.cta":       "Book a Tour",
 
   "hero.badge":     "Tour Guide · Via Baltica · Gdańsk",
@@ -45,6 +46,13 @@
   "trips.subheading": "Choose a category, then swipe through the tours inside.",
   "trips.book":       "Book this tour",
   "trips.tours":      "tours",
+
+  "blog.page_title": "Blog — Via Baltica",
+  "blog.badge":      "From Mark's Notebook",
+  "blog.heading":    "Stories from Gdańsk",
+  "blog.read_more":  "Read more →",
+  "blog.back":       "← All posts",
+  "blog.empty":      "No posts yet.",
 
   "reviews.badge":    "What clients say",
   "reviews.heading":  "Trusted by travellers",

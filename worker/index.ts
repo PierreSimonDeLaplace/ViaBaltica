@@ -35,21 +35,21 @@ async function handleReviews(
   env: Env,
   ctx: ExecutionContext,
 ): Promise<Response> {
-  const url  = new URL(request.url);
+  const url = new URL(request.url);
   const lang = url.searchParams.get('lang') === 'pl' ? 'pl' : 'en';
 
   const cacheKey = new Request(`https://cache.internal/reviews/${lang}`);
-  const cache    = caches.default;
+  const cache = caches.default;
 
   const hit = await cache.match(cacheKey);
   if (hit) return hit;
 
   const apiUrl = new URL('https://maps.googleapis.com/maps/api/place/details/json');
   apiUrl.searchParams.set('place_id', env.GOOGLE_PLACE_ID);
-  apiUrl.searchParams.set('fields',   FIELDS);
+  apiUrl.searchParams.set('fields', FIELDS);
   apiUrl.searchParams.set('reviews_sort', 'most_relevant');
   apiUrl.searchParams.set('language', lang);
-  apiUrl.searchParams.set('key',      env.GOOGLE_API_KEY);
+  apiUrl.searchParams.set('key', env.GOOGLE_API_KEY);
 
   console.log(`[reviews] calling Google Places API lang=${lang} place_id=${env.GOOGLE_PLACE_ID}`);
 
@@ -58,9 +58,9 @@ async function handleReviews(
     apiRes = await fetch(apiUrl.toString());
   } catch (err) {
     console.error(`[reviews] fetch failed: ${String(err)}`);
-    return new Response(JSON.stringify({ error: 'fetch_failed', detail: String(err) }), {
+    return new Response(JSON.stringify({error: 'fetch_failed', detail: String(err)}), {
       status: 502,
-      headers: { 'Content-Type': 'application/json', ...CORS },
+      headers: {'Content-Type': 'application/json', ...CORS},
     });
   }
 
@@ -69,28 +69,28 @@ async function handleReviews(
   console.log(`[reviews] Google Places API response: ${JSON.stringify(data)}`);
 
   if (data.status !== 'OK') {
-    return new Response(JSON.stringify({ error: data.status }), {
+    return new Response(JSON.stringify({error: data.status}), {
       status: 502,
-      headers: { 'Content-Type': 'application/json', ...CORS },
+      headers: {'Content-Type': 'application/json', ...CORS},
     });
   }
 
-  const { result } = data;
+  const {result} = data;
   const payload = JSON.stringify({
-    rating:  result.rating,
-    total:   result.user_ratings_total,
+    rating: result.rating,
+    total: result.user_ratings_total,
     reviews: (result.reviews ?? []).filter(r => r.text?.trim()).slice(0, 5).map(r => ({
       author: r.author_name,
       rating: r.rating,
-      text:   r.text,
-      time:   r.relative_time_description,
+      text: r.text,
+      time: r.relative_time_description,
       avatar: r.profile_photo_url,
     })),
   });
 
   const response = new Response(payload, {
     headers: {
-      'Content-Type':  'application/json',
+      'Content-Type': 'application/json',
       'Cache-Control': 'public, max-age=14400, s-maxage=86400',
       ...CORS,
     },
@@ -102,18 +102,24 @@ async function handleReviews(
 
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
-    const { pathname } = new URL(request.url);
+    const {pathname} = new URL(request.url);
 
     if (request.method === 'OPTIONS') {
-      return new Response(null, { status: 204, headers: CORS });
+      return new Response(null, {status: 204, headers: CORS});
     }
 
     if (pathname === '/api/reviews') {
       return handleReviews(request, env, ctx);
     }
 
-    return env.ASSETS
-      ? env.ASSETS.fetch(request)
-      : new Response('Not found', { status: 404 });
+    if (!env.ASSETS) return new Response('Not found', {status: 404});
+
+    if (pathname.startsWith('/blog')) {
+      const url = new URL(request.url);
+      url.pathname = '/blog';
+      return env.ASSETS.fetch(new Request(url.toString(), request));
+    }
+
+    return env.ASSETS.fetch(request);
   },
 } satisfies ExportedHandler<Env>;

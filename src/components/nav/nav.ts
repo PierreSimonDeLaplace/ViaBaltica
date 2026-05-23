@@ -15,6 +15,14 @@ export function mount(): void {
   if (!toggle) throw new Error('Nav.mount: missing #menu-toggle in document');
   toggle.insertAdjacentHTML('afterend', html);
 
+  document.querySelectorAll<HTMLAnchorElement>('.nav-links a, .mobile-links a').forEach(a => {
+    const href = a.getAttribute('href') ?? '';
+    const active = href === '/'
+      ? window.location.pathname === '/'
+      : window.location.pathname.startsWith(href);
+    a.classList.toggle('active', active);
+  });
+
   document.querySelector('.mobile-drawer')?.addEventListener('click', (e) => {
     if ((e.target as HTMLElement).closest('.theme-btn')) return;
     toggle.checked = false;
