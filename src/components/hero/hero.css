@@ -18,25 +18,35 @@
   overflow: hidden;
 }
 
-/* ── Background image + tint overlay ─────────────────────────────────────── */
+/* ── Slider ───────────────────────────────────────────────────────────────── */
 
-.hero-bg {
+.hero-slider {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background-image: url('https://images.unsplash.com/photo-1671921002984-4aaf9db971e2?w=1920&q=85');
-  background-size: cover;
-  background-position: center 50%;
+  overflow: hidden;
 }
 
-:root[data-theme="light"] .hero-bg {
-  background-image: url('https://images8.alphacoders.com/742/thumb-1920-742355.jpg');
-  background-position: center 60%;
+.hero-slides {
+  display: flex;
+  height: 100%;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.hero-bg::after {
+
+.hero-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 50%;
+  user-select: none;
+}
+
+.hero-slider::after {
   content: '';
   position: absolute;
   inset: 0;
+  pointer-events: none;
   background:
     linear-gradient(
       to bottom,
@@ -46,7 +56,8 @@
     ),
     linear-gradient(135deg, var(--hero-tint-warm) 0%, transparent 60%);
 }
-:root[data-theme="light"] .hero-bg::after {
+
+:root[data-theme="light"] .hero-slider::after {
   background:
     linear-gradient(
       to bottom,
@@ -54,6 +65,46 @@
       var(--hero-tint-mid) 40%,
       var(--hero-tint-bot) 100%
     );
+}
+
+/* ── Dots ─────────────────────────────────────────────────────────────────── */
+
+.hero-dots {
+  position: absolute;
+  bottom: 5.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  display: flex;
+  gap: 0.25rem;
+}
+
+/* 44×44 tap target; visual dot rendered via ::before */
+.hero-dot {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-dot::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.hero-dot:hover::before  { background: rgba(255, 255, 255, 0.75); }
+.hero-dot--active::before {
+  background: var(--white);
+  transform: scale(1.35);
 }
 
 /* ── Copy stack ──────────────────────────────────────────────────────────── */
