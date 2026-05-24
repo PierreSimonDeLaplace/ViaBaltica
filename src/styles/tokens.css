@@ -98,6 +98,10 @@
   --g-red:   #EA4335;
   --g-green: #34A853;
 
+  /* eyebrow labels — warm sandy cream on dark surfaces */
+  --eyebrow:      rgba(196, 176, 140, 0.85);
+  --eyebrow-line: rgba(196, 176, 140, 0.42);
+
   /* polaroid card — cream paper, fixed regardless of site theme */
   --font-hand:  'Caveat', cursive;
   --paper:      #f5efe2;
@@ -149,6 +153,9 @@
   --hero-tint-bot:    rgba(8, 17, 30, 0.65);
   --hero-stat-bg:     rgba(245, 247, 250, 0.88);
   --hero-stat-label:  rgba(30, 45, 65, 0.60);
+
+  --eyebrow:      rgba(82, 64, 40, 0.70);
+  --eyebrow-line: rgba(82, 64, 40, 0.32);
 
   color-scheme: light;
 }

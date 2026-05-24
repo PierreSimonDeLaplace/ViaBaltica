@@ -83,19 +83,6 @@
   }
 }
 
-/* ── Eyebrow ─────────────────────────────────────────────────────────────── */
-
-.about-eyebrow {
-  display: block;
-  margin-bottom: 0.75rem;
-  font-family: var(--font-sans), sans-serif;
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
 /* ── Heading ─────────────────────────────────────────────────────────────── */
 
 .about-intro h2 {

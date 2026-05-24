@@ -119,28 +119,8 @@
   max-width: 760px;
 }
 
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.35rem 1rem;
-  border: 1px solid var(--gold-border);
-  border-radius: 100px;
-  background: var(--gold-dim);
-  backdrop-filter: blur(6px);
-  color: var(--gold);
-  font-size: 0.72rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-.hero-badge::before {
-  content: '';
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--gold);
-  flex-shrink: 0;
-}
+/* Hero eyebrow uses the global .eyebrow component from badge.css.
+   No local overrides needed — the warm cream tokens read on the dark photo. */
 
 .page-hero h1 {
   font-family: var(--font-serif), serif;

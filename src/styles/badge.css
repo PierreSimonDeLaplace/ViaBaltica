@@ -1,20 +1,28 @@
 /* ─────────────────────────────────────────────────────────────────────────────
-   Pill-shaped section labels. Used as a section "kicker" above headings.
+   Eyebrow — typographic section kicker above headings.
+   A short uppercase label flanked by hairline strokes.
+   Container controls alignment (inline-flex follows parent text-align).
    ───────────────────────────────────────────────────────────────────────── */
 
-.badge,
-.about-label {
-  display: inline-block;
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 0.875rem;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--blue-light);
-  border: 1px solid var(--border-hover);
-  background: var(--blue-dim);
-  padding: 0.35rem 0.9rem;
-  border-radius: 100px;
+  color: var(--eyebrow);
 }
 
-.about-label {
-  margin-bottom: 0.25rem;
+.eyebrow::before,
+.eyebrow::after {
+  content: '';
+  display: block;
+  width: 18px;
+  height: 1px;
+  background: var(--eyebrow-line);
+  flex-shrink: 0;
 }

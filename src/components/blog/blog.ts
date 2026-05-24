@@ -62,7 +62,7 @@ function renderList(container: HTMLElement, dict: Locale, lang: SupportedLang): 
   container.innerHTML = `
     <section class="blog-listing">
       <div class="blog-listing-header">
-        <span class="badge">${getString(dict, 'blog.badge', 'Blog')}</span>
+        <span class="eyebrow">${getString(dict, 'blog.badge', 'Blog')}</span>
         <h1>${getString(dict, 'blog.heading', "From Mark's Notebook")}</h1>
       </div>
       <div class="blog-grid">

@@ -12,7 +12,7 @@
   "nav.blog":      "Blog",
   "nav.cta":       "Book a Tour",
 
-  "hero.badge":     "Tour Guide · Via Baltica · Gdańsk",
+  "hero.badge":     "Private tours · Gdańsk & Pomerania",
   "hero.heading":   "Discover Gdańsk<br>like a <em>local</em>",
   "hero.body":      "Private guided tours through one of Europe's most beautiful Baltic cities — where history, amber and the sea come together.",
   "hero.cta":       "Explore Tours",
@@ -70,7 +70,7 @@
   "faq.q6": "Do you offer custom routes?",
   "faq.a6": "Always. About a third of my bookings are custom — themed around food, photography, Solidarity-era history, or family roots. Tell me what you're interested in when you write.",
 
-  "reviews.badge":    "What clients say",
+  "reviews.badge":    "What travellers say",
   "reviews.heading":  "Trusted by travellers",
   "reviews.count":        "(18 reviews)",
   "reviews.count_format": "({n} reviews)",
@@ -82,7 +82,7 @@
   "reviews.r3.text":  "One of the best guided experiences I've had in Europe. The route along Via Baltica was perfectly curated, and Mark's storytelling made every stop memorable.",
   "reviews.r3.date":  "December 2024",
 
-  "contact.badge":       "Get in Touch",
+  "contact.badge":       "Book your tour",
   "contact.heading":     "Book your<br>Gdańsk <em>adventure</em>",
   "contact.body":        "Ready to explore Gdańsk? Reach out directly — Mark responds within 24 hours to discuss your perfect tour.",
   "contact.phone.label": "Phone",

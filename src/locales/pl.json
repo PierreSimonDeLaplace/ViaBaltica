@@ -12,7 +12,7 @@
   "nav.blog":      "Blog",
   "nav.cta":       "Zarezerwuj wycieczkę",
 
-  "hero.badge":     "Przewodnik · Via Baltica · Gdańsk",
+  "hero.badge":     "Prywatne wycieczki · Gdańsk i Pomorze",
   "hero.heading":   "Odkryj Gdańsk<br>oczami <em>lokalsa</em>",
   "hero.body":      "Prywatne wycieczki z przewodnikiem po jednym z najpiękniejszych miast bałtyckich Europy — gdzie historia, bursztyn i morze tworzą niepowtarzalną całość.",
   "hero.cta":       "Odkryj wycieczki",
@@ -70,7 +70,7 @@
   "faq.q6": "Czy oferuje Pan trasy na zamówienie?",
   "faq.a6": "Zawsze. Mniej więcej jedna trzecia moich rezerwacji to wycieczki szyte na miarę — tematyczne wokół kuchni, fotografii, historii Solidarności czy poszukiwań rodzinnych korzeni. Napisz, co cię interesuje.",
 
-  "reviews.badge":    "Co mówią klienci",
+  "reviews.badge":    "Co mówią podróżnicy",
   "reviews.heading":  "Zaufali nam podróżnicy",
   "reviews.count":        "(18 opinii)",
   "reviews.count_format": "({n} opinii)",
@@ -82,7 +82,7 @@
   "reviews.r3.text":  "Jedna z najlepszych wycieczek z przewodnikiem, jaką miałam w Europie. Trasa Via Baltica była perfekcyjnie zaplanowana, a opowieści Marka sprawiły, że każdy przystanek był niezapomniany.",
   "reviews.r3.date":  "Grudzień 2024",
 
-  "contact.badge":       "Kontakt",
+  "contact.badge":       "Zarezerwuj wycieczkę",
   "contact.heading":     "Zarezerwuj swoją<br>gdańską <em>przygodę</em>",
   "contact.body":        "Gotowy na odkrycie Gdańska? Skontaktuj się bezpośrednio — Marek odpowiada w ciągu 24 godzin i chętnie omówi idealną wycieczkę.",
   "contact.phone.label": "Telefon",
