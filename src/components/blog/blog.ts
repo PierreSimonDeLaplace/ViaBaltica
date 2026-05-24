@@ -3,6 +3,7 @@ import {onLanguageChange} from '../../scripts/i18n';
 import {marked} from 'marked';
 import PhotoSwipeLightbox from 'photoswipe/lightbox';
 import 'photoswipe/style.css';
+import '../../styles/polaroid.css';
 import './blog.css';
 
 let pswpLightbox: PhotoSwipeLightbox | null = null;
@@ -102,19 +103,19 @@ function renderPost(container: HTMLElement, post: Post, dict: Locale, lang: Supp
   const [mW, mH] = polaroidDims(ratio, ratio >= 1 ? 290 : 240);
 
   const captionHtml = (post.caption || post.location)
-    ? `<div class="blog-polaroid-caption" aria-hidden="true">
-        ${post.caption ? `<span class="blog-polaroid-caption-text">${escapeHtml(post.caption)}</span>` : ''}
-        ${post.location ? `<span class="blog-polaroid-location">${escapeHtml(post.location)}</span>` : ''}
+    ? `<div class="polaroid-caption" aria-hidden="true">
+        ${post.caption ? `<span class="polaroid-caption-text">${escapeHtml(post.caption)}</span>` : ''}
+        ${post.location ? `<span class="polaroid-location">${escapeHtml(post.location)}</span>` : ''}
       </div>`
     : '';
 
   const headerHtml = post.image
     ? `<div class="blog-post-banner">
-        <div class="blog-polaroid-wrap">
-          <div class="blog-polaroid">
-            <div class="blog-polaroid-tape" aria-hidden="true"></div>
-            <div class="blog-polaroid-photo"
-                 style="--photo-w:${dW}px;--photo-h:${dH}px;--photo-w-m:${mW}px;--photo-h-m:${mH}px">
+        <div class="polaroid-wrap">
+          <div class="polaroid"
+               style="--photo-w:${dW}px;--photo-h:${dH}px;--photo-w-m:${mW}px;--photo-h-m:${mH}px">
+            <div class="polaroid-tape" aria-hidden="true"></div>
+            <div class="polaroid-photo">
               <img src="${escapeHtml(post.image)}" alt="${escapeHtml(t.title)}"
                    loading="eager" fetchpriority="high">
             </div>

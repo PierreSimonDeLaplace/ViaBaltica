@@ -1,0 +1,101 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   Polaroid card — shared component used by blog banners and the About section.
+   Import this file in any component that renders a .polaroid element.
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* Extra room above/below the tilted card so the shadow never clips */
+.polaroid-wrap {
+  padding: 20px 10px 10px;
+  flex-shrink: 0;
+}
+
+.polaroid {
+  position: relative;
+  width: fit-content;
+  background: var(--paper);
+  background-image:
+    radial-gradient(120% 100% at 50% 0%,  rgba(255, 255, 255, 0.6), transparent 60%),
+    radial-gradient(80%  100% at 50% 100%, rgba(0, 0, 0, 0.04),     transparent 60%);
+  padding: 14px 14px 56px;
+  border-radius: 2px;
+  box-shadow:
+    inset 0 1px 0 var(--paper-edge),
+    0 22px 38px rgba(0, 0, 0, 0.45),
+    0 6px  14px rgba(0, 0, 0, 0.35);
+  transform: rotate(-2.5deg);
+}
+
+.polaroid-tape {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  width: 96px;
+  height: 22px;
+  background: var(--tape);
+  border-top: 1px solid var(--tape-edge);
+  border-bottom: 1px solid var(--tape-edge);
+  mix-blend-mode: multiply;
+}
+
+.polaroid-photo {
+  width: var(--photo-w, 280px);
+  height: var(--photo-h, 210px);
+  overflow: hidden;
+  background: #000;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.4);
+}
+
+.polaroid-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.polaroid-caption {
+  width: var(--photo-w, 280px);
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+  padding: 0 8px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 760px) {
+  .polaroid-caption {
+    width: var(--photo-w-m, 200px);
+  }
+}
+
+.polaroid-caption-text {
+  font-family: var(--font-hand), cursive;
+  font-weight: 600;
+  font-size: 1.375rem;  /* 22px */
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.polaroid-location {
+  font-family: var(--font-sans), sans-serif;
+  font-weight: 500;
+  font-size: 0.6875rem; /* 11px */
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: rgba(58, 46, 31, 0.55);
+}
+
+/* ── Responsive photo sizing ─────────────────────────────────────────────── */
+
+@media (max-width: 760px) {
+  .polaroid { transform: rotate(-1.5deg); }
+  .polaroid-wrap { padding-top: 12px; }
+
+  .polaroid-photo {
+    width: var(--photo-w-m, 200px);
+    height: var(--photo-h-m, 150px);
+  }
+}
