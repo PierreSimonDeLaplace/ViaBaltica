@@ -1,14 +1,124 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   FOOTER — four-column sitemap + bottom strip.
+   ───────────────────────────────────────────────────────────────────────── */
+
 .site-footer {
+  background: var(--surface-2);
+  border-top: 1px solid var(--border);
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 72px clamp(1.5rem, 5vw, 3.5rem) 32px;
+}
+
+/* ── Four-column grid ────────────────────────────────────────────────────── */
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+@media (max-width: 860px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Column 1: Brand ─────────────────────────────────────────────────────── */
+
+.footer-logo {
+  display: inline-block;
+  font-family: var(--font-serif), serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  text-decoration: none;
+  margin-bottom: 1.125rem;
+  transition: color 0.2s;
+}
+
+.footer-logo:hover {
+  color: var(--accent-light);
+}
+
+.footer-logo span {
+  color: var(--accent);
+}
+
+.footer-tagline {
+  font-family: var(--font-serif), serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--muted);
+  max-width: 340px;
+  margin: 0;
+}
+
+/* ── Columns 2–4: Link lists ─────────────────────────────────────────────── */
+
+.footer-col-title {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a,
+.footer-links span,
+.footer-contact-link {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover,
+.footer-contact-link:hover {
+  color: var(--text);
+}
+
+/* ── Bottom strip ────────────────────────────────────────────────────────── */
+
+.footer-bottom {
+  display: flex;
   align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 0.5rem;
-  padding: 1.1rem clamp(1.5rem, 5vw, 3.5rem);
-  background: var(--surface);
+  margin-top: 56px;
+  padding-top: 24px;
   border-top: 1px solid var(--border);
-  font-size: 0.78rem;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 12px;
   color: var(--muted);
 }
 
-.footer-made { font-style: italic; }
+.footer-signature {
+  font-family: var(--font-serif), serif;
+  font-style: italic;
+  color: var(--eyebrow);
+}

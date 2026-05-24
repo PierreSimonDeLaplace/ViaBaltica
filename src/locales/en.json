@@ -93,6 +93,25 @@
   "contact.lang.value":  "English & Polish",
   "contact.note":        "Private tours · Custom routes · Groups welcome",
 
-  "footer.copyright":    "© 2025 Via Baltica · Mark Jeziak. All rights reserved.",
-  "footer.made":         "Handcrafted in Gdańsk"
+  "footer.tagline":         "Eighteen years finding the streets, stories and hidden courtyards that most visitors never see.",
+
+  "footer.col.tours":       "Tours",
+  "footer.col.explore":     "Explore",
+  "footer.col.reach":       "Get in touch",
+
+  "footer.tours.all":       "Browse all tours",
+  "footer.tours.gdansk":    "Gdańsk City Tours",
+  "footer.tours.coast":     "Baltic Coast & Seaside",
+  "footer.tours.nature":    "Nature & Day Trips",
+  "footer.tours.book":      "Book a tour",
+
+  "footer.explore.about":   "Meet Mark",
+  "footer.explore.reviews": "Traveller reviews",
+  "footer.explore.faq":     "Common questions",
+  "footer.explore.blog":    "From Mark's Notebook",
+
+  "footer.reach.location":  "Gdańsk, Poland",
+
+  "footer.copyright":       "© {year} Via Baltica · Mark Jeziak. All rights reserved.",
+  "footer.signature":       "Handcrafted in Gdańsk"
 }

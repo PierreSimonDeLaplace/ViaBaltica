@@ -93,6 +93,25 @@
   "contact.lang.value":  "Angielski i Polski",
   "contact.note":        "Wycieczki prywatne · Trasy na zamówienie · Grupy mile widziane",
 
-  "footer.copyright":    "© 2025 Via Baltica · Marek Jeziak. Wszelkie prawa zastrzeżone.",
-  "footer.made":         "Stworzone z pasją w Gdańsku"
+  "footer.tagline":         "Osiemnaście lat odkrywania ulic, historii i ukrytych podwórek, których większość turystów nigdy nie widzi.",
+
+  "footer.col.tours":       "Wycieczki",
+  "footer.col.explore":     "Odkryj",
+  "footer.col.reach":       "Kontakt",
+
+  "footer.tours.all":       "Wszystkie wycieczki",
+  "footer.tours.gdansk":    "Wycieczki po Gdańsku",
+  "footer.tours.coast":     "Wybrzeże Bałtyku",
+  "footer.tours.nature":    "Natura i całodniowe wyprawy",
+  "footer.tours.book":      "Zarezerwuj wycieczkę",
+
+  "footer.explore.about":   "Poznaj Marka",
+  "footer.explore.reviews": "Opinie podróżników",
+  "footer.explore.faq":     "Najczęstsze pytania",
+  "footer.explore.blog":    "Z notatnika Marka",
+
+  "footer.reach.location":  "Gdańsk, Polska",
+
+  "footer.copyright":       "© {year} Via Baltica · Marek Jeziak. Wszelkie prawa zastrzeżone.",
+  "footer.signature":       "Stworzone z pasją w Gdańsku"
 }
