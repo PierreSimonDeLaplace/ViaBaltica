@@ -1,76 +1,142 @@
 {
   "photo": "https://picsum.photos/seed/baltic-sea/120/120",
   "en": {
-    "title": "Baltic Coast & Seaside",
-    "subtitle": "3 tours · Sea & Relaxation",
+    "title": "Coast & sea",
+    "subtitle": "Sopot, Hel and the Baltic dunes",
     "trips": [
       {
         "id": "sopot-baltic-pier",
-        "thumb":  "https://picsum.photos/seed/sopot-baltic-pier/400/400",
-        "banner": "https://picsum.photos/seed/sopot-baltic-pier/800/320",
+        "slug": "sopot-baltic-pier",
+        "thumb":  "https://picsum.photos/seed/sopot-baltic-pier/400/250",
+        "banner": "https://picsum.photos/seed/sopot-baltic-pier/800/500",
         "title": "Sopot & Baltic Pier",
         "meta": "4 h · Sopot",
+        "duration": "4 h",
+        "location": "Sopot",
         "tags": ["Coast", "Leisure"],
         "body": "Walk Europe's longest wooden pier, breathe in Baltic sea air, and explore the elegant spa town that once charmed kaisers and artists alike.",
-        "price": "from €50",
-        "badge": "hot"
+        "longDescription": "Walk Europe's longest wooden pier in Sopot, browse the boutiques of Monte Cassino Street, and pause at the famously bent Krzywy Domek. We'll end with lunch at a beachfront restaurant I'd take my own family to. Bring swimwear from May to September — the Baltic is bracing but worth it.",
+        "highlights": [
+          "Molo Sopot — the wooden pier (512 m over the Baltic)",
+          "Monte Cassino Street and the Crooked House",
+          "Lunch at a local beachfront (included)",
+          "Sopot's Art Nouveau villas and spa history"
+        ],
+        "price": 50,
+        "group": "1–8 people",
+        "badge": "Seasonal"
       },
       {
         "id": "gdynia-port-modernism",
-        "thumb":  "https://picsum.photos/seed/gdynia-port-modernism/400/400",
-        "banner": "https://picsum.photos/seed/gdynia-port-modernism/800/320",
+        "slug": "gdynia-port-modernism",
+        "thumb":  "https://picsum.photos/seed/gdynia-port-modernism/400/250",
+        "banner": "https://picsum.photos/seed/gdynia-port-modernism/800/500",
         "title": "Gdynia Port & Modernism",
         "meta": "4 h · Gdynia",
+        "duration": "4 h",
+        "location": "Gdynia",
         "tags": ["Architecture", "Sea"],
         "body": "Explore Poland's inter-war modernist gem: the port city of Gdynia, built almost from scratch in the 1920s, with its Art Deco architecture and museum ships.",
-        "price": "from €50"
+        "longDescription": "Poland's inter-war modernist gem: the port city of Gdynia was built almost from scratch in the 1920s, and its grid of Art Deco buildings is unlike anywhere else in the country. We'll walk the sea boulevard, board the museum destroyer Błyskawica, and explore a city that invented itself in a decade.",
+        "highlights": [
+          "Gdynia Sea Boulevard and the port promenade",
+          "Art Deco architecture of the city centre",
+          "Museum destroyer ORP Błyskawica (entry included)",
+          "The story of Poland's race to build a port"
+        ],
+        "price": 50,
+        "group": "1–8 people"
       },
       {
         "id": "vistula-delta-birdwatching",
-        "thumb":  "https://picsum.photos/seed/vistula-delta-birdwatching/400/400",
-        "banner": "https://picsum.photos/seed/vistula-delta-birdwatching/800/320",
+        "slug": "vistula-delta-birdwatching",
+        "thumb":  "https://picsum.photos/seed/vistula-delta-birdwatching/400/250",
+        "banner": "https://picsum.photos/seed/vistula-delta-birdwatching/800/500",
         "title": "Vistula Delta Birdwatching",
         "meta": "5 h · Żuławy",
+        "duration": "5 h",
+        "location": "Żuławy",
         "tags": ["Nature", "Birds"],
         "body": "The Żuławy wetlands at the Vistula delta are a migratory paradise. Spot white-tailed eagles, rare waders, and vast reed beds stretching to the horizon.",
-        "price": "from €60"
+        "longDescription": "The Żuławy wetlands at the mouth of the Vistula are one of the best birdwatching sites in central Europe. We'll spend the morning in the delta's reed beds and oxbow lakes, looking for white-tailed eagles, marsh harriers, and the rare aquatic warbler that breeds here and almost nowhere else.",
+        "highlights": [
+          "Vistula delta reed beds and oxbow lakes",
+          "White-tailed eagles and marsh harriers",
+          "Rare aquatic warbler breeding grounds",
+          "Traditional Żuławy Dutch windmills"
+        ],
+        "price": 60,
+        "group": "1–6 people"
       }
     ]
   },
   "pl": {
-    "title": "Wybrzeże Bałtyku",
-    "subtitle": "3 wycieczki · Morze i Relaks",
+    "title": "Wybrzeże i morze",
+    "subtitle": "Sopot, Hel i bałtyckie wydmy",
     "trips": [
       {
         "id": "sopot-baltic-pier",
-        "thumb":  "https://picsum.photos/seed/sopot-baltic-pier/400/400",
-        "banner": "https://picsum.photos/seed/sopot-baltic-pier/800/320",
+        "slug": "sopot-baltic-pier",
+        "thumb":  "https://picsum.photos/seed/sopot-baltic-pier/400/250",
+        "banner": "https://picsum.photos/seed/sopot-baltic-pier/800/500",
         "title": "Sopot i Molo Bałtyckie",
         "meta": "4 h · Sopot",
+        "duration": "4 h",
+        "location": "Sopot",
         "tags": ["Wybrzeże", "Relaks"],
         "body": "Spaceruj po najdłuższym drewnianym molo w Europie, wdychaj bałtyckie powietrze i odkryj eleganckie uzdrowisko, które ongiś zachwycało cesarzy i artystów.",
-        "price": "od €50",
-        "badge": "hot"
+        "longDescription": "Przejdź najdłuższe drewniane molo w Europie w Sopocie, przejdź się ulicą Monte Cassino i zatrzymaj się przy słynnym Krzywym Domku. Zakończymy lunchem w restauracji nad brzegiem morza, do której zabrałbym własną rodzinę. Od maja do września warto zabrać strój kąpielowy — Bałtyk jest orzeźwiający.",
+        "highlights": [
+          "Molo Sopot — drewniane molo (512 m nad Bałtykiem)",
+          "Ulica Monte Cassino i Krzywy Domek",
+          "Lunch przy plaży (wliczony)",
+          "Secesyjne wille Sopotu i historia uzdrowiska"
+        ],
+        "price": 50,
+        "group": "1–8 osób",
+        "badge": "Sezonowa"
       },
       {
         "id": "gdynia-port-modernism",
-        "thumb":  "https://picsum.photos/seed/gdynia-port-modernism/400/400",
-        "banner": "https://picsum.photos/seed/gdynia-port-modernism/800/320",
+        "slug": "gdynia-port-modernism",
+        "thumb":  "https://picsum.photos/seed/gdynia-port-modernism/400/250",
+        "banner": "https://picsum.photos/seed/gdynia-port-modernism/800/500",
         "title": "Port Gdynia i Modernizm",
         "meta": "4 h · Gdynia",
+        "duration": "4 h",
+        "location": "Gdynia",
         "tags": ["Architektura", "Morze"],
         "body": "Odkryj polską perłę modernizmu z okresu międzywojennego: Gdynię zbudowaną niemal od zera w latach 20., z architekturą Art Deco i okrętami-muzeami.",
-        "price": "od €50"
+        "longDescription": "Polska perła modernizmu z okresu międzywojennego: Gdynia została zbudowana niemal od zera w latach 20., a jej siatka budynków w stylu Art Deco jest unikalna w skali kraju. Przejdziemy promenadą nadmorską, wejdziemy na pokład niszczyciela-muzeum Błyskawicy i odkryjemy miasto, które stworzyło się w ciągu dekady.",
+        "highlights": [
+          "Bulwar Nadmorski i promenada portowa w Gdyni",
+          "Architektura Art Deco centrum miasta",
+          "ORP Błyskawica — niszczyciel-muzeum (wstęp wliczony)",
+          "Historia polskiego wyścigu o zbudowanie portu"
+        ],
+        "price": 50,
+        "group": "1–8 osób"
       },
       {
         "id": "vistula-delta-birdwatching",
-        "thumb":  "https://picsum.photos/seed/vistula-delta-birdwatching/400/400",
-        "banner": "https://picsum.photos/seed/vistula-delta-birdwatching/800/320",
+        "slug": "vistula-delta-birdwatching",
+        "thumb":  "https://picsum.photos/seed/vistula-delta-birdwatching/400/250",
+        "banner": "https://picsum.photos/seed/vistula-delta-birdwatching/800/500",
         "title": "Ptaki Delty Wisły",
         "meta": "5 h · Żuławy",
+        "duration": "5 h",
+        "location": "Żuławy",
         "tags": ["Natura", "Ptaki"],
         "body": "Żuławy Wiślane w delcie Wisły to raj dla ptaków migrujących. Obserwuj bieliki, rzadkie brodźce i rozległe trzciny sięgające horyzontu.",
-        "price": "od €60"
+        "longDescription": "Żuławy Wiślane u ujścia Wisły to jedno z najlepszych miejsc obserwacji ptaków w środkowej Europie. Spędzimy poranek w deltowych szuwarach i starorzeczach, szukając bielika bielego, błotniaka stawowego i rzadkiej rokitniczki, która gniazduje tu i prawie nigdzie indziej.",
+        "highlights": [
+          "Deltowe szuwary i starorzecza Wisły",
+          "Bieliki i błotniaki stawowe",
+          "Stanowiska lęgowe rokitniczki",
+          "Tradycyjne żuławskie wiatraki holenderskie"
+        ],
+        "price": 60,
+        "group": "1–6 osób"
       }
     ]
   }

@@ -112,12 +112,12 @@ export function mount(target: HTMLElement): void {
     requestAnimationFrame(() => { slidesEl.style.transition = ''; });
   }
 
-  // Touch swipe
+  // Touch swipe — listeners on section so they fire over the copy overlay too
   let touchStartX = 0;
-  slidesEl.addEventListener('touchstart', e => {
+  section.addEventListener('touchstart', e => {
     touchStartX = e.touches[0].clientX;
   }, { passive: true });
-  slidesEl.addEventListener('touchend', e => {
+  section.addEventListener('touchend', e => {
     const diff = touchStartX - e.changedTouches[0].clientX;
     if (Math.abs(diff) < SWIPE_THRESHOLD) return;
     stopAutoplay();

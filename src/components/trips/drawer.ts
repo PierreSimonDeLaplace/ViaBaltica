@@ -1,13 +1,20 @@
 import './drawer.css';
 import type { TripEntry } from '../../types/trips';
-import { I18N_DEBUG, d } from '../../scripts/i18n';
-import {
-  getGalleryImages,
-  initGalleryLightbox,
-  openGalleryAt,
-  destroyGallery,
-  type GalleryItem,
-} from './gallery';
+import { I18N_DEBUG } from '../../scripts/i18n';
+import { getGalleryImages, destroyGallery, initGalleryLightbox, openGalleryAt } from './gallery';
+
+/* ── Public types ─────────────────────────────────────────────────────────── */
+
+export interface DrawerStrings {
+  book:             string;
+  drawerLabel:      string;
+  drawerClose:      string;
+  fromGroup:        string;
+  highlights:       string;
+  cancellation:     string;
+  cancellationNote: string;
+  from:             string;
+}
 
 export function renderTags(tags: string[]): string {
   return I18N_DEBUG
@@ -15,178 +22,255 @@ export function renderTags(tags: string[]): string {
     : tags.map(t => `<span class="trip-tag">${t}</span>`).join('');
 }
 
+/* ── Module state ─────────────────────────────────────────────────────────── */
+
 let overlayEl: HTMLElement;
-let drawerEl:  HTMLElement;
-let currentTripId: string | null = null;
-let lastFocused:   Element | null = null;
+let drawerEl: HTMLElement;
+let currentSlug: string | null = null;
+let lastFocused: Element | null = null;
+let storedStrings: DrawerStrings = {
+  book:             'Book this tour',
+  drawerLabel:      'Tour detail',
+  drawerClose:      'Close',
+  fromGroup:        'From / group',
+  highlights:       "What we'll see",
+  cancellation:     'Free cancellation up to 48h.',
+  cancellationNote: 'No upfront payment — confirmation by email.',
+  from:             'from',
+};
+let resolveFn: ((slug: string) => TripEntry | undefined) | null = null;
+
+/* ── Init ─────────────────────────────────────────────────────────────────── */
 
 export function initDrawer(): void {
   overlayEl = document.createElement('div');
   overlayEl.className = 'trip-detail-overlay';
+  overlayEl.setAttribute('aria-hidden', 'true');
 
   drawerEl = document.createElement('aside');
-  drawerEl.className  = 'trip-detail-drawer';
-  drawerEl.setAttribute('role',       'dialog');
+  drawerEl.className = 'trip-detail-drawer';
+  drawerEl.setAttribute('role', 'dialog');
   drawerEl.setAttribute('aria-modal', 'true');
+  drawerEl.setAttribute('aria-labelledby', 'tour-drawer-title');
 
   document.body.append(overlayEl, drawerEl);
 
   overlayEl.addEventListener('click', closeDrawer);
 
-  drawerEl.addEventListener('click', (e) => {
-    if (window.innerWidth >= 560) return;
-    const target = e.target as HTMLElement;
-    if (
-      target.closest('.drawer-back')        ||
-      target.closest('.drawer-cta-mobile')  ||
-      target.closest('.drawer-hero--collage')
-    ) return;
-    closeDrawer();
-  });
-
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && currentTripId) {
-      if (document.querySelector('.pswp--open')) return;
-      closeDrawer();
-    }
+    if (e.key === 'Escape' && currentSlug) closeDrawer();
   });
 
-  window.addEventListener('popstate', () => {
-    if (!new URLSearchParams(location.search).has('trip') && currentTripId) _close();
+  window.addEventListener('hashchange', () => {
+    const slug = hashSlug();
+    if (!slug && currentSlug) {
+      _close();
+    } else if (slug && slug !== currentSlug && resolveFn) {
+      const trip = resolveFn(slug);
+      if (trip) _open(trip);
+    }
   });
 }
 
-export function openDrawer(trip: TripEntry, bookLabel: string, backLabel: string): void {
+/* ── Public API ───────────────────────────────────────────────────────────── */
+
+export function openDrawer(trip: TripEntry, strings: DrawerStrings): void {
+  storedStrings = strings;
   lastFocused   = document.activeElement;
-  currentTripId = trip.id;
 
-  renderContent(trip, bookLabel, backLabel);
-
-  overlayEl.classList.add('open');
-  drawerEl.classList.add('open');
-  document.body.style.overflow = 'hidden';
-
-  if (!new URLSearchParams(location.search).has('trip')) {
-    history.pushState({ trip: trip.id }, '', `?trip=${encodeURIComponent(trip.id)}`);
-  }
+  const next = `#tour=${trip.slug}`;
+  if (location.hash !== next) history.pushState({ tour: trip.slug }, '', next);
+  _open(trip);
 }
 
 export function refreshIfOpen(
-  resolveTrip: (id: string) => TripEntry | undefined,
-  bookLabel: string,
-  backLabel: string,
+  resolveTrip: (slug: string) => TripEntry | undefined,
+  strings: DrawerStrings,
 ): void {
-  if (!currentTripId) return;
-  const trip = resolveTrip(currentTripId);
-  if (trip) renderContent(trip, bookLabel, backLabel);
+  resolveFn     = resolveTrip;
+  storedStrings = strings;
+  if (!currentSlug) return;
+  const trip = resolveTrip(currentSlug);
+  if (trip) renderContent(trip);
 }
 
 export function closeDrawer(): void {
-  if (!currentTripId) return;
-  _close();
-  if (new URLSearchParams(location.search).has('trip')) {
-    const params = new URLSearchParams(location.search);
-    params.delete('trip');
-    const qs = params.toString();
-    history.replaceState(null, '', location.pathname + (qs ? `?${qs}` : '') + location.hash);
+  if (!currentSlug) return;
+  if (location.hash.startsWith('#tour=')) {
+    history.pushState({}, '', location.pathname + location.search);
   }
+  _close();
+}
+
+/* ── Internals ────────────────────────────────────────────────────────────── */
+
+function hashSlug(): string | null {
+  const m = location.hash.match(/^#tour=([\w-]+)/);
+  return m ? m[1] : null;
+}
+
+function _open(trip: TripEntry): void {
+  currentSlug = trip.slug;
+  renderContent(trip);
+  overlayEl.classList.add('open');
+  drawerEl.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  requestAnimationFrame(() => {
+    drawerEl.querySelector<HTMLElement>('.drawer-close')?.focus();
+  });
 }
 
 function _close(): void {
-  currentTripId = null;
+  currentSlug = null;
   drawerEl.classList.remove('open');
   overlayEl.classList.remove('open');
   document.body.style.overflow = '';
   (lastFocused as HTMLElement | null)?.focus();
 }
 
-function buildSimpleHero(trip: TripEntry): string {
-  return `
-    <div class="drawer-hero">
-      ${trip.badge ? `<div class="trip-ribbon trip-ribbon--${trip.badge}">${trip.badge}</div>` : ''}
-      <img class="drawer-hero-img" src="${trip.banner}" alt="${trip.title}" loading="lazy" />
-    </div>`;
-}
+interface Photo { src: string; thumb: string; alt: string; }
 
-function buildCollageHero(trip: TripEntry, images: GalleryItem[]): string {
-  // lightbox indices: 0 = banner, 1 = images[0], 2 = images[1], ...
-  const totalCount = 1 + images.length;
-  const moreCount  = Math.max(0, totalCount - 3);
-
-  return `
-    <div class="drawer-hero drawer-hero--collage">
-      ${trip.badge ? `<div class="trip-ribbon trip-ribbon--${trip.badge}">${trip.badge}</div>` : ''}
-      <button type="button" class="drawer-hero-main" data-pswp-index="0" aria-label="View photos">
-        <img src="${trip.banner}" alt="${trip.title}" loading="lazy" />
-      </button>
-      <div class="drawer-hero-side">
-        <button type="button" class="drawer-hero-thumb" data-pswp-index="1" aria-label="View photo 1">
-          <img src="${images[0].thumb}" alt="" loading="lazy" />
-        </button>
-        ${images.length >= 2 ? `
-        <button type="button" class="drawer-hero-thumb" data-pswp-index="2" aria-label="${moreCount > 0 ? `View all ${totalCount} photos` : 'View photo 2'}">
-          <img src="${images[1].thumb}" alt="" loading="lazy" />
-          ${moreCount > 0 ? `<span class="drawer-hero-more">+${moreCount}</span>` : ''}
-        </button>` : ''}
-      </div>
-    </div>`;
-}
-
-function renderContent(trip: TripEntry, bookLabel: string, backLabel: string): void {
-  destroyGallery();
-
-  const galleryImages = trip.gallery ? getGalleryImages(trip.gallery) : [];
-  const hasGallery    = galleryImages.length > 0;
-
-  drawerEl.innerHTML = `
-    ${hasGallery ? buildCollageHero(trip, galleryImages) : buildSimpleHero(trip)}
-
-    <div class="drawer-content">
-      <div class="drawer-tags">${renderTags(trip.tags)}</div>
-      <h2 class="drawer-title">${d(trip.title, 'trip.title')}</h2>
-      <div class="drawer-meta">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="10"/>
-          <path d="M12 6v6l4 2"/>
-        </svg>
-        ${d(trip.meta, 'trip.meta')}
-      </div>
-      <p class="drawer-body">${d(trip.body, 'trip.body')}</p>
-    </div>
-
-    <div class="drawer-cta-area">
-      <div class="drawer-cta-row">
-        ${trip.price ? `
-          <div class="drawer-price">
-            <span class="drawer-price-from">${trip.price.split(/\s(.+)/)[0]}</span>
-            <span class="drawer-price-amount">${trip.price.split(/\s(.+)/)[1]}</span>
-          </div>` : ''}
-        <a href="#contact" class="btn-primary drawer-cta">${bookLabel}</a>
-      </div>
-    </div>
-
-    <div class="drawer-bottombar">
-      <button class="drawer-back" aria-label="${backLabel}">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <path d="M19 12H5M12 5l-7 7 7 7"/>
-        </svg>
-        <span>${backLabel}</span>
-      </button>
-      <a href="#contact" class="btn-primary drawer-cta-mobile">${bookLabel}</a>
-    </div>`;
-
-  drawerEl.querySelector('.drawer-back')?.addEventListener('click', closeDrawer);
-  drawerEl.querySelector('.drawer-cta')?.addEventListener('click', _close);
-  drawerEl.querySelector('.drawer-cta-mobile')?.addEventListener('click', _close);
-
-  if (hasGallery) {
-    const srcs = [trip.banner, ...galleryImages.map(img => img.full)];
-    initGalleryLightbox(srcs);
-
-    drawerEl.querySelector('.drawer-hero--collage')?.addEventListener('click', (e) => {
-      const cell = (e.target as HTMLElement).closest<HTMLElement>('[data-pswp-index]');
-      if (!cell) return;
-      openGalleryAt(Number(cell.dataset.pswpIndex));
+function buildPhotoList(trip: TripEntry): Photo[] {
+  const photos: Photo[] = [{ src: trip.banner, thumb: trip.banner, alt: trip.title }];
+  if (trip.gallery) {
+    getGalleryImages(trip.gallery).forEach((img, i) => {
+      photos.push({ src: img.full, thumb: img.thumb, alt: `${trip.title} — photo ${i + 2}` });
     });
   }
+  return photos;
+}
+
+function renderContent(trip: TripEntry): void {
+  destroyGallery();
+  const s = storedStrings;
+  const photos = buildPhotoList(trip);
+  let activeIndex = 0;
+
+  drawerEl.innerHTML = buildHTML(trip, s, photos);
+
+  // Close
+  drawerEl.querySelector('.drawer-close')?.addEventListener('click', closeDrawer);
+
+  // Book CTAs — close drawer, scroll to contact
+  drawerEl.querySelectorAll('.drawer-book-cta').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeDrawer();
+      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Gallery — PhotoSwipe lightbox + thumbnail strip
+  if (photos.length > 0) {
+    initGalleryLightbox(photos.map(p => p.src));
+
+    const mainWrap = drawerEl.querySelector<HTMLElement>('.drawer-gallery-main-wrap');
+    const mainImg  = drawerEl.querySelector<HTMLImageElement>('.drawer-gallery-main');
+    const counter  = drawerEl.querySelector<HTMLElement>('.drawer-gallery-counter');
+
+    // Click main photo → open lightbox at current active photo
+    mainWrap?.addEventListener('click', () => openGalleryAt(activeIndex));
+
+    // Thumbnail clicks → swap main photo + keep lightbox index in sync
+    drawerEl.querySelectorAll<HTMLButtonElement>('.drawer-thumb-btn').forEach((btn, i) => {
+      btn.addEventListener('click', () => {
+        activeIndex = i;
+        if (mainImg) { mainImg.src = btn.dataset.src ?? ''; mainImg.alt = btn.dataset.alt ?? ''; }
+        if (counter) counter.textContent = `${i + 1} / ${photos.length}`;
+        drawerEl.querySelectorAll('.drawer-thumb-btn').forEach((b, j) => {
+          b.classList.toggle('drawer-thumb-btn--active', j === i);
+        });
+      });
+    });
+  }
+}
+
+function buildHTML(
+  trip: TripEntry,
+  s: DrawerStrings,
+  photos: Photo[],
+): string {
+  if (I18N_DEBUG) {
+    return `<div class="drawer-debug">
+      <p>trips.drawer_label</p><p>${trip.slug}</p>
+    </div>`;
+  }
+
+  const photo = photos[0];
+
+  const priceHTML = trip.price !== undefined ? `
+    <div class="drawer-price">
+      <div class="drawer-price-label">${s.fromGroup}</div>
+      <div class="drawer-price-amount">€${trip.price}</div>
+    </div>` : '';
+
+  const highlightsHTML = trip.highlights?.length ? `
+    <div class="drawer-highlights">
+      <h3 class="drawer-highlights-title">${s.highlights}</h3>
+      <ul class="drawer-highlights-list">
+        ${trip.highlights.map(h => `
+          <li>
+            <span class="drawer-check" aria-hidden="true">✓</span>
+            <span>${h}</span>
+          </li>`).join('')}
+      </ul>
+    </div>` : '';
+
+  const groupHTML = trip.group
+    ? `<span>${trip.group}</span>`
+    : '';
+
+  const longDesc = (trip.longDescription ?? trip.body).replace(/\n/g, '\n');
+
+  return `
+    <div class="drawer-handle" aria-hidden="true"><span></span></div>
+
+    <div class="drawer-topbar">
+      <span class="drawer-topbar-label">${s.drawerLabel}</span>
+      <button type="button" class="drawer-close" aria-label="${s.drawerClose}">×</button>
+    </div>
+
+    <div class="drawer-body">
+      <div class="drawer-gallery">
+        <div class="drawer-gallery-main-wrap${photos.length > 1 ? ' drawer-gallery-main-wrap--zoomable' : ''}">
+          <img class="drawer-gallery-main" src="${photo.src}" alt="${photo.alt}" />
+          <span class="drawer-gallery-counter">1 / ${photos.length}</span>
+        </div>
+        ${photos.length > 1 ? `
+        <div class="drawer-thumbnails">
+          ${photos.map((p, i) => `
+            <button type="button"
+              class="drawer-thumb-btn${i === 0 ? ' drawer-thumb-btn--active' : ''}"
+              data-src="${p.src}" data-alt="${p.alt}"
+              aria-label="Photo ${i + 1}">
+              <img src="${p.thumb}" alt="" loading="lazy" />
+            </button>`).join('')}
+        </div>` : ''}
+      </div>
+
+      <div class="drawer-content">
+        <div class="drawer-tags">${renderTags(trip.tags)}</div>
+        <h2 id="tour-drawer-title" class="drawer-title">${trip.title}</h2>
+        <div class="drawer-meta">
+          <span class="drawer-meta-clock">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>
+            </svg>
+            ${trip.duration}
+          </span>
+          <span>${trip.location}</span>
+          ${groupHTML}
+        </div>
+        <p class="drawer-description">${longDesc}</p>
+        ${highlightsHTML}
+        <div class="drawer-cancellation">
+          <strong>${s.cancellation}</strong> ${s.cancellationNote}
+        </div>
+      </div>
+    </div>
+
+    <div class="drawer-bookbar">
+      ${priceHTML}
+      <a href="#contact" class="drawer-book-cta btn-primary">${s.book} →</a>
+    </div>`;
 }

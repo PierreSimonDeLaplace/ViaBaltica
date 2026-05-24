@@ -102,6 +102,17 @@
   --eyebrow:      rgba(196, 176, 140, 0.85);
   --eyebrow-line: rgba(196, 176, 140, 0.42);
 
+  /* tour card price chip — on photo, adapts to theme */
+  --card-price-bg:     rgba(8, 17, 30, 0.85);
+  --card-price-border: rgba(255, 255, 255, 0.15);
+  --card-price-text:   #ffffff;
+  --card-price-from:   rgba(255, 255, 255, 0.60);
+
+  /* sticky bookbar — adapts to theme */
+  --bookbar-bg:    rgba(8, 17, 30, 0.95);
+  --bookbar-text:  #e8f0f8;
+  --bookbar-label: rgba(232, 240, 248, 0.50);
+
   /* polaroid card — cream paper, fixed regardless of site theme */
   --font-hand:  'Caveat', cursive;
   --paper:      #f5efe2;
@@ -157,12 +168,23 @@
   --eyebrow:      rgba(82, 64, 40, 0.70);
   --eyebrow-line: rgba(82, 64, 40, 0.32);
 
+  /* tour card price chip — light mode: frosted white */
+  --card-price-bg:     rgba(255, 255, 255, 0.92);
+  --card-price-border: rgba(12, 31, 53, 0.12);
+  --card-price-text:   #0c1f35;
+  --card-price-from:   rgba(12, 31, 53, 0.55);
+
+  /* sticky bookbar — light mode: frosted surface */
+  --bookbar-bg:    rgba(244, 248, 252, 0.97);
+  --bookbar-text:  #0c1f35;
+  --bookbar-label: rgba(12, 31, 53, 0.55);
+
   color-scheme: light;
 }
 
 /* Animate theme-sensitive surfaces when [data-theme] flips. */
-body, nav, .mobile-drawer, .review-card, .trip-card,
-.cat-header, .cat-drawer, .trips-list, .reviews-section,
+body, nav, .mobile-drawer, .review-card, .tour-card,
+.trips-section, .reviews-section,
 .dropdown, .btn-primary, .btn-outline {
   transition: background 0.35s ease, color 0.35s ease,
               border-color 0.35s ease, box-shadow 0.35s ease;

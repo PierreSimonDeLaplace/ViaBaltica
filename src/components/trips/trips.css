@@ -1,24 +1,31 @@
 /* ─────────────────────────────────────────────────────────────────────────────
-   TRIPS — accordion of categories; each open category reveals a swipe slider.
+   TRIPS — stacked category rows, each with a horizontally-swipeable rail.
+   Responsive via container queries: ≥ 721px desktop, ≤ 720px mobile.
    ───────────────────────────────────────────────────────────────────────── */
 
 .trips-section {
-  padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 3.5rem);
+  padding: clamp(56px, 8vw, 96px) 0;
   background: var(--bg);
   border-top: 1px solid var(--border);
+  container-type: inline-size;
 }
 
+/* ── Section header ──────────────────────────────────────────────────────── */
+
 .trips-header {
-  margin-bottom: 3rem;
+  max-width: 760px;
+  margin: 0 auto clamp(40px, 6vw, 64px);
+  padding-inline: clamp(18px, 4vw, 40px);
   text-align: center;
 }
-.trips-header .badge { margin-bottom: 1.2rem; }
+
 .trips-header h2 {
   font-family: var(--font-serif), serif;
   font-size: clamp(2rem, 5vw, 3.2rem);
   font-weight: 600;
   line-height: 1.15;
 }
+
 .trips-header p {
   margin: 0.75rem auto 0;
   max-width: 480px;
@@ -27,335 +34,318 @@
   line-height: 1.7;
 }
 
+/* ── Category rows ───────────────────────────────────────────────────────── */
+
 .trips-list {
-  max-width: 900px;
+  max-width: 1280px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: var(--shadow);
+  gap: clamp(32px, 5vw, 56px);
 }
 
-/* ── Category row (accordion item) ───────────────────────────────────────── */
+.cat-row { /* semantic <section>, no decoration of its own */ }
 
-.cat-row { border-bottom: 1px solid var(--border); }
-.cat-row:last-child { border-bottom: none; }
+/* ── Row header ──────────────────────────────────────────────────────────── */
 
-.cat-header {
+.cat-row-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  padding-inline: clamp(18px, 4vw, 40px);
+  margin-bottom: 14px;
+}
+
+.cat-row-title-wrap { flex: 1; min-width: 0; }
+
+.cat-row-title {
+  font-family: var(--font-serif), serif;
+  font-size: clamp(20px, 2.2vw, 26px);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--text);
+  margin: 0;
+}
+
+.cat-row-subtitle {
+  font-family: var(--font-serif), serif;
+  font-style: italic;
+  font-size: clamp(13px, 1.3vw, 15px);
+  color: var(--text-2);
+  margin: 4px 0 0;
+}
+
+.cat-row-controls {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 1.1rem 1.5rem;
-  background: var(--surface);
-  cursor: pointer;
-  user-select: none;
-  transition: background 0.2s;
-}
-.cat-header:hover,
-.cat-row.open > .cat-header { background: var(--surface-2); }
-
-.cat-photo {
+  gap: 14px;
   flex-shrink: 0;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 2px solid var(--blue-dim-2);
-  transition: border-color 0.2s;
 }
 
-.cat-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.cat-row.open > .cat-header .cat-photo {
-  border-color: var(--accent-mid);
-}
-.cat-info { flex: 1; min-width: 0; }
-.cat-title {
-  font-family: var(--font-serif), serif;
-  font-size: 1.15rem;
+.cat-row-count {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 12px;
   font-weight: 600;
-  line-height: 1.2;
-  color: var(--text);
-}
-.cat-subtitle {
-  margin-top: 0.15rem;
-  font-size: 0.78rem;
-  color: var(--muted);
-}
-
-.cat-count {
-  padding: 0.2rem 0.6rem;
-  border: 1px solid var(--border);
-  border-radius: 100px;
-  font-size: 0.75rem;
   color: var(--muted);
   white-space: nowrap;
-  transition: border-color 0.2s, color 0.2s;
 }
-.cat-row.open > .cat-header .cat-count {
-  color: var(--accent);
+
+.cat-row-arrows {
+  display: flex;
+  gap: 6px;
+}
+
+.cat-arrow {
+  width: 36px;
+  height: 36px;
+  border-radius: 99px;
+  background: var(--surface-2);
+  border: 1px solid var(--border-hover);
+  color: var(--text);
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.cat-arrow:hover {
+  background: var(--surface);
   border-color: var(--accent);
 }
 
-.cat-chevron {
-  flex-shrink: 0;
-  width: 18px;
-  height: 18px;
-  color: var(--muted);
-  transition: transform 0.3s, color 0.2s;
-}
-.cat-row.open > .cat-header .cat-chevron {
-  color: var(--accent);
-  transform: rotate(180deg);
-}
+/* ── Scroll rail ─────────────────────────────────────────────────────────── */
 
-.cat-drawer {
-  max-height: 0;
-  overflow: hidden;
-  background: var(--bg);
-  border-top: 0 solid var(--border);
-  transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.cat-row.open > .cat-drawer {
-  max-height: 520px;
-  border-top-width: 1px;
-}
-
-@media (max-width: 560px) {
-  .cat-row.open > .cat-drawer { max-height: 860px; }
-}
-
-/* ── Slider ──────────────────────────────────────────────────────────────── */
-
-.trip-slider-wrap     { padding: 1.5rem; }
-.trip-slider-viewport {
+/*
+  Padding-inline-start is NOT used on the rail because browsers (especially
+  Safari/WebKit) don't reliably render it when the rail becomes a scroll
+  container. Instead a flex spacer (.cat-row-lead) provides the left gutter,
+  and scroll-padding-inline-start keeps snap positions aligned with that gutter.
+*/
+.cat-row-rail {
+  display: flex;
+  gap: 14px;
   overflow-x: auto;
   overflow-y: hidden;
-  border-radius: 10px;
   scroll-snap-type: x mandatory;
+  scroll-padding-inline-start: clamp(18px, 4vw, 40px);
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
-  touch-action: pan-x pan-y;
+  padding-bottom: 4px;
+  cursor: grab;
+  user-select: none;
 }
-.trip-slider-viewport::-webkit-scrollbar { display: none; }
 
-.trip-slider-track { display: flex; }
+.cat-row-rail::-webkit-scrollbar { display: none; }
 
-.trip-card {
-  min-width: 100%;
+.cat-row-rail.is-dragging {
+  cursor: grabbing;
+}
+
+/* ── Card slot — 320 px fixed on desktop, 78 cqi on mobile ──────────────── */
+
+/*
+  Leading gutter spacer.
+  The flex gap (14px) is added BETWEEN this spacer and the first card, so the
+  spacer width must be (gutter − gap) so the card lands exactly at the gutter:
+    spacer(26px) + gap(14px) = 40px = header padding-inline-start  ✓
+*/
+.cat-row-lead {
+  flex: 0 0 calc(clamp(18px, 4vw, 40px) - 14px);
+  flex-shrink: 0;
+}
+
+.cat-row-slot {
+  flex: 0 0 320px;
   scroll-snap-align: start;
-  display: grid;
-  grid-template-columns: 200px 1fr;
+}
+
+.cat-row-trail {
+  flex: 0 0 24px;
+}
+
+/* ── Mobile layout via container query ──────────────────────────────────── */
+
+@container (max-width: 720px) {
+  .cat-row-slot   { flex: 0 0 78cqi; }
+  .cat-row-arrows { display: none; }
+  .cat-row-dots   { display: flex !important; }
+
+  .cat-row-subtitle { display: none; }
+}
+
+/* ── Dot indicator (hidden on desktop, shown on mobile by container query) ─ */
+
+.cat-row-dots {
+  display: none;
+  gap: 5px;
+  justify-content: center;
+  margin-top: 12px;
+  padding-inline: clamp(18px, 4vw, 40px);
+}
+
+.cat-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 99px;
+  background: var(--border-hover);
+  transition: width 0.2s, background 0.2s;
+  flex-shrink: 0;
+}
+
+.cat-dot--active {
+  width: 16px;
+  background: var(--accent);
+}
+
+/* ── Tour card ───────────────────────────────────────────────────────────── */
+
+.tour-card {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+  outline-offset: 2px;
 }
 
-.trip-card:hover {
-  border-color: var(--blue-mid);
-  box-shadow: 0 4px 20px var(--shadow-15);
-}
-@media (max-width: 560px) {
-  .trip-card { grid-template-columns: 1fr; }
+.tour-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-hover);
+  box-shadow: 0 8px 24px var(--shadow-25);
 }
 
-.trip-card-img {
+.tour-card:focus-visible {
+  outline: 2px solid var(--accent);
+}
+
+/* Image block */
+
+.tour-card-img-wrap {
   position: relative;
+  aspect-ratio: 16 / 10;
   overflow: hidden;
-  min-height: 200px;
   background: var(--surface-2);
-  border-right: 1px solid var(--border);
 }
 
-.trip-card-img img {
+.tour-card-img-wrap img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.4s ease;
 }
 
-@media (max-width: 560px) {
-  .trip-card-img {
-    min-height: 140px;
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
+.tour-card:hover .tour-card-img-wrap img {
+  transform: scale(1.04);
 }
 
-.trip-card-body {
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-  padding: 1.4rem 1.5rem;
-}
-.trip-card-title {
-  font-family: var(--font-serif), serif;
-  font-size: 1.35rem;
-  font-weight: 600;
-  line-height: 1.2;
-  color: var(--text);
-}
-.trip-card-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-}
-.trip-tag {
-  padding: 0.18rem 0.55rem;
-  border: 1px solid var(--accent-dim);
-  border-radius: 100px;
-  font-size: 0.68rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-.trip-card-desc {
-  flex: 1;
-  color: var(--text-2);
-  font-size: 0.87rem;
-  line-height: 1.75;
-}
-.trip-card-footer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.6rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid var(--border);
-}
-.trip-card-meta {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  font-size: 0.8rem;
-  color: var(--muted);
-}
-.trip-card-top {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 0.75rem;
-}
+/* Price chip — frosted overlay on photo; colours adapt to theme via tokens */
 
-.trip-price-circle {
-  flex-shrink: 0;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2px;
-  background: linear-gradient(145deg, var(--accent-light), var(--accent));
-  box-shadow: 0 3px 8px var(--shadow-35);
-}
-.trip-price-from {
-  font-size: 0.48rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--price-ink-dim);
-  line-height: 1;
-}
-.trip-price-amount {
-  font-family: var(--font-serif), serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--price-ink);
-  line-height: 1;
-  text-shadow: 0 1px 2px var(--shadow-25);
-}
-.trip-card-book {
-  font-size: 0.78rem;
-  padding: 0.4rem 0.9rem;
-}
-
-/* ── Ribbon ──────────────────────────────────────────────────────────────── */
-
-.trip-ribbon {
+.tour-card-price {
   position: absolute;
-  top: 20px;
-  right: -28px;
-  width: 115px;
-  padding: 5px 0;
-  text-align: center;
-  font-size: 0.67rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  top: 10px;
+  right: 10px;
+  background: var(--card-price-bg);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid var(--card-price-border);
+  border-radius: 99px;
+  padding: 5px 9px;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--card-price-text);
+  pointer-events: none;
+  transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+}
+
+.tour-card-price-from {
+  color: var(--card-price-from);
+  font-weight: 500;
+}
+
+/* Badge */
+
+.tour-card-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--accent);
+  color: var(--price-ink);
+  font-family: var(--font-sans), sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.10em;
   text-transform: uppercase;
-  color: var(--white);
-  transform: rotate(45deg);
-  z-index: 1;
+  padding: 4px 8px;
+  border-radius: 4px;
   pointer-events: none;
 }
-.trip-ribbon--bestseller { background: var(--accent); color: var(--price-ink); }
-.trip-ribbon--hot        { background: var(--ribbon-hot); }
-.trip-ribbon--promo      { background: var(--ribbon-promo); }
 
-/* ── Slider controls ─────────────────────────────────────────────────────── */
+/* Body block */
 
-.trip-slider-controls {
+.tour-card-body {
+  padding: 14px 16px 16px;
+  flex: 1;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 1rem;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.trip-slider-dots {
+.tour-card-tags {
   display: flex;
-  align-items: center;
-  gap: 5px;
-}
-.trip-slider-dot {
-  width: 6px;
-  height: 6px;
-  padding: 0;
-  border: none;
-  border-radius: 50%;
-  background: var(--border);
-  cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
-}
-.trip-slider-dot.active {
-  background: var(--accent);
-  transform: scale(1.4);
+  flex-wrap: wrap;
+  gap: 4px;
 }
 
-.trip-slider-arrows {
-  display: flex;
-  gap: 0.4rem;
+.trip-tag {
+  padding: 3px 8px;
+  border: 1px solid var(--accent-dim);
+  border-radius: 4px;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-light);
 }
-.trip-slider-arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  background: none;
-  color: var(--muted);
-  cursor: pointer;
-  transition: color 0.2s, border-color 0.2s, background 0.2s;
-}
-.trip-slider-arrow:hover:not(:disabled) {
+
+.tour-card-title {
+  font-family: var(--font-serif), serif;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.2;
   color: var(--text);
-  border-color: var(--accent);
-  background: var(--accent-dim);
+  margin: 2px 0 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
-.trip-slider-arrow:disabled {
-  opacity: 0.25;
-  cursor: not-allowed;
+
+.tour-card-meta {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.tour-card-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 99px;
+  background: var(--muted);
+  flex-shrink: 0;
 }

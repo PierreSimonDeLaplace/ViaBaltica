@@ -35,6 +35,14 @@ async function handleReviews(
   env: Env,
   ctx: ExecutionContext,
 ): Promise<Response> {
+  if (!env.GOOGLE_API_KEY || !env.GOOGLE_PLACE_ID) {
+    console.error('[reviews] GOOGLE_API_KEY or GOOGLE_PLACE_ID secret not set');
+    return new Response(JSON.stringify({ error: 'misconfigured' }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json', ...CORS },
+    });
+  }
+
   const url = new URL(request.url);
   const lang = url.searchParams.get('lang') === 'pl' ? 'pl' : 'en';
 
@@ -65,10 +73,12 @@ async function handleReviews(
   const data = await apiRes.json() as GooglePlacesResponse;
 
   if (data.status !== 'OK') {
-    return new Response(JSON.stringify({error: data.status}), {
-      status: 502,
-      headers: {'Content-Type': 'application/json', ...CORS},
-    });
+    const body = data as unknown as Record<string, unknown>;
+    console.error(`[reviews] Google Places status: ${data.status}`, body['error_message'] ?? '');
+    return new Response(
+      JSON.stringify({ error: data.status, detail: body['error_message'] ?? null }),
+      { status: 502, headers: { 'Content-Type': 'application/json', ...CORS } },
+    );
   }
 
   const {result} = data;
