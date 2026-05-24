@@ -53,6 +53,8 @@
   "blog.read_more":  "Czytaj więcej →",
   "blog.back":       "← Wszystkie wpisy",
   "blog.empty":      "Brak wpisów.",
+  "blog.by":         "Autor:",
+  "blog.min_read":   "min czytania",
 
   "reviews.badge":    "Co mówią klienci",
   "reviews.heading":  "Zaufali nam podróżnicy",

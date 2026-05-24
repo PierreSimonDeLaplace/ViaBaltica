@@ -98,6 +98,14 @@
   --g-red:   #EA4335;
   --g-green: #34A853;
 
+  /* polaroid card — cream paper, fixed regardless of site theme */
+  --font-hand:  'Caveat', cursive;
+  --paper:      #f5efe2;
+  --paper-edge: #e8dec5;
+  --ink:        #3a2e1f;
+  --tape:       rgba(232, 165, 68, 0.32);
+  --tape-edge:  rgba(232, 165, 68, 0.45);
+
   /* reviewer avatar palette */
   --avatar-1: #c9a96e;
   --avatar-2: #6e9ec9;

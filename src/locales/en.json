@@ -53,6 +53,8 @@
   "blog.read_more":  "Read more →",
   "blog.back":       "← All posts",
   "blog.empty":      "No posts yet.",
+  "blog.by":         "By",
+  "blog.min_read":   "min read",
 
   "reviews.badge":    "What clients say",
   "reviews.heading":  "Trusted by travellers",

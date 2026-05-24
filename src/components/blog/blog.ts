@@ -1,6 +1,6 @@
-import { getString, type Locale, type SupportedLang } from '../../types/locale';
-import { onLanguageChange } from '../../scripts/i18n';
-import { marked } from 'marked';
+import {getString, type Locale, type SupportedLang} from '../../types/locale';
+import {onLanguageChange} from '../../scripts/i18n';
+import {marked} from 'marked';
 import PhotoSwipeLightbox from 'photoswipe/lightbox';
 import 'photoswipe/style.css';
 import './blog.css';
@@ -8,21 +8,24 @@ import './blog.css';
 let pswpLightbox: PhotoSwipeLightbox | null = null;
 
 interface PostTranslation {
-  title:   string;
+  title: string;
   excerpt: string;
   content: string;
 }
 
 interface Post {
-  slug:     string;
-  date:     string;
-  image:    string;
+  slug: string;
+  date: string;
+  image: string;
+  ratio?: number;    // width / height; drives the polaroid card proportions
+  caption?: string;   // handwritten-style caption on the polaroid
+  location?: string;   // small location label below the caption
   gallery?: string[];
-  en:       PostTranslation;
-  pl:       PostTranslation;
+  en: PostTranslation;
+  pl: PostTranslation;
 }
 
-const postModules = import.meta.glob<{ default: Post }>('../../data/blog/*.json', { eager: true });
+const postModules = import.meta.glob<{ default: Post }>('../../data/blog/*.json', {eager: true});
 const posts: Post[] = Object.values(postModules)
   .map(m => m.default)
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
@@ -41,6 +44,19 @@ function formatDate(iso: string, lang: SupportedLang): string {
   });
 }
 
+function calcReadTime(content: string, dict: Locale): string {
+  const words = content.trim().split(/\s+/).length;
+  const mins = Math.max(1, Math.ceil(words / 200));
+  return `${mins} ${getString(dict, 'blog.min_read', 'min read')}`;
+}
+
+/** Returns [width, height] for a polaroid photo given its aspect ratio and longest-edge cap. */
+function polaroidDims(ratio: number, maxDim: number): [number, number] {
+  return ratio >= 1
+    ? [maxDim, Math.round(maxDim / ratio)]
+    : [Math.round(maxDim * ratio), maxDim];
+}
+
 function renderList(container: HTMLElement, dict: Locale, lang: SupportedLang): void {
   container.innerHTML = `
     <section class="blog-listing">
@@ -50,13 +66,13 @@ function renderList(container: HTMLElement, dict: Locale, lang: SupportedLang): 
       </div>
       <div class="blog-grid">
         ${posts.length === 0
-          ? `<p class="blog-empty">${getString(dict, 'blog.empty', 'No posts yet.')}</p>`
-          : posts.map(p => {
-              const t = p[lang] ?? p.en;
-              const img = p.image
-                ? `<img src="${escapeHtml(p.image)}" alt="${escapeHtml(t.title)}" loading="lazy">`
-                : '';
-              return `
+    ? `<p class="blog-empty">${getString(dict, 'blog.empty', 'No posts yet.')}</p>`
+    : posts.map(p => {
+      const t = p[lang] ?? p.en;
+      const img = p.image
+        ? `<img src="${escapeHtml(p.image)}" alt="${escapeHtml(t.title)}" loading="lazy">`
+        : '';
+      return `
                 <a href="/blog/${escapeHtml(p.slug)}" class="blog-card">
                   <div class="blog-card-image">${img}</div>
                   <div class="blog-card-body">
@@ -66,8 +82,8 @@ function renderList(container: HTMLElement, dict: Locale, lang: SupportedLang): 
                     <span class="blog-card-cta" aria-hidden="true">${getString(dict, 'blog.read_more', 'Read more →')}</span>
                   </div>
                 </a>`;
-            }).join('')
-        }
+    }).join('')
+  }
       </div>
     </section>`;
 }
@@ -77,26 +93,78 @@ function renderPost(container: HTMLElement, post: Post, dict: Locale, lang: Supp
   pswpLightbox = null;
 
   const t = post[lang] ?? post.en;
+  const ratio = post.ratio ?? 4 / 3;
+
+  // Compute photo dimensions for both breakpoints so CSS can switch via custom properties.
+  // Desktop: landscape cap = 420 px, portrait cap = 340 px.
+  // Mobile:  landscape cap = 290 px, portrait cap = 240 px.
+  const [dW, dH] = polaroidDims(ratio, ratio >= 1 ? 420 : 340);
+  const [mW, mH] = polaroidDims(ratio, ratio >= 1 ? 290 : 240);
+
+  const captionHtml = (post.caption || post.location)
+    ? `<div class="blog-polaroid-caption" aria-hidden="true">
+        ${post.caption ? `<span class="blog-polaroid-caption-text">${escapeHtml(post.caption)}</span>` : ''}
+        ${post.location ? `<span class="blog-polaroid-location">${escapeHtml(post.location)}</span>` : ''}
+      </div>`
+    : '';
+
+  const headerHtml = post.image
+    ? `<div class="blog-post-banner">
+        <div class="blog-polaroid-wrap">
+          <div class="blog-polaroid">
+            <div class="blog-polaroid-tape" aria-hidden="true"></div>
+            <div class="blog-polaroid-photo"
+                 style="--photo-w:${dW}px;--photo-h:${dH}px;--photo-w-m:${mW}px;--photo-h-m:${mH}px">
+              <img src="${escapeHtml(post.image)}" alt="${escapeHtml(t.title)}"
+                   loading="eager" fetchpriority="high">
+            </div>
+            ${captionHtml}
+          </div>
+        </div>
+        <div class="blog-post-titleblock">
+          <time class="blog-post-date">${formatDate(post.date, lang)}</time>
+          <h1 class="blog-post-title">${escapeHtml(t.title)}</h1>
+          <p class="blog-post-dek">${escapeHtml(t.excerpt)}</p>
+          <div class="blog-post-meta">
+            <span>${calcReadTime(t.content, dict)}</span>
+            <span class="blog-post-meta-dot" aria-hidden="true"></span>
+            <span>${getString(dict, 'blog.by', 'By')} Mark Jeziak</span>
+          </div>
+        </div>
+      </div>`
+    : `<header class="blog-post-header">
+        <time class="blog-post-date">${formatDate(post.date, lang)}</time>
+        <h1 class="blog-post-title">${escapeHtml(t.title)}</h1>
+      </header>`;
 
   const galleryHtml = post.gallery?.length
     ? `<div class="post-gallery pswp-gallery">
         ${post.gallery.map((src, i) =>
-          `<a href="${escapeHtml(src)}">
+      `<a href="${escapeHtml(src)}">
             <img src="${escapeHtml(src)}" alt="${escapeHtml(t.title)} — photo ${i + 1}" loading="lazy">
           </a>`
-        ).join('')}
+    ).join('')}
       </div>`
+    : '';
+
+  const bannerSection = post.image
+    ? `<div class="blog-post-banner-wrap">
+        <a href="/blog" class="blog-back">${getString(dict, 'blog.back', '← All posts')}</a>
+        ${headerHtml}
+      </div>`
+    : '';
+
+  const fallbackHeader = !post.image
+    ? `<a href="/blog" class="blog-back">${getString(dict, 'blog.back', '← All posts')}</a>
+       ${headerHtml}`
     : '';
 
   container.innerHTML = `
     <article class="blog-post">
+      ${bannerSection}
       <div class="blog-post-body">
-        <a href="/blog" class="blog-back">${getString(dict, 'blog.back', '← All posts')}</a>
-        <header class="blog-post-header">
-          <time class="blog-post-date">${formatDate(post.date, lang)}</time>
-          <h1 class="blog-post-title">${escapeHtml(t.title)}</h1>
-        </header>
-        <div class="post-content">${marked.parse(t.content, { async: false })}</div>
+        ${fallbackHeader}
+        <div class="post-content">${marked.parse(t.content, {async: false})}</div>
         ${galleryHtml}
       </div>
     </article>`;
@@ -112,11 +180,11 @@ function renderPost(container: HTMLElement, post: Post, dict: Locale, lang: Supp
 
   pswpLightbox.addFilter('domItemData', (itemData, _element, linkEl) => {
     const img = linkEl?.querySelector<HTMLImageElement>('img');
-    itemData.src  = linkEl?.href ?? '';
-    itemData.w    = img?.naturalWidth  ?? 0;
-    itemData.h    = img?.naturalHeight ?? 0;
+    itemData.src = linkEl?.href ?? '';
+    itemData.w = img?.naturalWidth ?? 0;
+    itemData.h = img?.naturalHeight ?? 0;
     itemData.msrc = img?.src;
-    itemData.alt  = img?.alt;
+    itemData.alt = img?.alt;
     return itemData;
   });
 
