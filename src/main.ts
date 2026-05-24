@@ -8,6 +8,7 @@ import { mount as mountHero }    from './components/hero/hero';
 import { mount as mountAbout }   from './components/about/about';
 import { mount as mountTrips }   from './components/trips/trips';
 import { mount as mountReviews } from './components/reviews/reviews';
+import { mount as mountFaq }     from './components/faq/faq';
 import { mount as mountContact } from './components/contact/contact';
 import { mount as mountFooter }  from './components/footer/footer';
 
@@ -22,6 +23,7 @@ mountHero(main);
 mountAbout(main);
 mountTrips(main);
 mountReviews(main);
+mountFaq(main);
 mountContact(main);
 mountFooter();
 initTheme();
