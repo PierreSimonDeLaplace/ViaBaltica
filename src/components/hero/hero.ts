@@ -1,19 +1,22 @@
 import html from './hero.html?raw';
 import './hero.css';
+import gdanskImg      from '../../assets/images/hero/gdansk.jpg';
+import krzywDomekImg  from '../../assets/images/hero/krzywy_domek.jpg';
+import torunImg       from '../../assets/images/hero/torun.jpg';
 
 interface Slide { src: string; alt: string; }
 
 const SLIDES: Slide[] = [
   {
-    src: '/images/hero/gdansk.jpg',
+    src: gdanskImg,
     alt: 'Gdańsk waterfront along the Motława river at dusk',
   },
   {
-    src: '/images/hero/krzywy_domek.jpg',
+    src: krzywDomekImg,
     alt: 'Krzywy Domek — the famously crooked building in Sopot',
   },
   {
-    src: '/images/hero/torun.jpg',
+    src: torunImg,
     alt: 'Toruń old town reflected in the Vistula river',
   },
 ];
