@@ -26,22 +26,19 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-serif), serif;
-  font-size: 1.6rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
   color: var(--text);
   text-decoration: none;
 }
-.logo span { color: var(--accent); }
-.logo::before {
-  content: '';
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent);
-  flex-shrink: 0;
+
+/* Single-colour PNG used as a mask, painted with the current text colour —
+   stays navy-blue in light mode and warm cream in dark mode automatically. */
+.logo-mark {
+  display: block;
+  width: 48px;
+  height: 48px;
+  background: currentColor;
+  -webkit-mask: url('../../assets/images/logo/logo_viabaltica_darkblue.png') center / contain no-repeat;
+          mask: url('../../assets/images/logo/logo_viabaltica_darkblue.png') center / contain no-repeat;
 }
 
 /* ── Desktop links ───────────────────────────────────────────────────────── */
@@ -243,5 +240,5 @@ input#menu-toggle:checked ~ .mobile-drawer { display: block; }
 
   .hamburger { display: flex; }
   .lang-flags-mobile { display: flex; }
-  .logo { font-size: 1.3rem; }
+  .logo-mark { width: 40px; height: 40px; }
 }
