@@ -40,3 +40,4 @@ function injectEmail(): void {
   a.className   = 'contact-link';
   slot.appendChild(a);
 }
+

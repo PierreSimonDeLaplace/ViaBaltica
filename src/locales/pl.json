@@ -13,7 +13,7 @@
   "nav.cta":       "Zarezerwuj wycieczkę",
 
   "hero.badge":     "Prywatne wycieczki · Gdańsk i Pomorze",
-  "hero.heading":   "Odkryj Gdańsk<br>oczami <em>lokalsa</em>",
+  "hero.heading":   "Odkryj duszę<br><em>Morza Bałtyckiego</em>",
   "hero.body":      "Prywatne wycieczki z przewodnikiem po jednym z najpiękniejszych miast bałtyckich Europy — gdzie historia, bursztyn i morze tworzą niepowtarzalną całość.",
   "hero.cta":       "Odkryj wycieczki",
   "hero.secondary": "Poznaj przewodnika",
@@ -23,18 +23,18 @@
   "hero.stat4":     "Języki",
 
   "about.badge":            "Twój przewodnik",
-  "about.heading":          "Pasja do historii, <em>miłość do Gdańska.</em>",
-  "about.p1":               "Jestem Marek — urodzony i wychowany w Gdańsku, licencjonowany przez Polską Organizację Turystyczną i szczęśliwy człowiek, który spędza dni, oprowadzając gości po mieście, w którym dorastał. Od prawie dwóch dekad zamieniam pogmatwaną historię Gdańska — kupców hanzeatyckich, Krzyżaków, handlarzy bursztynem i strajki stoczniowe — w opowieści, które naprawdę zostają w pamięci.",
-  "about.p2":               "Moje wycieczki są prywatne i celowo spokojne. Zaglądamy do podwórek, zatrzymujemy się w piekarniach, do których zabrałbym własną rodzinę, i omijamy pętlę sklepów z pamiątkami, jaką serwuje większość autokarowych tras. Czy jest was dwoje na długi weekend, czy dwanaście osób świętujących coś wyjątkowego — chętnie oprowadzę was po Gdańsku.",
+  "about.heading":          "Niektóre miasta się zwiedza. <em>Gdańsk się rozumie.</em>",
+  "about.p1":               "Jestem gdańszczaninem — zanurzonym w historii najpotężniejszego portu Bałtyku. Przez lata odkrywałem to, co leży pod powierzchnią: opowieści ukryte w kamieniach, znaczenia wpisane w pomniki, codzienną duszę miasta, które kształtowało imperia i zmieniało świat. Znam zaułki gdańskich ulic, sopockie plaże i gdyński port. Na filarach historii buduję współczesną opowieść o Trójmieście. Jako mieszkaniec — znam istotę tego miejsca. Jako przewodnik — dzielę się tym, co to poznawanie odsłoniło.",
+  "about.p2":               "Jestem licencjonowanym przewodnikiem i pilotem wycieczek, certyfikowanym przez Polskie Towarzystwo Turystyczno-Krajoznawcze (PTTK), i aktywnym członkiem Klubu Przewodników Miejskich w Gdańsku — gdzie pełnię funkcję Dyrektora ds. Marketingu i zasiadam w Komitecie Programowym oraz Edukacyjnym. Pracuję z grupami każdego wieku i rodzaju. Zarówno z podróżnikiem tropicym hanzeatycką przeszłość, rodziną odkrywającą Solidarność po raz pierwszy, jak i z uczniami, dla których historia musi ożyć — szukam tej jednej opowieści, przy której każdy gość zatrzymuje się, unosi głowę i naprawdę rozumie.",
   "about.polaroid_caption": "Marek, na Długim Pobrzeżu",
-  "about.polaroid_location":"Gdańsk · Kwiecień",
+  "about.polaroid_location":"Gdańsk · Wybrzeże Bałtyku",
   "about.placeholder":      "Zastąp zdjęciem Marka w terenie",
   "about.h1title":          "Licencjonowany przewodnik",
-  "about.h1desc":           "Polska Organizacja Turystyczna, licencja #PL-2007-1142.",
+  "about.h1desc":           "Polskie Towarzystwo Turystyczno-Krajoznawcze (PTTK), Gdańsk. Ceniony przez najlepszych operatorów turystycznych w Polsce.",
   "about.h2title":          "Angielski i polski",
   "about.h2desc":           "Rodzimy język: polski, biegły angielski. Niemiecki i francuski na życzenie.",
   "about.h3title":          "Urodzony w Gdańsku",
-  "about.h3desc":           "40 lat w Gdańsku. Każde podwórko, legenda i skrót.",
+  "about.h3desc":           "Urodzony na Wybrzeżu Bałtyckim, ukształtowany przez jego historię. Każdy zaułek, legenda i stoczniowa opowieść są częścią mnie.",
   "about.h4title":          "5,0 w Google",
   "about.h4desc":           "18 opinii, same pięć gwiazdek. Sprawdź, co piszą podróżnicy.",
   "about.ctaTours":         "Przeglądaj wycieczki →",
@@ -78,6 +78,8 @@
   "faq.a5": "Trasy po Starym Mieście wiodą przez brukowane uliczki i kilka schodów, ale są spokojne i można swobodnie dostosować tempo. Trasa rodzinna jest w pełni dostępna dla wózków. Powiedz mi o potrzebach grupy, a dostosuję spacer.",
   "faq.q6": "Czy oferuje Pan trasy na zamówienie?",
   "faq.a6": "Zawsze. Mniej więcej jedna trzecia moich rezerwacji to wycieczki szyte na miarę — tematyczne wokół kuchni, fotografii, historii Solidarności czy poszukiwań rodzinnych korzeni. Napisz, co cię interesuje.",
+  "faq.q7": "Czy zapewnia Pan transport na wycieczki całodniowe?",
+  "faq.a7": "Tak — mam własny samochód i korzystam z niego na wszystkich prywatnych wyprawach poza Gdańsk. Wycieczka samochodem to świetny sposób na odkrycie nowych miejsc, gdy czas jest ograniczony — a jednocześnie doskonała okazja, by wyrwać się z codzienności: jeden dzień, jedna podróż, najlepsze z Pomorza we własnym tempie. Odbiór spod hotelu jest wliczony we wszystkich wycieczkach całodniowych. Malbork, Kaszuby, Toruń, Kanał Elbląski — wystarczy napisać, dokąd chcesz pojechać.",
 
   "reviews.badge":    "Co mówią podróżnicy",
   "reviews.heading":  "Zaufali nam podróżnicy",
@@ -93,7 +95,7 @@
 
   "contact.badge":       "Zarezerwuj wycieczkę",
   "contact.heading":     "Zarezerwuj swoją<br>gdańską <em>przygodę</em>",
-  "contact.body":        "Gotowy na odkrycie Gdańska? Skontaktuj się bezpośrednio — Marek odpowiada w ciągu 24 godzin i chętnie omówi idealną wycieczkę.",
+  "contact.body":        "Nie znalazłeś tego, czego szukasz? Napisz mi, co chciałbyś zobaczyć — załatwię to. Skontaktuj się bezpośrednio, a Marek odpowie w ciągu 24 godzin.",
   "contact.phone.label": "Telefon",
   "contact.email.label": "Email",
   "contact.hours.label": "Dostępność",
@@ -109,9 +111,9 @@
   "footer.col.reach":       "Kontakt",
 
   "footer.tours.all":       "Wszystkie wycieczki",
-  "footer.tours.gdansk":    "Wycieczki po Gdańsku",
-  "footer.tours.coast":     "Wybrzeże Bałtyku",
-  "footer.tours.nature":    "Natura i całodniowe wyprawy",
+  "footer.tours.gdansk":    "Spacery po Gdańsku",
+  "footer.tours.coast":     "Wycieczki rowerowe",
+  "footer.tours.nature":    "Wycieczki całodniowe",
   "footer.tours.book":      "Zarezerwuj wycieczkę",
 
   "footer.explore.about":   "Poznaj Marka",
@@ -119,8 +121,9 @@
   "footer.explore.faq":     "Najczęstsze pytania",
   "footer.explore.blog":    "Z notatnika Marka",
 
-  "footer.reach.location":  "Gdańsk, Polska",
+  "footer.reach.address":   "Długie Ogrody 2/31",
+  "footer.reach.location":  "80-765 Gdańsk, Polska",
 
-  "footer.copyright":       "© {year} Via Baltica · Marek Jeziak. Wszelkie prawa zastrzeżone.",
+  "footer.copyright":       "© {year} Tour Guides VIA BALTICA · Marek Jeziak. Wszelkie prawa zastrzeżone.",
   "footer.signature":       "Stworzone z pasją w Gdańsku"
 }

@@ -13,7 +13,7 @@
   "nav.cta":       "Book a Tour",
 
   "hero.badge":     "Private tours · Gdańsk & Pomerania",
-  "hero.heading":   "Discover Gdańsk<br>like a <em>local</em>",
+  "hero.heading":   "Discover the soul<br>of the <em>Baltic Sea</em>",
   "hero.body":      "Private guided tours through one of Europe's most beautiful Baltic cities — where history, amber and the sea come together.",
   "hero.cta":       "Explore Tours",
   "hero.secondary": "Meet the Guide",
@@ -23,18 +23,18 @@
   "hero.stat4":     "Languages",
 
   "about.badge":            "Meet your guide",
-  "about.heading":          "A passion for stories, <em>a love for Gdańsk.</em>",
-  "about.p1":               "I'm Mark — born and raised in Gdańsk, certified by the Polish Tourist Organisation, and lucky enough to spend my days walking visitors through the city I grew up in. For nearly two decades I've been turning Gdańsk's tangled history of Hanseatic merchants, Teutonic knights, amber traders and shipyard strikes into stories you actually remember.",
-  "about.p2":               "My tours are private and slow on purpose. We linger in courtyards, stop at the bakeries I'd take my own family to, and skip the gift-shop loop that most coach tours run. Whether it's two of you on a long weekend or twelve of you celebrating something — I'd love to show you around.",
+  "about.heading":          "Some cities are visited. <em>Gdańsk is understood.</em>",
+  "about.p1":               "I was born in Gdańsk and I am a Gdańsk resident — immersed in the history of the most powerful port on the Baltic Sea. I have spent years learning what lies beneath the surface: the stories behind the stones, the meaning inside the monuments, the everyday soul of a city that shaped empires and changed the world. I explore the secrets of the city's side streets, Sopot's beaches and Gdynia's port. On the pillars of history, I build the contemporary story of the Tri-City. As a citizen of this place, I know its essence. As a guide, I share what that knowing has revealed.",
+  "about.p2":               "I am a licensed guide and tour leader, certified by the Polish Tourist and Sightseeing Society (PTTK), and an active member of the Club of City Guides in Gdańsk — where I serve as Marketing Director and sit on the Programme and Education Committees. I work with groups of every age and kind. Whether it is a traveller tracing the Hanseatic past, a family encountering Solidarity for the first time, or students who need history to come alive — I find the story that makes each guest stop, look up, and truly understand.",
   "about.polaroid_caption": "Mark, on the Long Embankment",
-  "about.polaroid_location":"Gdańsk · April",
+  "about.polaroid_location":"Gdańsk · Baltic Coast",
   "about.placeholder":      "Replace with a photo of Mark on location",
-  "about.h1title":          "Certified guide",
-  "about.h1desc":           "Polish Tourist Organisation, license #PL-2007-1142.",
+  "about.h1title":          "Licensed guide",
+  "about.h1desc":           "Polish Tourist and Sightseeing Society (PTTK), Gdańsk. Trusted by Poland's finest tour operators.",
   "about.h2title":          "English & Polish",
   "about.h2desc":           "Native Polish, fluent English. German and French on request.",
-  "about.h3title":          "Local-born",
-  "about.h3desc":           "40 years in Gdańsk. Every courtyard, legend and shortcut.",
+  "about.h3title":          "Born in Gdańsk",
+  "about.h3desc":           "Born on the Baltic coast, shaped by its history. Every nook, legend and shipyard story is part of me.",
   "about.h4title":          "5.0 on Google",
   "about.h4desc":           "18 reviews, all five stars. Read what travellers say below.",
   "about.ctaTours":         "Browse tours →",
@@ -78,6 +78,8 @@
   "faq.a5": "Old Town tours involve cobblestones and a few stairs but are otherwise gentle and easy to pace. The family-friendly route is fully stroller-accessible. Just tell me your group's needs and we'll tailor the walk.",
   "faq.q6": "Do you offer custom routes?",
   "faq.a6": "Always. About a third of my bookings are custom — themed around food, photography, Solidarity-era history, or family roots. Tell me what you're interested in when you write.",
+  "faq.q7": "Do you provide transport for day trips?",
+  "faq.a7": "Yes — I own a car and use it for all private day expeditions beyond Gdańsk. A day trip by car is a great way to visit new places when time is short, and a wonderful escape from everyday life: one day, one journey, the best of Pomerania at your own pace. Hotel pickup is included in all full-day tours. Malbork, Kashubia, Toruń, the Elbląg Canal — just let me know where you'd like to go.",
 
   "reviews.badge":    "What travellers say",
   "reviews.heading":  "Trusted by travellers",
@@ -93,7 +95,7 @@
 
   "contact.badge":       "Book your tour",
   "contact.heading":     "Book your<br>Gdańsk <em>adventure</em>",
-  "contact.body":        "Ready to explore Gdańsk? Reach out directly — Mark responds within 24 hours to discuss your perfect tour.",
+  "contact.body":        "Not quite found what you're looking for? Tell me what you'd like to see — I will arrange it. Reach out directly and Mark will respond within 24 hours.",
   "contact.phone.label": "Phone",
   "contact.email.label": "Email",
   "contact.hours.label": "Available",
@@ -109,9 +111,9 @@
   "footer.col.reach":       "Get in touch",
 
   "footer.tours.all":       "Browse all tours",
-  "footer.tours.gdansk":    "Gdańsk City Tours",
-  "footer.tours.coast":     "Baltic Coast & Seaside",
-  "footer.tours.nature":    "Nature & Day Trips",
+  "footer.tours.gdansk":    "Walking Tours",
+  "footer.tours.coast":     "Cycling Adventures",
+  "footer.tours.nature":    "Day Expeditions",
   "footer.tours.book":      "Book a tour",
 
   "footer.explore.about":   "Meet Mark",
@@ -119,8 +121,9 @@
   "footer.explore.faq":     "Common questions",
   "footer.explore.blog":    "From Mark's Notebook",
 
-  "footer.reach.location":  "Gdańsk, Poland",
+  "footer.reach.address":   "Długie Ogrody 2/31",
+  "footer.reach.location":  "80-765 Gdańsk, Poland",
 
-  "footer.copyright":       "© {year} Via Baltica · Mark Jeziak. All rights reserved.",
+  "footer.copyright":       "© {year} Tour Guides VIA BALTICA · Marek Jeziak. All rights reserved.",
   "footer.signature":       "Handcrafted in Gdańsk"
 }

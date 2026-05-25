@@ -1,0 +1,151 @@
+{
+  "photo": "https://picsum.photos/seed/cycling-gdansk/120/120",
+  "en": {
+    "title": "Cycling adventures",
+    "subtitle": "From Gdańsk's historic streets to the Baltic coast and Pomeranian hills",
+    "trips": [
+      {
+        "id": "bike-tour-gdansk",
+        "slug": "bike-tour-gdansk",
+        "thumb": "https://picsum.photos/seed/bike-tour-gdansk/400/250",
+        "banner": "https://picsum.photos/seed/bike-tour-gdansk/800/500",
+        "title": "Gdańsk on Two Wheels",
+        "meta": "4 h · City Centre",
+        "duration": "4 h",
+        "location": "City Centre",
+        "tags": ["Cycling", "History"],
+        "body": "The most intimate way to feel a city's rhythm — from the Old Town and the Shipyard to the Baltic coast path, all in one four-hour ride.",
+        "longDescription": "Gdańsk is one of Poland's most bike-friendly cities, and cycling offers an intimacy that no bus or walking tour can match. We cover the historic Main City, cross into the Old Town, visit the Shipyard and Solidarity Square, then follow the green bicycle routes to the Lower Town bastions and the coastal path at Nowy Port and Brzeźno.",
+        "highlights": [
+          "Historic Main City & Old Town",
+          "Gdańsk Shipyard & BHP Hall",
+          "Solidarity Square",
+          "Lower Town bastions & green cycle routes",
+          "Coastal bike path — Nowy Port & Brzeźno"
+        ],
+        "price": 50,
+        "group": "1–8 people",
+        "badge": "Most booked"
+      },
+      {
+        "id": "tri-city-coastal-route",
+        "slug": "tri-city-coastal-route",
+        "thumb": "https://picsum.photos/seed/tri-city-coastal/400/250",
+        "banner": "https://picsum.photos/seed/tri-city-coastal/800/500",
+        "title": "Tri-City Coastal Route",
+        "meta": "6 h · Tri-City",
+        "duration": "6 h",
+        "location": "Tri-City",
+        "tags": ["Cycling", "Coast"],
+        "body": "One coastal road, three cities with three entirely different souls. The most popular ride in the Tri-City — ~21 km along the Bay of Gdańsk.",
+        "longDescription": "The most popular cycling tour in the Tri-City follows the Bay of Gdańsk coast — scenic, relatively flat, and perfectly suited to experiencing all three cities in one long Baltic day. From Gdańsk's historic centre and Shipyard, past the famous murals of Zaspa, through Sopot's sea promenade and Europe's longest wooden pier, all the way into the modernist port city of Gdynia.",
+        "highlights": [
+          "Gdańsk Old Town & Shipyard",
+          "Zaspa district — famous murals",
+          "Ronald Reagan Park at Brzeźno",
+          "Sopot promenade & wooden pier (512 m — Europe's longest)",
+          "Gdynia coastal boulevard & panoramic view"
+        ],
+        "price": 65,
+        "group": "1–8 people"
+      },
+      {
+        "id": "cycling-pomerania",
+        "slug": "cycling-pomerania",
+        "thumb": "https://picsum.photos/seed/cycling-pomerania/400/250",
+        "banner": "https://picsum.photos/seed/cycling-pomerania/800/500",
+        "title": "Cycling Around Pomerania",
+        "meta": "Full day · Pomerania",
+        "duration": "Full day",
+        "location": "Pomerania",
+        "tags": ["Cycling", "Nature"],
+        "body": "Hills, lakes, forests — and history at every turn. A full day of cycling through some of Pomerania's most rewarding landscapes.",
+        "longDescription": "Venture beyond the city into rolling Kashubian hills, pristine lakes and dense Pomeranian forests. I know these trails well — from the Mennonite Trail through the Vistula Delta, to the road south to Malbork Castle, to the Vistula Spit between Baltic Sea and lagoon, and the coastal trail all the way to Hel. Starting point: Gdańsk Old Town. The direction depends on your interests and the day.",
+        "highlights": [
+          "Kashubian highlands — hills & glacial lakes",
+          "Mennonite Trail through the Vistula Delta (Żuławy)",
+          "Route to Malbork Castle",
+          "Vistula Spit — Baltic Sea & Vistula Lagoon",
+          "Hel Peninsula coastal trail"
+        ],
+        "price": 80,
+        "group": "1–6 people",
+        "badge": "Seasonal"
+      }
+    ]
+  },
+  "pl": {
+    "title": "Wycieczki rowerowe",
+    "subtitle": "Przez historyczne centrum, wybrzeże Bałtyku i wzgórza Kaszub",
+    "trips": [
+      {
+        "id": "bike-tour-gdansk",
+        "slug": "bike-tour-gdansk",
+        "thumb": "https://picsum.photos/seed/bike-tour-gdansk/400/250",
+        "banner": "https://picsum.photos/seed/bike-tour-gdansk/800/500",
+        "title": "Gdańsk na dwóch kółkach",
+        "meta": "4 h · Centrum",
+        "duration": "4 h",
+        "location": "Centrum",
+        "tags": ["Rower", "Historia"],
+        "body": "Najintymniejszy sposób, by poczuć rytm miasta — od Starego Miasta i Stoczni po nadmorską ścieżkę rowerową, wszystko w jednej czterogodzinnej przejażdżce.",
+        "longDescription": "Gdańsk to jedno z najbardziej przyjaznych rowerzystom miast w Polsce, a jazda na rowerze daje bliskość, której nie zastąpi żaden autobus ani pieszy spacer. Przemierzamy historyczne Główne Miasto, zajeżdżamy do Stoczni i na plac Solidarności, a potem zielone trasy prowadzą przez bastiony Dolnego Miasta i nadmorską ścieżkę do Nowego Portu i Brzeźna.",
+        "highlights": [
+          "Historyczne Główne Miasto i Stare Miasto",
+          "Stocznia Gdańska i Sala BHP",
+          "Plac Solidarności",
+          "Bastiony Dolnego Miasta i zielone trasy rowerowe",
+          "Nadmorska ścieżka rowerowa — Nowy Port i Brzeźno"
+        ],
+        "price": 50,
+        "group": "1–8 osób",
+        "badge": "Najpopularniejsza"
+      },
+      {
+        "id": "tri-city-coastal-route",
+        "slug": "tri-city-coastal-route",
+        "thumb": "https://picsum.photos/seed/tri-city-coastal/400/250",
+        "banner": "https://picsum.photos/seed/tri-city-coastal/800/500",
+        "title": "Trójmiejska Trasa Nadmorska",
+        "meta": "6 h · Trójmiasto",
+        "duration": "6 h",
+        "location": "Trójmiasto",
+        "tags": ["Rower", "Wybrzeże"],
+        "body": "Jedna nadmorska trasa, trzy miasta o zupełnie różnych duszach. Najpopularniejsza przejażdżka w Trójmieście — ok. 21 km wzdłuż Zatoki Gdańskiej.",
+        "longDescription": "Najpopularniejsza trasa rowerowa w Trójmieście biegnie wzdłuż wybrzeża Zatoki Gdańskiej — malownicza, stosunkowo płaska i stworzona do tego, by poczuć wszystkie trzy miasta w jeden długi bałtycki dzień. Z historycznego centrum Gdańska i Stoczni, przez słynne murale Zaspy i sopocką promenadę, przez najdłuższe drewniane molo w Europie, aż do modernistycznego portu Gdyni.",
+        "highlights": [
+          "Gdańsk — Stare Miasto i Stocznia",
+          "Dzielnica Zaspa — słynne murale",
+          "Park Reagana w Brzeźnie",
+          "Sopot — promenada i molo (512 m — najdłuższe w Europie)",
+          "Gdynia — bulwar nadmorski i panorama Trójmiasta"
+        ],
+        "price": 65,
+        "group": "1–8 osób"
+      },
+      {
+        "id": "cycling-pomerania",
+        "slug": "cycling-pomerania",
+        "thumb": "https://picsum.photos/seed/cycling-pomerania/400/250",
+        "banner": "https://picsum.photos/seed/cycling-pomerania/800/500",
+        "title": "Rowerem przez Pomorze",
+        "meta": "Cały dzień · Pomorze",
+        "duration": "Cały dzień",
+        "location": "Pomorze",
+        "tags": ["Rower", "Natura"],
+        "body": "Wzgórza, jeziora, lasy — i historia na każdym zakręcie. Cały dzień jazdy przez jedne z najpiękniejszych krajobrazów Pomorza.",
+        "longDescription": "Wyruszamy poza miasto — w Kaszubskie wzgórza, błękitne jeziora i gęste pomorskie lasy. Znam te szlaki doskonale: od Szlaku Mennonickiego przez Żuławy, przez drogę na zamek w Malborku, po Mierzeję Wiślaną między Bałtykiem a Zalewem Wiślanym i nadmorską trasę na Półwysep Helski. Punkt startowy: gdańskie Stare Miasto. Kierunek dobieramy do zainteresowań grupy.",
+        "highlights": [
+          "Wyżyna Kaszubska — wzgórza i polodowcowe jeziora",
+          "Szlak Mennonicki przez Żuławy Wiślane",
+          "Trasa do Zamku w Malborku",
+          "Mierzeja Wiślana — Bałtyk i Zalew Wiślany",
+          "Nadmorska trasa na Półwysep Helski"
+        ],
+        "price": 80,
+        "group": "1–6 osób",
+        "badge": "Sezonowa"
+      }
+    ]
+  }
+}
