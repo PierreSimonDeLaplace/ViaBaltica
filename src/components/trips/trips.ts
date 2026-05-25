@@ -20,7 +20,27 @@ const raw = import.meta.glob<{ default: TripCategoryFile }>(
   '../../data/trips/*.json',
   { eager: true },
 );
-const CATEGORIES: TripCategoryFile[] = Object.values(raw).map(m => m.default);
+
+const tripImages = import.meta.glob<string>(
+  '../../assets/images/trips/*.jpg',
+  { eager: true, import: 'default' },
+);
+
+function resolveImage(value: string): string {
+  if (value.startsWith('http')) return value;
+  return tripImages[`../../assets/images/trips/${value}`] ?? value;
+}
+
+const CATEGORIES: TripCategoryFile[] = Object.values(raw).map(m => {
+  const cat = m.default;
+  for (const lang of ['en', 'pl'] as const) {
+    for (const trip of cat[lang].trips) {
+      trip.thumb  = resolveImage(trip.thumb);
+      trip.banner = resolveImage(trip.banner);
+    }
+  }
+  return cat;
+});
 
 let initialHashChecked = false;
 
