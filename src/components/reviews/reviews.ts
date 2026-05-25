@@ -2,6 +2,7 @@ import html from './reviews.html?raw';
 import './reviews.css';
 import { onLanguageChange } from '../../scripts/i18n';
 import { getString, type Locale, type SupportedLang } from '../../types/locale';
+import { escapeHtml } from '../../scripts/dom';
 
 const fallbacks = {
   en: () => import('../../data/reviews/en.json'),
@@ -31,14 +32,6 @@ function avatarColor(name: string): string {
   let hash = 0;
   for (const ch of name) hash = (hash * 31 + ch.charCodeAt(0)) & 0xffff;
   return AVATAR_COLORS[hash % AVATAR_COLORS.length] ?? 'var(--avatar-2)';
-}
-
-function escapeHtml(s: string): string {
-  return s
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
 }
 
 function starsHtml(n: number): string {

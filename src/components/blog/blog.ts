@@ -1,6 +1,11 @@
-import {getString, type Locale, type SupportedLang} from '../../types/locale';
-import {onLanguageChange} from '../../scripts/i18n';
+import { getString, type Locale, type SupportedLang } from '../../types/locale';
+import { onLanguageChange } from '../../scripts/i18n';
+import { escapeHtml } from '../../scripts/dom';
 import { marked, type Tokens } from 'marked';
+import PhotoSwipeLightbox from 'photoswipe/lightbox';
+import 'photoswipe/style.css';
+import '../../styles/polaroid.css';
+import './blog.css';
 
 /* ── ::youtube[VIDEO_ID] shortcode ───────────────────────────────────────── */
 marked.use({
@@ -23,10 +28,6 @@ marked.use({
     },
   }],
 });
-import PhotoSwipeLightbox from 'photoswipe/lightbox';
-import 'photoswipe/style.css';
-import '../../styles/polaroid.css';
-import './blog.css';
 
 let pswpLightbox: PhotoSwipeLightbox | null = null;
 
@@ -52,14 +53,6 @@ const postModules = import.meta.glob<{ default: Post }>('../../data/blog/*.json'
 const posts: Post[] = Object.values(postModules)
   .map(m => m.default)
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-
-function escapeHtml(s: string): string {
-  return s
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
-}
 
 function formatDate(iso: string, lang: SupportedLang): string {
   return new Date(iso).toLocaleDateString(lang === 'pl' ? 'pl-PL' : 'en-GB', {
