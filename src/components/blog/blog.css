@@ -388,6 +388,26 @@
   margin: 1.5rem 0;
 }
 
+/* ── YouTube embed (::youtube[ID] shortcode) ─────────────────────────────── */
+
+.post-video-wrap {
+  position: relative;
+  padding-bottom: 56.25%; /* 16 : 9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 2rem 0;
+  background: var(--surface-2);
+}
+
+.post-video-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 .blog-not-found {
   text-align: center;
   padding: 6rem 2rem;

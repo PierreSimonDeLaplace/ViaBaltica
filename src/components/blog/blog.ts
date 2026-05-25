@@ -1,6 +1,28 @@
 import {getString, type Locale, type SupportedLang} from '../../types/locale';
 import {onLanguageChange} from '../../scripts/i18n';
-import {marked} from 'marked';
+import { marked, type Tokens } from 'marked';
+
+/* ── ::youtube[VIDEO_ID] shortcode ───────────────────────────────────────── */
+marked.use({
+  extensions: [{
+    name:  'youtube',
+    level: 'block' as const,
+    start: (src: string) => src.indexOf('::youtube['),
+    tokenizer(src: string): Tokens.Generic | undefined {
+      const m = src.match(/^::youtube\[([A-Za-z0-9_-]+)\]/);
+      if (m) return { type: 'youtube', raw: m[0], id: m[1] };
+      return undefined;
+    },
+    renderer(token: Tokens.Generic): string {
+      return `<div class="post-video-wrap">` +
+        `<iframe src="https://www.youtube-nocookie.com/embed/${token['id'] as string}"` +
+        ` title="YouTube video" loading="lazy"` +
+        ` allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"` +
+        ` allowfullscreen></iframe>` +
+        `</div>\n`;
+    },
+  }],
+});
 import PhotoSwipeLightbox from 'photoswipe/lightbox';
 import 'photoswipe/style.css';
 import '../../styles/polaroid.css';
