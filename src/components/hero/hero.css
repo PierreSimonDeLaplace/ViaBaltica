@@ -119,8 +119,16 @@
   max-width: 760px;
 }
 
-/* Hero eyebrow uses the global .eyebrow component from badge.css.
-   No local overrides needed — the warm cream tokens read on the dark photo. */
+/* Hero eyebrow — dark mode reads fine from the global warm-cream token.
+   Light mode token is dark-brown (designed for white sections), invisible
+   against the hero's dark overlay tint, so override it here. */
+:root[data-theme="light"] .page-hero .eyebrow {
+  color: rgba(196, 176, 140, 0.90);
+}
+:root[data-theme="light"] .page-hero .eyebrow::before,
+:root[data-theme="light"] .page-hero .eyebrow::after {
+  background: rgba(196, 176, 140, 0.48);
+}
 
 .page-hero h1 {
   font-family: var(--font-serif), serif;
