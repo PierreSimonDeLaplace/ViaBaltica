@@ -55,6 +55,10 @@ coverage/
 # ── Misc ────────────────────────────────────────────────────────────────────
 *.local
 
+# ── Source assets (originals — processed copies live in public/images/) ─────
+inside_photos/
+marks_inside/
+
 # wrangler files
 .wrangler
 .dev.vars*

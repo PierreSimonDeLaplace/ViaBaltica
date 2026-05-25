@@ -7,13 +7,16 @@
       {
         "id": "tri-city-day",
         "slug": "tri-city-day",
-        "thumb": "https://picsum.photos/seed/tri-city-day/400/250",
-        "banner": "https://picsum.photos/seed/tri-city-day/800/500",
+        "thumb": "/images/trips/tri-city-day-thumb.jpg",
+        "banner": "/images/trips/tri-city-day.jpg",
         "title": "3 Times the Fun! — Tri-City",
         "meta": "8 h · Tri-City",
         "duration": "8 h",
         "location": "Tri-City",
-        "tags": ["Day Trip", "Culture"],
+        "tags": [
+          "Day Trip",
+          "Culture"
+        ],
         "body": "History, elegance and the Baltic — all in one day. Gdańsk, Sopot and Gdynia: three cities, each with a completely different soul.",
         "longDescription": "Explore the full breadth of the Tri-City in one memorable day. Medieval Gdańsk, shaped by Hanseatic trade and wartime rebuilding. Elegant Sopot, a seaside resort with the longest wooden pier in Europe. And Gdynia — a modernist port city built almost from nothing in the 1920s. We also stop at Oliwa Cathedral for an organ concert that has echoed through centuries of history. Hotel pickup included; children under 7 travel free.",
         "highlights": [
@@ -36,7 +39,10 @@
         "meta": "8 h · Kashubia",
         "duration": "8 h",
         "location": "Kashubia",
-        "tags": ["Day Trip", "Nature"],
+        "tags": [
+          "Day Trip",
+          "Nature"
+        ],
         "body": "Just beyond Gdańsk lies a region unlike any other in Poland — its own language, its own hills, its own way of being in the world.",
         "longDescription": "Just a short trip from the coast, immerse yourself in a land of rolling hills, stunning lakes, unique culture and delicious regional cuisine. We explore the 'Kashubian Switzerland' landscape, visit traditional pottery and craft workshops, discover the Railway Museum in Kościerzyna, and see the famous upside-down house in Szymbark. A quiet, rewarding day far from the tourist circuit. Hotel pickup included; children under 7 travel free.",
         "highlights": [
@@ -53,13 +59,16 @@
       {
         "id": "malbork-castle-day",
         "slug": "malbork-castle-day",
-        "thumb": "https://picsum.photos/seed/malbork-castle-day/400/250",
-        "banner": "https://picsum.photos/seed/malbork-castle-day/800/500",
+        "thumb": "/images/trips/malbork-castle-day-thumb.jpg",
+        "banner": "/images/trips/malbork-castle-day.jpg",
         "title": "Malbork Castle",
         "meta": "6 h · Malbork",
         "duration": "6 h",
         "location": "Malbork",
-        "tags": ["Castle", "Day Trip"],
+        "tags": [
+          "Castle",
+          "Day Trip"
+        ],
         "body": "The largest brick castle in the world. A UNESCO World Heritage Site. Once the seat of the Teutonic Knights — and still impossible to fully take in.",
         "longDescription": "Discover the magnificent Malbork Castle — the largest brick castle in the world by land area and a UNESCO World Heritage Site since 1997. This 13th-century fortress, once the seat of the powerful Teutonic Knights, is a masterpiece of Gothic architecture. Skip-the-line access and a comprehensive guided tour of the High, Middle and Outer Castles. Transport from Gdańsk included; children under 7 travel free.",
         "highlights": [
@@ -82,7 +91,10 @@
         "meta": "8 h · Malbork / Westerplatte",
         "duration": "8 h",
         "location": "Malbork / Westerplatte",
-        "tags": ["Castle", "History"],
+        "tags": [
+          "Castle",
+          "History"
+        ],
         "body": "Two places where history turned. One day, two journeys — from a medieval fortress to the field where the Second World War began.",
         "longDescription": "Malbork Castle is one of Poland's defining landmarks — the world's largest brick fortress, once commanding an empire from the banks of the Nogat river. After the castle tour we drive through the beautiful Żuławy Lowlands, following the historical Mennonite trails. The final stop: Westerplatte — where the Second World War began. Includes audio guide in Malbork, traditional lunch, and a private guide at Westerplatte.",
         "highlights": [
@@ -98,13 +110,16 @@
       {
         "id": "stutthof-memorial",
         "slug": "stutthof-memorial",
-        "thumb": "https://picsum.photos/seed/stutthof-memorial/400/250",
-        "banner": "https://picsum.photos/seed/stutthof-memorial/800/500",
+        "thumb": "/images/trips/stutthof-memorial-thumb.jpg",
+        "banner": "/images/trips/stutthof-memorial.jpg",
         "title": "Stutthof Memorial",
         "meta": "4 h · Sztutowo",
         "duration": "4 h",
         "location": "Sztutowo",
-        "tags": ["Memorial", "History"],
+        "tags": [
+          "Memorial",
+          "History"
+        ],
         "body": "The first Nazi concentration camp established on Polish soil. A necessary visit — sombre, honest and deeply important.",
         "longDescription": "Stutthof was established in September 1939, near Gdańsk. Around 65,000 people died here before its liberation in 1945. Visitors see the original prisoner barracks, the commander's villa, the gas chambers and the crematorium. The museum's exhibitions give historical context and carry the personal stories of those imprisoned here. A deeply educational experience — and a reminder of the cost of forgetting.",
         "highlights": [
@@ -120,13 +135,16 @@
       {
         "id": "elblag-canal-frombork",
         "slug": "elblag-canal-frombork",
-        "thumb": "https://picsum.photos/seed/elblag-canal/400/250",
-        "banner": "https://picsum.photos/seed/elblag-canal/800/500",
+        "thumb": "/images/trips/elblag-canal-frombork-thumb.jpg",
+        "banner": "/images/trips/elblag-canal-frombork.jpg",
         "title": "Elbląg Canal & Frombork",
         "meta": "8 h · Elbląg / Frombork",
         "duration": "8 h",
         "location": "Elbląg / Frombork",
-        "tags": ["Day Trip", "UNESCO"],
+        "tags": [
+          "Day Trip",
+          "UNESCO"
+        ],
         "body": "Sail on land. Then visit the cathedral town where Copernicus changed humanity's understanding of the universe.",
         "longDescription": "Experience the only place on Earth where passenger boats travel overland on inclined planes and rails, powered entirely by water — one of Poland's Seven Wonders. Afterwards, drive to Frombork on the Vistula Lagoon, where Nicolaus Copernicus lived, worked and wrote De Revolutionibus — the work that placed the Sun at the centre of everything. Entry tickets and private guide in Frombork included.",
         "highlights": [
@@ -142,13 +160,16 @@
       {
         "id": "wolfs-lair-swieta-lipka",
         "slug": "wolfs-lair-swieta-lipka",
-        "thumb": "https://picsum.photos/seed/wolfs-lair/400/250",
-        "banner": "https://picsum.photos/seed/wolfs-lair/800/500",
+        "thumb": "/images/trips/wolfs-lair-swieta-lipka-thumb.jpg",
+        "banner": "/images/trips/wolfs-lair-swieta-lipka.jpg",
         "title": "Wolf's Lair & Święta Lipka",
         "meta": "10 h · Masuria",
         "duration": "10 h",
         "location": "Masuria",
-        "tags": ["History", "Memorial"],
+        "tags": [
+          "History",
+          "Memorial"
+        ],
         "body": "Two utterly different places in the Masurian forest — a baroque sanctuary and the concrete command bunker from the darkest chapter of the 20th century.",
         "longDescription": "A day of profound contrasts deep in the Masurian forest. We begin at Święta Lipka — one of Poland's finest baroque pilgrimage churches, a place of extraordinary beauty and quiet. Then we enter the forest to Wolf's Lair (Wilczy Szaniec) — Adolf Hitler's most secretive field headquarters on the Eastern Front. The massive concrete bunkers still stand, half-swallowed by trees.",
         "highlights": [
@@ -170,7 +191,10 @@
         "meta": "10 h · Toruń",
         "duration": "10 h",
         "location": "Toruń",
-        "tags": ["Day Trip", "UNESCO"],
+        "tags": [
+          "Day Trip",
+          "UNESCO"
+        ],
         "body": "A UNESCO Old Town, a Leaning Tower, the birthplace of Copernicus, and gingerbread that has been the city's signature for over 700 years.",
         "longDescription": "Toruń is a historic Polish city and a UNESCO World Heritage Site. We discover the enchanting Old Town — the Old Town Hall, the Cathedral of St John (where Copernicus was baptised), and the famous Leaning Tower. We visit the birthplace of Nicolaus Copernicus and learn about the man who rewrote humanity's understanding of the cosmos. We end with an interactive workshop at the Living Museum of Gingerbread.",
         "highlights": [
@@ -193,13 +217,16 @@
       {
         "id": "tri-city-day",
         "slug": "tri-city-day",
-        "thumb": "https://picsum.photos/seed/tri-city-day/400/250",
-        "banner": "https://picsum.photos/seed/tri-city-day/800/500",
+        "thumb": "/images/trips/tri-city-day-thumb.jpg",
+        "banner": "/images/trips/tri-city-day.jpg",
         "title": "Trójmiasto w jeden dzień",
         "meta": "8 h · Trójmiasto",
         "duration": "8 h",
         "location": "Trójmiasto",
-        "tags": ["Wycieczka", "Kultura"],
+        "tags": [
+          "Wycieczka",
+          "Kultura"
+        ],
         "body": "Historia, elegancja i Bałtyk — wszystko w jednym dniu. Gdańsk, Sopot i Gdynia: trzy miasta o zupełnie różnych duszach.",
         "longDescription": "Odkryj całe Trójmiasto w jeden niezapomniany dzień. Średniowieczny Gdańsk, ukształtowany przez hanzeatycki handel i powojenną odbudowę. Elegancki Sopot z najdłuższym drewnianym molem w Europie. I Gdynia — modernistyczne miasto portowe zbudowane niemal od zera w latach dwudziestych. Zatrzymamy się też w Katedrze Oliwskiej na koncercie organowym. Odbiór z hotelu wliczony; dzieci do 7 lat bezpłatnie.",
         "highlights": [
@@ -222,7 +249,10 @@
         "meta": "8 h · Kaszuby",
         "duration": "8 h",
         "location": "Kaszuby",
-        "tags": ["Wycieczka", "Natura"],
+        "tags": [
+          "Wycieczka",
+          "Natura"
+        ],
         "body": "Tuż za Gdańskiem leży region niepodobny do żadnego innego w Polsce — własny język, własne wzgórza, własny sposób na bycie w świecie.",
         "longDescription": "Niedaleko od wybrzeża zanurz się w krainie pagórków, pięknych jezior, unikalnej kultury i regionalnej kuchni. Odkrywamy 'Szwajcarię Kaszubską', odwiedzamy pracownie garncarskie i rękodzielnicze, zwiedzamy Muzeum Kolejnictwa w Kościerzynie i widzimy słynny dom na głowie w Szymbarku. Spokojny, satysfakcjonujący dzień z dala od utartych szlaków. Odbiór z hotelu wliczony; dzieci do 7 lat bezpłatnie.",
         "highlights": [
@@ -239,13 +269,16 @@
       {
         "id": "malbork-castle-day",
         "slug": "malbork-castle-day",
-        "thumb": "https://picsum.photos/seed/malbork-castle-day/400/250",
-        "banner": "https://picsum.photos/seed/malbork-castle-day/800/500",
+        "thumb": "/images/trips/malbork-castle-day-thumb.jpg",
+        "banner": "/images/trips/malbork-castle-day.jpg",
         "title": "Zamek w Malborku",
         "meta": "6 h · Malbork",
         "duration": "6 h",
         "location": "Malbork",
-        "tags": ["Zamek", "Wycieczka"],
+        "tags": [
+          "Zamek",
+          "Wycieczka"
+        ],
         "body": "Największy ceglany zamek na świecie. Obiekt UNESCO. Dawna siedziba Krzyżaków — i wciąż niemożliwy do ogarnięcia jednym spojrzeniem.",
         "longDescription": "Odkryj wspaniały Zamek w Malborku — największy ceglany zamek na świecie i obiekt UNESCO od 1997 roku. Ta trzynastowieczna twierdza, dawna siedziba potężnych Krzyżaków, to arcydzieło architektury gotyckiej. Wejście bez kolejki i kompleksowe zwiedzanie Zamku Wysokiego, Średniego i Przedzamcza. Transport z Gdańska wliczony; dzieci do 7 lat bezpłatnie.",
         "highlights": [
@@ -268,7 +301,10 @@
         "meta": "8 h · Malbork / Westerplatte",
         "duration": "8 h",
         "location": "Malbork / Westerplatte",
-        "tags": ["Zamek", "Historia"],
+        "tags": [
+          "Zamek",
+          "Historia"
+        ],
         "body": "Dwa miejsca, w których historia zmieniła bieg. Jeden dzień, dwie podróże — od średniowiecznej twierdzy po pole, gdzie zaczęła się II Wojna Światowa.",
         "longDescription": "Zamek w Malborku to jeden z symboli Polski — największa ceglana twierdza świata, która przez wieki władała terenami nad Nogatem. Po zwiedzaniu zamku jedziemy przez piękne Żuławy Wiślane, śladami historycznych szlaków mennonickich. Ostatni przystanek: Westerplatte — gdzie 1 września 1939 roku zaczęła się II Wojna Światowa. Wliczony audioprzewodnik w Malborku, tradycyjny lunch i prywatny przewodnik na Westerplatte.",
         "highlights": [
@@ -284,13 +320,16 @@
       {
         "id": "stutthof-memorial",
         "slug": "stutthof-memorial",
-        "thumb": "https://picsum.photos/seed/stutthof-memorial/400/250",
-        "banner": "https://picsum.photos/seed/stutthof-memorial/800/500",
+        "thumb": "/images/trips/stutthof-memorial-thumb.jpg",
+        "banner": "/images/trips/stutthof-memorial.jpg",
         "title": "Muzeum Stutthof",
         "meta": "4 h · Sztutowo",
         "duration": "4 h",
         "location": "Sztutowo",
-        "tags": ["Pamięć", "Historia"],
+        "tags": [
+          "Pamięć",
+          "Historia"
+        ],
         "body": "Pierwszy nazistowski obóz koncentracyjny na polskiej ziemi. Konieczna wizyta — poważna, szczera i głęboko ważna.",
         "longDescription": "Stutthof powstał we wrześniu 1939 roku w pobliżu Gdańska. Przed wyzwoleniem w 1945 roku zginęło tu około 65 000 osób. Zwiedzający oglądają oryginalne baraki więźniów, willę komendanta, komory gazowe i krematorium. Wystawy muzealne przywołują historyczny kontekst i osobiste historie więźniów. Głęboko edukacyjne doświadczenie — i przypomnienie o kosztach zapomnienia.",
         "highlights": [
@@ -306,13 +345,16 @@
       {
         "id": "elblag-canal-frombork",
         "slug": "elblag-canal-frombork",
-        "thumb": "https://picsum.photos/seed/elblag-canal/400/250",
-        "banner": "https://picsum.photos/seed/elblag-canal/800/500",
+        "thumb": "/images/trips/elblag-canal-frombork-thumb.jpg",
+        "banner": "/images/trips/elblag-canal-frombork.jpg",
         "title": "Kanał Elbląski i Frombork",
         "meta": "8 h · Elbląg / Frombork",
         "duration": "8 h",
         "location": "Elbląg / Frombork",
-        "tags": ["Wycieczka", "UNESCO"],
+        "tags": [
+          "Wycieczka",
+          "UNESCO"
+        ],
         "body": "Płyń lądem. Potem odwiedź miasteczko katedralne, gdzie Kopernik zmienił rozumienie wszechświata.",
         "longDescription": "Doświadcz jedynego miejsca na Ziemi, gdzie statki pasażerskie pokonują ląd na pochylniach napędzanych wyłącznie siłą wody — jednego z Siedmiu Cudów Polski. Następnie jedziemy do Fromborka nad Zalewem Wiślanym, gdzie Mikołaj Kopernik żył, pracował i napisał De Revolutionibus — dzieło, które umieściło Słońce w centrum wszystkiego. Bilety wstępu i prywatny przewodnik we Fromborku wliczone.",
         "highlights": [
@@ -328,13 +370,16 @@
       {
         "id": "wolfs-lair-swieta-lipka",
         "slug": "wolfs-lair-swieta-lipka",
-        "thumb": "https://picsum.photos/seed/wolfs-lair/400/250",
-        "banner": "https://picsum.photos/seed/wolfs-lair/800/500",
+        "thumb": "/images/trips/wolfs-lair-swieta-lipka-thumb.jpg",
+        "banner": "/images/trips/wolfs-lair-swieta-lipka.jpg",
         "title": "Wilczy Szaniec i Święta Lipka",
         "meta": "10 h · Mazury",
         "duration": "10 h",
         "location": "Mazury",
-        "tags": ["Historia", "Pamięć"],
+        "tags": [
+          "Historia",
+          "Pamięć"
+        ],
         "body": "Dwa zupełnie różne miejsca w głębi mazurskich lasów — barokowe sanktuarium i betonowy bunkier z najciemniejszego rozdziału XX wieku.",
         "longDescription": "Dzień głębokich kontrastów w mazurskich lasach. Zaczynamy od Świętej Lipki — jednego z najpiękniejszych barokowych kościołów pielgrzymkowych w Polsce, miejsca niezwykłej urody i spokoju. Potem wchodzimy w las do Wilczego Szańca — najbardziej tajnej kwatery polowej Hitlera na Froncie Wschodnim. Potężne betonowe bunkry stoją do dziś, w połowie pochłonięte przez las.",
         "highlights": [
@@ -356,7 +401,10 @@
         "meta": "10 h · Toruń",
         "duration": "10 h",
         "location": "Toruń",
-        "tags": ["Wycieczka", "UNESCO"],
+        "tags": [
+          "Wycieczka",
+          "UNESCO"
+        ],
         "body": "Stare Miasto UNESCO, Krzywa Wieża, miejsce urodzin Kopernika i pierniki będące wizytówką miasta od ponad 700 lat.",
         "longDescription": "Toruń to historyczne polskie miasto i obiekt UNESCO. Odkrywamy urokliwe Stare Miasto — Ratusz Staromiejski, Katedrę Świętych Janów (gdzie ochrzczono Kopernika) i słynną Krzywą Wieżę. Odwiedzamy dom, w którym urodził się Mikołaj Kopernik, i poznajemy historię człowieka, który przepisał ludzkie rozumienie kosmosu. Na koniec — interaktywne warsztaty w Żywym Muzeum Piernika.",
         "highlights": [

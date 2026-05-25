@@ -7,13 +7,16 @@
       {
         "id": "essential-gdansk-walk",
         "slug": "essential-gdansk-walk",
-        "thumb": "https://picsum.photos/seed/essential-gdansk/400/250",
-        "banner": "https://picsum.photos/seed/essential-gdansk/800/500",
+        "thumb": "/images/trips/essential-gdansk-walk-thumb.jpg",
+        "banner": "/images/trips/essential-gdansk-walk.jpg",
         "title": "The Essential Gdańsk Walk",
         "meta": "4 h · City Centre",
         "duration": "4 h",
         "location": "City Centre",
-        "tags": ["History", "Walking"],
+        "tags": [
+          "History",
+          "Walking"
+        ],
         "body": "Ten centuries of history in a single walk. From the Golden Gate to the Solidarity Monument — the full story of Gdańsk, told at a pace that lets you actually take it in.",
         "longDescription": "Sightseeing on foot is the ideal way to discover the city's heart in a short time. During the walk I share stories, anecdotes and facts that will not let you easily forget this place. We move through the Royal Route and Old Town, stopping at every landmark that shaped Gdańsk's story. I don't bore you. I promise.",
         "highlights": [
@@ -31,13 +34,16 @@
       {
         "id": "solidarity-shipyard",
         "slug": "solidarity-shipyard",
-        "thumb": "https://picsum.photos/seed/solidarity-shipyard/400/250",
-        "banner": "https://picsum.photos/seed/solidarity-shipyard/800/500",
+        "thumb": "/images/trips/solidarity-shipyard-thumb.jpg",
+        "banner": "/images/trips/solidarity-shipyard.jpg",
         "title": "It Started in Gdańsk",
         "meta": "3 h · Shipyard District",
         "duration": "3 h",
         "location": "Shipyard District",
-        "tags": ["History", "Solidarity"],
+        "tags": [
+          "History",
+          "Solidarity"
+        ],
         "body": "The story of the dockyard workers who changed Europe — walked from the gate where it all began.",
         "longDescription": "A walk through the Old Shipyard and the places where Poland's Solidarity movement came to life. We visit the BHP Hall where the 1980 Agreements were signed, historic Gate No. 2, and the Square of the Fallen Shipyard Workers, with a small stop for a local soft drink. We finish at the European Solidarity Centre — one of the finest museums in Poland. Entry tickets included.",
         "highlights": [
@@ -53,13 +59,16 @@
       {
         "id": "free-city-wwii",
         "slug": "free-city-wwii",
-        "thumb": "https://picsum.photos/seed/free-city-wwii/400/250",
-        "banner": "https://picsum.photos/seed/free-city-wwii/800/500",
+        "thumb": "/images/trips/free-city-wwii-thumb.jpg",
+        "banner": "/images/trips/free-city-wwii.jpg",
         "title": "The Free City & World War II",
         "meta": "6 h · Westerplatte",
         "duration": "6 h",
         "location": "Westerplatte",
-        "tags": ["History", "Memorial"],
+        "tags": [
+          "History",
+          "Memorial"
+        ],
         "body": "Westerplatte. The Polish Post Office. The places where the Second World War began — and where ordinary people faced the extraordinary with uncommon courage.",
         "longDescription": "The perfect tour for travellers interested in Gdańsk's history during the Second World War. Transfer to Westerplatte Peninsula — battlefield where WWII began on 1 September 1939 — with a walk through the ruins and the story of the garrison's defence. Then on to the Museum of the Polish Post Office, where the building's civilian defenders became wartime heroes.",
         "highlights": [
@@ -81,7 +90,10 @@
         "meta": "3 h · Waterfront",
         "duration": "3 h",
         "location": "Waterfront",
-        "tags": ["History", "Maritime"],
+        "tags": [
+          "History",
+          "Maritime"
+        ],
         "body": "Gdańsk was one of the most powerful harbours in the medieval world. This walk reveals the Hanseatic soul of the city — in every crane, granary and merchant house.",
         "longDescription": "See the most powerful harbour on the Baltic Sea. Learn about maritime tradition and the merchant spirit that built Gdańsk into a European powerhouse. We follow the Royal Route to the Crane, explore Granary Island, visit the Fish Market, and finish at the National Maritime Museum on Ołowianka Island. Optional: Amber Sky view wheel.",
         "highlights": [
@@ -99,13 +111,16 @@
       {
         "id": "where-is-amber",
         "slug": "where-is-amber",
-        "thumb": "https://picsum.photos/seed/where-is-amber/400/250",
-        "banner": "https://picsum.photos/seed/where-is-amber/800/500",
+        "thumb": "/images/trips/where-is-amber-thumb.jpg",
+        "banner": "/images/trips/where-is-amber.jpg",
         "title": "Where Is Amber?",
         "meta": "3 h · Old Town",
         "duration": "3 h",
         "location": "Old Town",
-        "tags": ["Culture", "Amber"],
+        "tags": [
+          "Culture",
+          "Amber"
+        ],
         "body": "Gdańsk is the undisputed world capital of amber. This walk follows Baltic gold from its ancient trade routes to the hands of artisans working today.",
         "longDescription": "For millennia, this petrified tree resin captivated civilisations — from ancient Rome to the royal courts of Europe. Gdańsk sits at the heart of that story. We walk the Royal Route to Mariacka Street, visit the Amber Museum in the Great Mill, and end at a private amber workshop where master artisans transform raw resin into breathtaking art.",
         "highlights": [
@@ -121,13 +136,16 @@
       {
         "id": "beer-and-stars",
         "slug": "beer-and-stars",
-        "thumb": "https://picsum.photos/seed/beer-and-stars/400/250",
-        "banner": "https://picsum.photos/seed/beer-and-stars/800/500",
+        "thumb": "/images/trips/beer-and-stars-thumb.jpg",
+        "banner": "/images/trips/beer-and-stars.jpg",
         "title": "Beer and Stars",
         "meta": "3 h · Old Town",
         "duration": "3 h",
         "location": "Old Town",
-        "tags": ["History", "Science"],
+        "tags": [
+          "History",
+          "Science"
+        ],
         "body": "Meet the man who charted the skies while walking the streets of Gdańsk — an extraordinary lesson in history, science and excellent beer.",
         "longDescription": "The Jan Heweliusz Trail combines two of Johannes Hevelius's greatest passions: exploring the Universe and brewing beer. We visit the Old Town Hall, Heweliusz Square, St Catherine's Church, and the Hewelianum Science Centre on Gradowa Hill. We finish at the PG4 restaurant — with a glass brewed to Hevelius's own 17th-century recipe.",
         "highlights": [
@@ -144,13 +162,16 @@
       {
         "id": "railroad-in-gdansk",
         "slug": "railroad-in-gdansk",
-        "thumb": "https://picsum.photos/seed/railroad-gdansk/400/250",
-        "banner": "https://picsum.photos/seed/railroad-gdansk/800/500",
+        "thumb": "/images/trips/railroad-in-gdansk-thumb.jpg",
+        "banner": "/images/trips/railroad-in-gdansk.jpg",
         "title": "Railroad in Gdańsk",
         "meta": "3–6 h · City Centre",
         "duration": "3–6 h",
         "location": "City Centre",
-        "tags": ["History", "Architecture"],
+        "tags": [
+          "History",
+          "Architecture"
+        ],
         "body": "Gdańsk's history and its railways are inseparable. This tour traces the iron arteries that shaped the city — and the wartime lines that history still remembers.",
         "longDescription": "While today's trains carry commuters, their tracks run over a past of industrial might and wartime significance. We explore Gdańsk Główny station, the District Directorate of Polish Railways, and Gradowa Hill. The extended version adds the Railway Museum in Kościerzyna, the Westerplatte Railway Gate, and Weiser's Viaduct — known from Paweł Huelle's celebrated novel.",
         "highlights": [
@@ -173,13 +194,16 @@
       {
         "id": "essential-gdansk-walk",
         "slug": "essential-gdansk-walk",
-        "thumb": "https://picsum.photos/seed/essential-gdansk/400/250",
-        "banner": "https://picsum.photos/seed/essential-gdansk/800/500",
+        "thumb": "/images/trips/essential-gdansk-walk-thumb.jpg",
+        "banner": "/images/trips/essential-gdansk-walk.jpg",
         "title": "Esencja Gdańska",
         "meta": "4 h · Centrum",
         "duration": "4 h",
         "location": "Centrum",
-        "tags": ["Historia", "Spacer"],
+        "tags": [
+          "Historia",
+          "Spacer"
+        ],
         "body": "Dziesięć wieków historii w jednym spacerze. Od Złotej Bramy po Pomnik Poległych Stoczniowców — pełna opowieść o Gdańsku, opowiedziana w tempie, które pozwala naprawdę ją wchłonąć.",
         "longDescription": "Spacer to idealny sposób, by w krótkim czasie poznać serce miasta. Podczas czterogodzinnej wędrówki opowiadam ciekawostki, anegdoty i fakty, które sprawią, że tego miejsca nie zapomnisz. Przemierzamy Drogę Królewską i Stare Miasto, zatrzymując się przy miejscach kluczowych dla historii Gdańska. Nie nudzę. Obiecuję.",
         "highlights": [
@@ -197,13 +221,16 @@
       {
         "id": "solidarity-shipyard",
         "slug": "solidarity-shipyard",
-        "thumb": "https://picsum.photos/seed/solidarity-shipyard/400/250",
-        "banner": "https://picsum.photos/seed/solidarity-shipyard/800/500",
+        "thumb": "/images/trips/solidarity-shipyard-thumb.jpg",
+        "banner": "/images/trips/solidarity-shipyard.jpg",
         "title": "To się zaczęło w Gdańsku",
         "meta": "3 h · Dzielnica Stoczniowa",
         "duration": "3 h",
         "location": "Dzielnica Stoczniowa",
-        "tags": ["Historia", "Solidarność"],
+        "tags": [
+          "Historia",
+          "Solidarność"
+        ],
         "body": "Historia stoczniowców, którzy zmienili Europę — opowiedziana od bramy, przy której wszystko się zaczęło.",
         "longDescription": "Spacer przez Stocznię Gdańską i miejsca, w których narodziła się Solidarność. Odwiedzamy Salę BHP, gdzie podpisano Porozumienia Sierpniowe, historyczną Bramę nr 2 i Plac Poległych Stoczniowców — z małym postojem na lokalny napój. Kończymy w Europejskim Centrum Solidarności, jednym z najlepszych muzeów w Polsce. Wstęp wliczony.",
         "highlights": [
@@ -219,13 +246,16 @@
       {
         "id": "free-city-wwii",
         "slug": "free-city-wwii",
-        "thumb": "https://picsum.photos/seed/free-city-wwii/400/250",
-        "banner": "https://picsum.photos/seed/free-city-wwii/800/500",
+        "thumb": "/images/trips/free-city-wwii-thumb.jpg",
+        "banner": "/images/trips/free-city-wwii.jpg",
         "title": "Wolne Miasto i II Wojna Światowa",
         "meta": "6 h · Westerplatte",
         "duration": "6 h",
         "location": "Westerplatte",
-        "tags": ["Historia", "Pamięć"],
+        "tags": [
+          "Historia",
+          "Pamięć"
+        ],
         "body": "Westerplatte. Poczta Polska. Miejsca, w których zaczęła się II Wojna Światowa — i gdzie zwykli ludzie stanęli twarzą w twarz z niezwykłym losem.",
         "longDescription": "Idealna wycieczka dla podróżnych zainteresowanych historią Gdańska, szczególnie z okresu II Wojny Światowej. Transfer na Westerplatte — pole bitwy, gdzie 1 września 1939 roku padły pierwsze strzały — ze spacerem przez ruiny i historią obrony garnizonu. Następnie wizyta w Muzeum Poczty Polskiej, gdzie cywilni obrońcy stali się wojennymi bohaterami.",
         "highlights": [
@@ -247,7 +277,10 @@
         "meta": "3 h · Nabrzeże",
         "duration": "3 h",
         "location": "Nabrzeże",
-        "tags": ["Historia", "Hanza"],
+        "tags": [
+          "Historia",
+          "Hanza"
+        ],
         "body": "Gdańsk był jednym z najpotężniejszych portów średniowiecznego świata. Ten spacer ujawnia hanzeatycką duszę miasta — w każdym żurawiu, spichlerzu i kamienicy.",
         "longDescription": "Poznaj najpotężniejszy port Bałtyku. Usłysz o istocie Gdańska, jego morskich tradycjach i kupieckim duchu, który zbudował miasto na europejską potęgę. Przechodzimy Drogą Królewską do Żurawia, zaglądamy na Wyspę Spichrzów i Targ Rybny, a kończymy w Narodowym Muzeum Morskim na Wyspie Ołowianka. Opcjonalnie: koło widokowe Amber Sky.",
         "highlights": [
@@ -265,13 +298,16 @@
       {
         "id": "where-is-amber",
         "slug": "where-is-amber",
-        "thumb": "https://picsum.photos/seed/where-is-amber/400/250",
-        "banner": "https://picsum.photos/seed/where-is-amber/800/500",
+        "thumb": "/images/trips/where-is-amber-thumb.jpg",
+        "banner": "/images/trips/where-is-amber.jpg",
         "title": "Gdzie jest bursztyn?",
         "meta": "3 h · Stare Miasto",
         "duration": "3 h",
         "location": "Stare Miasto",
-        "tags": ["Kultura", "Bursztyn"],
+        "tags": [
+          "Kultura",
+          "Bursztyn"
+        ],
         "body": "Gdańsk to niekwestionowana światowa stolica bursztynu. Ten spacer śledzi bałtyckie złoto — od starożytnych szlaków handlowych po ręce rzemieślników pracujących dziś.",
         "longDescription": "Od tysiącleci ta skamieniała żywica fascynowała cywilizacje — od starożytnego Rzymu po europejskie dwory królewskie. Gdańsk stoi w centrum tej historii. Przechodzimy Drogą Królewską do ulicy Mariackiej, odwiedzamy Muzeum Bursztynu w Wielkim Młynie i kończymy w prywatnej pracowni bursztynniczej, gdzie mistrzowie zamieniają surową żywicę w dzieła sztuki.",
         "highlights": [
@@ -287,13 +323,16 @@
       {
         "id": "beer-and-stars",
         "slug": "beer-and-stars",
-        "thumb": "https://picsum.photos/seed/beer-and-stars/400/250",
-        "banner": "https://picsum.photos/seed/beer-and-stars/800/500",
+        "thumb": "/images/trips/beer-and-stars-thumb.jpg",
+        "banner": "/images/trips/beer-and-stars.jpg",
         "title": "Piwo i Gwiazdy",
         "meta": "3 h · Stare Miasto",
         "duration": "3 h",
         "location": "Stare Miasto",
-        "tags": ["Historia", "Nauka"],
+        "tags": [
+          "Historia",
+          "Nauka"
+        ],
         "body": "Poznaj człowieka, który obserwował gwiazdy, stojąc mocno na gdańskiej ziemi — niezwykła lekcja historii, nauki i dobrego piwa.",
         "longDescription": "Szlak Jana Heweliusza łączy dwie wielkie pasje tego astronoma: eksplorację Wszechświata i warzenie piwa. Odwiedzamy Ratusz Staromiejski, plac Heweliusza, kościół Świętej Katarzyny i Centrum Hewelianum na Górze Gradowej. Kończymy w restauracji PG4 — przy piwie uwarzonem według oryginalnej XVII-wiecznej receptury Heweliusza.",
         "highlights": [
@@ -310,13 +349,16 @@
       {
         "id": "railroad-in-gdansk",
         "slug": "railroad-in-gdansk",
-        "thumb": "https://picsum.photos/seed/railroad-gdansk/400/250",
-        "banner": "https://picsum.photos/seed/railroad-gdansk/800/500",
+        "thumb": "/images/trips/railroad-in-gdansk-thumb.jpg",
+        "banner": "/images/trips/railroad-in-gdansk.jpg",
         "title": "Kolej w Gdańsku",
         "meta": "3–6 h · Centrum",
         "duration": "3–6 h",
         "location": "Centrum",
-        "tags": ["Historia", "Architektura"],
+        "tags": [
+          "Historia",
+          "Architektura"
+        ],
         "body": "Historia Gdańska i kolej są nierozłączne. Ta wycieczka śledzi żelazne arterie, które ukształtowały miasto — i wojenne linie, które historia wciąż pamięta.",
         "longDescription": "Dziś pociągi wożą dojeżdżających do pracy, ale szyny biegną nad przeszłością przemysłowej potęgi i wojennych znaczeń. Zwiedzamy dworzec Gdańsk Główny, budynek Dyrekcji Kolei i punkt widokowy na Górze Gradowej. Wersja rozszerzona dodaje Muzeum Kolejnictwa w Kościerzynie, Bramę Kolejową na Westerplatte i Wiadukt Weisera — znany z powieści Pawła Huellego.",
         "highlights": [

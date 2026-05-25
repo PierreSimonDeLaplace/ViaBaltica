@@ -7,13 +7,16 @@
       {
         "id": "bike-tour-gdansk",
         "slug": "bike-tour-gdansk",
-        "thumb": "https://picsum.photos/seed/bike-tour-gdansk/400/250",
-        "banner": "https://picsum.photos/seed/bike-tour-gdansk/800/500",
+        "thumb": "/images/trips/bike-tour-gdansk-thumb.jpg",
+        "banner": "/images/trips/bike-tour-gdansk.jpg",
         "title": "Gdańsk on Two Wheels",
         "meta": "4 h · City Centre",
         "duration": "4 h",
         "location": "City Centre",
-        "tags": ["Cycling", "History"],
+        "tags": [
+          "Cycling",
+          "History"
+        ],
         "body": "The most intimate way to feel a city's rhythm — from the Old Town and the Shipyard to the Baltic coast path, all in one four-hour ride.",
         "longDescription": "Gdańsk is one of Poland's most bike-friendly cities, and cycling offers an intimacy that no bus or walking tour can match. We cover the historic Main City, cross into the Old Town, visit the Shipyard and Solidarity Square, then follow the green bicycle routes to the Lower Town bastions and the coastal path at Nowy Port and Brzeźno.",
         "highlights": [
@@ -30,13 +33,16 @@
       {
         "id": "tri-city-coastal-route",
         "slug": "tri-city-coastal-route",
-        "thumb": "https://picsum.photos/seed/tri-city-coastal/400/250",
-        "banner": "https://picsum.photos/seed/tri-city-coastal/800/500",
+        "thumb": "/images/trips/tri-city-coastal-route-thumb.jpg",
+        "banner": "/images/trips/tri-city-coastal-route.jpg",
         "title": "Tri-City Coastal Route",
         "meta": "6 h · Tri-City",
         "duration": "6 h",
         "location": "Tri-City",
-        "tags": ["Cycling", "Coast"],
+        "tags": [
+          "Cycling",
+          "Coast"
+        ],
         "body": "One coastal road, three cities with three entirely different souls. The most popular ride in the Tri-City — ~21 km along the Bay of Gdańsk.",
         "longDescription": "The most popular cycling tour in the Tri-City follows the Bay of Gdańsk coast — scenic, relatively flat, and perfectly suited to experiencing all three cities in one long Baltic day. From Gdańsk's historic centre and Shipyard, past the famous murals of Zaspa, through Sopot's sea promenade and Europe's longest wooden pier, all the way into the modernist port city of Gdynia.",
         "highlights": [
@@ -52,13 +58,16 @@
       {
         "id": "cycling-pomerania",
         "slug": "cycling-pomerania",
-        "thumb": "https://picsum.photos/seed/cycling-pomerania/400/250",
-        "banner": "https://picsum.photos/seed/cycling-pomerania/800/500",
+        "thumb": "/images/trips/cycling-pomerania-thumb.jpg",
+        "banner": "/images/trips/cycling-pomerania.jpg",
         "title": "Cycling Around Pomerania",
         "meta": "Full day · Pomerania",
         "duration": "Full day",
         "location": "Pomerania",
-        "tags": ["Cycling", "Nature"],
+        "tags": [
+          "Cycling",
+          "Nature"
+        ],
         "body": "Hills, lakes, forests — and history at every turn. A full day of cycling through some of Pomerania's most rewarding landscapes.",
         "longDescription": "Venture beyond the city into rolling Kashubian hills, pristine lakes and dense Pomeranian forests. I know these trails well — from the Mennonite Trail through the Vistula Delta, to the road south to Malbork Castle, to the Vistula Spit between Baltic Sea and lagoon, and the coastal trail all the way to Hel. Starting point: Gdańsk Old Town. The direction depends on your interests and the day.",
         "highlights": [
@@ -81,13 +90,16 @@
       {
         "id": "bike-tour-gdansk",
         "slug": "bike-tour-gdansk",
-        "thumb": "https://picsum.photos/seed/bike-tour-gdansk/400/250",
-        "banner": "https://picsum.photos/seed/bike-tour-gdansk/800/500",
+        "thumb": "/images/trips/bike-tour-gdansk-thumb.jpg",
+        "banner": "/images/trips/bike-tour-gdansk.jpg",
         "title": "Gdańsk na dwóch kółkach",
         "meta": "4 h · Centrum",
         "duration": "4 h",
         "location": "Centrum",
-        "tags": ["Rower", "Historia"],
+        "tags": [
+          "Rower",
+          "Historia"
+        ],
         "body": "Najintymniejszy sposób, by poczuć rytm miasta — od Starego Miasta i Stoczni po nadmorską ścieżkę rowerową, wszystko w jednej czterogodzinnej przejażdżce.",
         "longDescription": "Gdańsk to jedno z najbardziej przyjaznych rowerzystom miast w Polsce, a jazda na rowerze daje bliskość, której nie zastąpi żaden autobus ani pieszy spacer. Przemierzamy historyczne Główne Miasto, zajeżdżamy do Stoczni i na plac Solidarności, a potem zielone trasy prowadzą przez bastiony Dolnego Miasta i nadmorską ścieżkę do Nowego Portu i Brzeźna.",
         "highlights": [
@@ -104,13 +116,16 @@
       {
         "id": "tri-city-coastal-route",
         "slug": "tri-city-coastal-route",
-        "thumb": "https://picsum.photos/seed/tri-city-coastal/400/250",
-        "banner": "https://picsum.photos/seed/tri-city-coastal/800/500",
+        "thumb": "/images/trips/tri-city-coastal-route-thumb.jpg",
+        "banner": "/images/trips/tri-city-coastal-route.jpg",
         "title": "Trójmiejska Trasa Nadmorska",
         "meta": "6 h · Trójmiasto",
         "duration": "6 h",
         "location": "Trójmiasto",
-        "tags": ["Rower", "Wybrzeże"],
+        "tags": [
+          "Rower",
+          "Wybrzeże"
+        ],
         "body": "Jedna nadmorska trasa, trzy miasta o zupełnie różnych duszach. Najpopularniejsza przejażdżka w Trójmieście — ok. 21 km wzdłuż Zatoki Gdańskiej.",
         "longDescription": "Najpopularniejsza trasa rowerowa w Trójmieście biegnie wzdłuż wybrzeża Zatoki Gdańskiej — malownicza, stosunkowo płaska i stworzona do tego, by poczuć wszystkie trzy miasta w jeden długi bałtycki dzień. Z historycznego centrum Gdańska i Stoczni, przez słynne murale Zaspy i sopocką promenadę, przez najdłuższe drewniane molo w Europie, aż do modernistycznego portu Gdyni.",
         "highlights": [
@@ -126,13 +141,16 @@
       {
         "id": "cycling-pomerania",
         "slug": "cycling-pomerania",
-        "thumb": "https://picsum.photos/seed/cycling-pomerania/400/250",
-        "banner": "https://picsum.photos/seed/cycling-pomerania/800/500",
+        "thumb": "/images/trips/cycling-pomerania-thumb.jpg",
+        "banner": "/images/trips/cycling-pomerania.jpg",
         "title": "Rowerem przez Pomorze",
         "meta": "Cały dzień · Pomorze",
         "duration": "Cały dzień",
         "location": "Pomorze",
-        "tags": ["Rower", "Natura"],
+        "tags": [
+          "Rower",
+          "Natura"
+        ],
         "body": "Wzgórza, jeziora, lasy — i historia na każdym zakręcie. Cały dzień jazdy przez jedne z najpiękniejszych krajobrazów Pomorza.",
         "longDescription": "Wyruszamy poza miasto — w Kaszubskie wzgórza, błękitne jeziora i gęste pomorskie lasy. Znam te szlaki doskonale: od Szlaku Mennonickiego przez Żuławy, przez drogę na zamek w Malborku, po Mierzeję Wiślaną między Bałtykiem a Zalewem Wiślanym i nadmorską trasę na Półwysep Helski. Punkt startowy: gdańskie Stare Miasto. Kierunek dobieramy do zainteresowań grupy.",
         "highlights": [

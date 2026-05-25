@@ -3,42 +3,24 @@ import './hero.css';
 
 interface Slide { src: string; alt: string; }
 
-const SLIDES_LIGHT: Slide[] = [
+const SLIDES: Slide[] = [
   {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Gda%C5%84sk_G%C5%82%C3%B3wne_Miasto%2C_Ulica_Mariacka_-_panoramio.jpg/960px-Gda%C5%84sk_G%C5%82%C3%B3wne_Miasto%2C_Ulica_Mariacka_-_panoramio.jpg',
-    alt: "Ulica Mariacka — Gdańsk's Gothic amber street",
+    src: '/images/hero/gdansk.jpg',
+    alt: 'Gdańsk waterfront along the Motława river at dusk',
   },
   {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Neptune%27s_Fountain_in_the_center_of_Gdansk_-_panoramio.jpg/960px-Neptune%27s_Fountain_in_the_center_of_Gdansk_-_panoramio.jpg',
-    alt: "Neptune's Fountain at Długi Targ",
+    src: '/images/hero/krzywy_domek.jpg',
+    alt: 'Krzywy Domek — the famously crooked building in Sopot',
   },
   {
-    src: 'https://images8.alphacoders.com/742/thumb-1920-742355.jpg',
-    alt: 'Gdańsk old town panorama',
-  },
-];
-
-const SLIDES_DARK: Slide[] = [
-  {
-    src: 'https://images.unsplash.com/photo-1671921002984-4aaf9db971e2?w=1920&q=85',
-    alt: 'Gdańsk old town at dusk viewed from the Motława river',
-  },
-  {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Gdansk_at_night.jpg/960px-Gdansk_at_night.jpg',
-    alt: 'Gdańsk illuminated at night',
-  },
-  {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/%C5%BBuraw_in_Gda%C5%84sk.jpg/960px-%C5%BBuraw_in_Gda%C5%84sk.jpg',
-    alt: 'The Żuraw — a 14th-century crane on the Motława waterfront',
+    src: '/images/hero/torun.jpg',
+    alt: 'Toruń old town reflected in the Vistula river',
   },
 ];
 
 const AUTOPLAY_MS     = 5000;
 const SWIPE_THRESHOLD = 50;
 
-function isLight(): boolean {
-  return document.documentElement.dataset.theme === 'light';
-}
 
 export function mount(target: HTMLElement): void {
   target.insertAdjacentHTML('beforeend', html);
@@ -133,13 +115,6 @@ export function mount(target: HTMLElement): void {
   section.addEventListener('pointerenter', stopAutoplay);
   section.addEventListener('pointerleave', startAutoplay);
 
-  // Swap slide sets when the theme toggles
-  new MutationObserver(() => {
-    stopAutoplay();
-    buildSlides(isLight() ? SLIDES_LIGHT : SLIDES_DARK);
-    startAutoplay();
-  }).observe(document.documentElement, { attributeFilter: ['data-theme'] });
-
-  buildSlides(isLight() ? SLIDES_LIGHT : SLIDES_DARK);
+  buildSlides(SLIDES);
   startAutoplay();
 }
