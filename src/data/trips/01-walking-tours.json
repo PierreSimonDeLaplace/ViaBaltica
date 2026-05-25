@@ -29,7 +29,8 @@
         ],
         "price": 55,
         "group": "1–8 people",
-        "badge": "Most booked"
+        "badge": "Most booked",
+        "gallery": "old-town-waterfront"
       },
       {
         "id": "solidarity-shipyard",
@@ -216,7 +217,8 @@
         ],
         "price": 55,
         "group": "1–8 osób",
-        "badge": "Najpopularniejsza"
+        "badge": "Najpopularniejsza",
+        "gallery": "old-town-waterfront"
       },
       {
         "id": "solidarity-shipyard",
