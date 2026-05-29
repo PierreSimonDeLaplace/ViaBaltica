@@ -33,10 +33,12 @@ export function mount(target: HTMLElement): void {
   const dotsEl   = section.querySelector<HTMLElement>('.hero-dots')!;
 
   // count = number of real slides; DOM has count+1 elements (clone of slide 0 at the end)
-  let count   = 0;
-  let pos     = 0;  // transform position: 0..count (count = clone of slide 0)
-  let current = 0;  // active dot index: 0..count-1
-  let timer: ReturnType<typeof setInterval> | null = null;
+  let count       = 0;
+  let pos         = 0;  // transform position: 0..count (count = clone of slide 0)
+  let current     = 0;  // active dot index: 0..count-1
+  let rafId: number | null = null;
+  let lastAdvance = 0;
+  let hoverPaused = false;
   let dots: HTMLButtonElement[] = [];
 
   function moveTo(newPos: number, animate = true): void {
@@ -63,12 +65,31 @@ export function mount(target: HTMLElement): void {
   });
 
   function startAutoplay(): void {
-    timer = setInterval(() => moveTo(pos + 1), AUTOPLAY_MS);
+    stopAutoplay();
+    lastAdvance = performance.now();
+    const tick = (now: number): void => {
+      if (now - lastAdvance >= AUTOPLAY_MS) {
+        lastAdvance = now;
+        moveTo(pos + 1);
+      }
+      rafId = requestAnimationFrame(tick);
+    };
+    rafId = requestAnimationFrame(tick);
   }
 
   function stopAutoplay(): void {
-    if (timer !== null) { clearInterval(timer); timer = null; }
+    if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; }
   }
+
+  // rAF pauses automatically when the tab is hidden, so no explicit stop is needed.
+  // On return, reset lastAdvance so the first advance waits the full interval rather
+  // than firing immediately (the rAF timestamp jumps by however long we were away).
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) {
+      lastAdvance = performance.now();
+      if (!hoverPaused) startAutoplay();
+    }
+  });
 
   function buildSlides(slides: Slide[]): void {
     count = slides.length;
@@ -114,9 +135,14 @@ export function mount(target: HTMLElement): void {
     startAutoplay();
   }, { passive: true });
 
-  // Pause while hovering
-  section.addEventListener('pointerenter', stopAutoplay);
-  section.addEventListener('pointerleave', startAutoplay);
+  section.addEventListener('pointerenter', () => {
+    hoverPaused = true;
+    stopAutoplay();
+  });
+  section.addEventListener('pointerleave', () => {
+    hoverPaused = false;
+    startAutoplay();
+  });
 
   buildSlides(SLIDES);
   startAutoplay();

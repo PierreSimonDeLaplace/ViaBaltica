@@ -51,7 +51,7 @@
     linear-gradient(
       to bottom,
       var(--hero-tint-top) 0%,
-      var(--hero-tint-mid) 40%,
+      var(--hero-tint-mid) 55%,
       var(--hero-tint-bot) 100%
     ),
     linear-gradient(135deg, var(--hero-tint-warm) 0%, transparent 60%);
@@ -62,7 +62,7 @@
     linear-gradient(
       to bottom,
       var(--hero-tint-top) 0%,
-      var(--hero-tint-mid) 40%,
+      var(--hero-tint-mid) 55%,
       var(--hero-tint-bot) 100%
     );
 }
@@ -71,7 +71,7 @@
 
 .hero-dots {
   position: absolute;
-  bottom: 5.5rem;
+  bottom: 7.5rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
@@ -119,15 +119,15 @@
   max-width: 760px;
 }
 
-/* Hero eyebrow — dark mode reads fine from the global warm-cream token.
-   Light mode token is dark-brown (designed for white sections), invisible
-   against the hero's dark overlay tint, so override it here. */
-:root[data-theme="light"] .page-hero .eyebrow {
-  color: rgba(196, 176, 140, 0.90);
+/* Hero eyebrow — always sits against a photo, so override the section tokens
+   with a warm near-white that reads on any slide regardless of theme. */
+.page-hero .eyebrow {
+  color: var(--hero-eyebrow);
+  text-shadow: 0 1px 8px var(--shadow-60);
 }
-:root[data-theme="light"] .page-hero .eyebrow::before,
-:root[data-theme="light"] .page-hero .eyebrow::after {
-  background: rgba(196, 176, 140, 0.48);
+.page-hero .eyebrow::before,
+.page-hero .eyebrow::after {
+  background: var(--hero-eyebrow-line);
 }
 
 .page-hero h1 {
@@ -137,7 +137,7 @@
   line-height: 1.08;
   letter-spacing: -0.01em;
   color: var(--white);
-  text-shadow: 0 2px 24px var(--shadow-40);
+  text-shadow: 0 2px 24px var(--shadow-35);
 }
 .page-hero h1 em {
   color: var(--gold);
@@ -170,9 +170,10 @@
   right: 0;
   z-index: 1;
 
-  display: flex;
-  justify-content: center;
-  padding: 1.1rem clamp(1.5rem, 5vw, 3.5rem);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  align-items: center;
+  padding: 28px clamp(1.5rem, 5vw, 3.5rem);
 
   background: var(--hero-stat-bg);
   backdrop-filter: blur(12px);
@@ -185,16 +186,14 @@
 }
 
 .hero-stat {
-  flex: 1;
-  max-width: 180px;
   padding: 0 1rem;
   text-align: center;
-  border-right: 1px solid var(--border);
+  border-left: 1px solid var(--border);
 }
-.hero-stat:last-child { border-right: none; }
+.hero-stat:first-child { border-left: none; }
 
 :root[data-theme="light"] .hero-stat {
-  border-right-color: var(--blue-dim-2);
+  border-left-color: var(--blue-dim-2);
 }
 
 .hero-stat-num {
@@ -210,7 +209,7 @@
 }
 
 .hero-stat-label {
-  margin-top: 0.25rem;
+  margin-top: 8px;
   font-size: 0.7rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;

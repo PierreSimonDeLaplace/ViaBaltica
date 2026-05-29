@@ -71,6 +71,8 @@
   --hero-text-dim:   rgba(232, 240, 248, 0.88);
   --hero-stat-bg:    rgba(8, 17, 30, 0.70);
   --hero-stat-label: rgba(232, 240, 248, 0.55);
+  --hero-eyebrow:      #f4e9d2;
+  --hero-eyebrow-line: rgba(244, 233, 210, 0.55);
 
   /* modal/overlay backdrop */
   --overlay-bg: rgba(0, 0, 0, 0.55);
@@ -82,6 +84,7 @@
   --shadow-35: rgba(0, 0, 0, 0.35);
   --shadow-40: rgba(0, 0, 0, 0.40);
   --shadow-50: rgba(0, 0, 0, 0.50);
+  --shadow-60: rgba(0, 0, 0, 0.60);
 
   /* blue at mid opacities */
   --blue-dim-2: rgba(74, 143, 192, 0.18);
