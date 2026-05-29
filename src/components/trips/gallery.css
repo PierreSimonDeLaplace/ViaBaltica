@@ -9,7 +9,8 @@
 .drawer-gallery-heading {
   font-family: var(--font-serif), serif;
   font-size: 1.15rem;
-  font-weight: 600;
+  font-weight: 300;
+  font-style: italic;
   letter-spacing: 0.02em;
   color: var(--text);
   margin-bottom: 0.85rem;

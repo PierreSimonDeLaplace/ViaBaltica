@@ -5,8 +5,8 @@
 
 :root {
   /* typography */
-  --font-serif: 'Cormorant Garamond', serif;
-  --font-sans:  'DM Sans', sans-serif;
+  --font-serif: 'Source Sans 3', sans-serif;
+  --font-sans:  'Source Sans 3', sans-serif;
 
   /* surfaces */
   --bg:           #08111e;
@@ -34,13 +34,13 @@
   --blue-dim:     rgba(74, 143, 192, 0.14);
 
   /* text */
-  --text:         #e8f0f8;
-  --text-2:       #a8c0d8;
-  --muted:        #5d7d96;
+  --text:         #ffffff;
+  --text-2:       #c9cdd6;
+  --muted:        #9aa0ab;
 
   /* chrome */
   --nav-bg:       rgba(8, 17, 30, 0.88);
-  --nav-height:   72px;
+  --nav-height:   60px;
 
   /* depth */
   --shadow:       0 8px 32px rgba(0, 0, 0, 0.45);

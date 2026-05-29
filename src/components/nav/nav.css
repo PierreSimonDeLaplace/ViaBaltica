@@ -34,8 +34,8 @@
    stays navy-blue in light mode and warm cream in dark mode automatically. */
 .logo-mark {
   display: block;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   background: currentColor;
   -webkit-mask: url('../../assets/images/logo/logo_viabaltica_darkblue.png') center / contain no-repeat;
           mask: url('../../assets/images/logo/logo_viabaltica_darkblue.png') center / contain no-repeat;
@@ -240,5 +240,5 @@ input#menu-toggle:checked ~ .mobile-drawer { display: block; }
 
   .hamburger { display: flex; }
   .lang-flags-mobile { display: flex; }
-  .logo-mark { width: 40px; height: 40px; }
+  .logo-mark { width: 34px; height: 34px; }
 }

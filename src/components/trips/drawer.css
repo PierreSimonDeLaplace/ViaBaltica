@@ -234,7 +234,8 @@
 .drawer-title {
   font-family: var(--font-serif), serif;
   font-size: clamp(26px, 4vw, 34px);
-  font-weight: 500;
+  font-weight: 300;
+  font-style: italic;
   line-height: 1.1;
   color: var(--text);
   margin: 0;
@@ -275,7 +276,8 @@
 
 .drawer-highlights-title {
   font-family: var(--font-serif), serif;
-  font-weight: 500;
+  font-weight: 300;
+  font-style: italic;
   font-size: 20px;
   color: var(--text);
   margin: 8px 0 12px;
@@ -353,6 +355,8 @@
 .drawer-price-amount {
   font-family: var(--font-serif), serif;
   font-size: 28px;
+  font-weight: 300;
+  font-style: italic;
   line-height: 1;
   color: var(--bookbar-text);
   margin-top: 2px;

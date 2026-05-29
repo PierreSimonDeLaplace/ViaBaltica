@@ -19,7 +19,8 @@
   margin-bottom: 0.75rem;
   font-family: var(--font-serif), serif;
   font-size: clamp(2rem, 5vw, 3.2rem);
-  font-weight: 600;
+  font-weight: 300;
+  font-style: italic;
   line-height: 1.15;
 }
 
@@ -42,7 +43,8 @@
 .google-logo span {
   font-family: var(--font-serif), serif;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 300;
+  font-style: italic;
   line-height: 1;
 }
 .g-blue   { color: var(--g-blue); }
@@ -51,7 +53,7 @@
 .g-green  { color: var(--g-green); }
 
 .summary-stars { color: var(--star); font-size: 0.95rem; letter-spacing: 1px; }
-.summary-score { color: var(--text);  font-size: 0.9rem; font-weight: 500; }
+.summary-score { color: var(--text);  font-size: 0.9rem; font-weight: 400; }
 .summary-count { color: var(--muted); font-size: 0.8rem; }
 
 /* ── Slider wrap ─────────────────────────────────────────────────────────── */
@@ -132,7 +134,8 @@
   border-radius: 50%;
   font-family: var(--font-serif), serif;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 300;
+  font-style: italic;
   color: var(--white);
 }
 .reviewer-info {
@@ -140,7 +143,7 @@
   flex-direction: column;
   gap: 0.1rem;
 }
-.reviewer-name { color: var(--text);  font-size: 0.88rem; font-weight: 500; }
+.reviewer-name { color: var(--text);  font-size: 0.88rem; font-weight: 400; }
 .reviewer-date { color: var(--muted); font-size: 0.75rem; }
 
 /* ── Slider controls (dots + arrows) ─────────────────────────────────────── */

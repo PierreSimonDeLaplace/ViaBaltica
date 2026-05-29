@@ -23,7 +23,8 @@
 .contact-header h2 {
   font-family: var(--font-serif), serif;
   font-size: clamp(2.2rem, 5vw, 3.4rem);
-  font-weight: 600;
+  font-weight: 300;
+  font-style: italic;
   color: var(--text);
   line-height: 1.2;
 }
@@ -92,7 +93,7 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--muted);
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .contact-card-value {
